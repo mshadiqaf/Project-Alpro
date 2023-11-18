@@ -14,10 +14,10 @@ class App(ctk.CTk):
         ctk.set_default_color_theme('dark-blue')
         self.title('Hostay')
         self.geometry('800x600')
-        self.iconbitmap('Aset/favicon (4).ico')
-        self.img_mainmenu_background = ctk.CTkImage(Image.open('Aset/Solid BG.png'), size=(1600, 900))
-        self.img_login = ctk.CTkImage(Image.open('Aset/Box Shadow Login.png'), size=(1600, 900))
-        self.img_registration = ctk.CTkImage(Image.open('Aset/Box Shadow Regis.png'), size=(1600, 900))
+        self.iconbitmap('Aset Projek/favicon (4).ico')
+        self.img_mainmenu_background = ctk.CTkImage(Image.open('Aset Projek/Solid BG.png'), size=(1600, 900))
+        self.img_login = ctk.CTkImage(Image.open('Aset Projek/Box Shadow Login.png'), size=(1600, 900))
+        self.img_registration = ctk.CTkImage(Image.open('Aset Projek/Box Shadow Regis.png'), size=(1600, 900))
         self.background = ctk.CTkLabel(self, text='', image=self.img_login)
         self.background.place(relx=0.5, rely=0.5, anchor='center')
 
@@ -48,31 +48,32 @@ class App(ctk.CTk):
         self.background.place(relx=0.5, rely=0.5, anchor='center')
         self.background.configure(self, text='', image=self.img_mainmenu_background)
 
-        self.logo_image = ctk.CTkImage(Image.open('Aset/Hostay White.png'), size=(110, 55))
-        self.logoshadow_image = ctk.CTkImage(Image.open('Aset/Hostay Dark.png'), size=(250, 125))
-        self.dashboard_image = ctk.CTkImage(Image.open('Aset/Dashboard.png'), size=(20, 20))
-        self.checkin_image = ctk.CTkImage(Image.open('Aset/Check In.png'), size=(20, 20))
-        self.checkout_image = ctk.CTkImage(Image.open('Aset/Check Out.png'), size=(20, 20))
-        self.guestlist_image = ctk.CTkImage(Image.open('Aset/Guest List.png'), size=(20, 20))
-        self.roomservice_image = ctk.CTkImage(Image.open('Aset/Room Service.png'), size=(20, 20))
-        self.about_image =  ctk.CTkImage(Image.open('Aset/About.png'), size=(20, 20))
-        self.user_image = ctk.CTkImage(Image.open('Aset/User.png'), size=(25, 25))
-        self.user2_image = ctk.CTkImage(Image.open('Aset/User2.png'), size=(30, 30))
-        self.vacantrooms_image = ctk.CTkImage(Image.open('Aset/Vacant Rooms.png'), size=(310, 207))
-        self.occupiedrooms_image = ctk.CTkImage(Image.open('Aset/Occupied Rooms.png'), size=(310, 207))
-        self.vacatedrooms_image = ctk.CTkImage(Image.open('Aset/Vacated Rooms.png'), size=(310, 207))
-        self.requiringservice_image = ctk.CTkImage(Image.open('Aset/Requiring Service.png'), size=(310, 207))
-        self.rightarrow_image = ctk.CTkImage(Image.open('Aset/Right Arrow.png'), size=(10, 10))
-        self.downarrow_image = ctk.CTkImage(Image.open('Aset/Down Arrow.png'), size=(10, 10))
-        self.singleroom_image = ctk.CTkImage(Image.open('Aset/Single Room.png'), size=(305, 264))
-        self.doubleroom_image = ctk.CTkImage(Image.open('Aset/Double Room.png'), size=(305, 264))
-        self.suiteroom_image = ctk.CTkImage(Image.open('Aset/Suite Room.png'), size=(305, 264))
-        self.presidentsuiteroom_image = ctk.CTkImage(Image.open('Aset/President Suite Room.png'), size=(305, 264))
-        self.back_image = ctk.CTkImage(Image.open('Aset/Back.png'), size=(40, 40))
-        self.foodservice_image = ctk.CTkImage(Image.open('Aset/Food and Drink Service.png'), size=(405,351))
-        self.repairingservice_image = ctk.CTkImage(Image.open('Aset/Repairing Service.png'), size=(405,351))
-        self.cleaningservice_image = ctk.CTkImage(Image.open('Aset/Cleaning Service.png'), size=(405,351))
-        self.logout_image = ctk.CTkImage(Image.open('Aset/Logout.png'), size=(20,20))
+        self.logo_image = ctk.CTkImage(Image.open('Aset Projek/Hostay White.png'), size=(110, 55))
+        self.logoshadow_image = ctk.CTkImage(Image.open('Aset Projek/Hostay Dark.png'), size=(250, 125))
+        self.dashboard_image = ctk.CTkImage(Image.open('Aset Projek/Dashboard.png'), size=(20, 20))
+        self.checkin_image = ctk.CTkImage(Image.open('Aset Projek/Check In.png'), size=(20, 20))
+        self.checkout_image = ctk.CTkImage(Image.open('Aset Projek/Check Out.png'), size=(20, 20))
+        self.guestlist_image = ctk.CTkImage(Image.open('Aset Projek/Guest List.png'), size=(20, 20))
+        self.guesthistory_image = ctk.CTkImage(Image.open('Aset Projek/Guest History.png'), size=(20, 20))
+        self.roomservice_image = ctk.CTkImage(Image.open('Aset Projek/Room Service.png'), size=(20, 20))
+        self.about_image =  ctk.CTkImage(Image.open('Aset Projek/About.png'), size=(20, 20))
+        self.user_image = ctk.CTkImage(Image.open('Aset Projek/User.png'), size=(25, 25))
+        self.user2_image = ctk.CTkImage(Image.open('Aset Projek/User2.png'), size=(30, 30))
+        self.vacantready_image = ctk.CTkImage(Image.open('Aset Projek/Vacant Ready.png'), size=(310, 207))
+        self.occupiedrooms_image = ctk.CTkImage(Image.open('Aset Projek/Occupied Rooms.png'), size=(310, 207))
+        self.vacantdirty_image = ctk.CTkImage(Image.open('Aset Projek/Vacant Dirty.png'), size=(310, 207))
+        self.requiringservice_image = ctk.CTkImage(Image.open('Aset Projek/Requiring Service.png'), size=(310, 207))
+        self.rightarrow_image = ctk.CTkImage(Image.open('Aset Projek/Right Arrow.png'), size=(10, 10))
+        self.downarrow_image = ctk.CTkImage(Image.open('Aset Projek/Down Arrow.png'), size=(10, 10))
+        self.singleroom_image = ctk.CTkImage(Image.open('Aset Projek/Single Room.png'), size=(305, 264))
+        self.doubleroom_image = ctk.CTkImage(Image.open('Aset Projek/Double Room.png'), size=(305, 264))
+        self.suiteroom_image = ctk.CTkImage(Image.open('Aset Projek/Suite Room.png'), size=(305, 264))
+        self.presidentsuiteroom_image = ctk.CTkImage(Image.open('Aset Projek/President Suite Room.png'), size=(305, 264))
+        self.back_image = ctk.CTkImage(Image.open('Aset Projek/Back.png'), size=(40, 40))
+        self.foodservice_image = ctk.CTkImage(Image.open('Aset Projek/Food and Drink Service.png'), size=(405,351))
+        self.repairingservice_image = ctk.CTkImage(Image.open('Aset Projek/Repairing Service.png'), size=(405,351))
+        self.cleaningservice_image = ctk.CTkImage(Image.open('Aset Projek/Cleaning Service.png'), size=(405,351))
+        self.logout_image = ctk.CTkImage(Image.open('Aset Projek/Logout.png'), size=(20,20))
 
         self.grid_columnconfigure(1, weight=1)
         self.grid_columnconfigure((2, 3), weight=0)
@@ -102,8 +103,12 @@ class App(ctk.CTk):
         self.main_framebar_checkin_presidentsuiteroom = ctk.CTkFrame(self.main_frame_checkin_presidentsuiteroom, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_frame_guestlist = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
         self.main_framebar_guestlist = ctk.CTkFrame(self.main_frame_guestlist, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
+        self.main_frame_guesthistory = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
+        self.main_framebar_guesthistory = ctk.CTkFrame(self.main_frame_guesthistory, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_frame_roomservice = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
         self.main_frame_foodservice = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
+        self.main_framebar_foodservice_menu = ctk.CTkFrame(self.main_frame_foodservice, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
+        self.main_framebar_foodservice_order = ctk.CTkFrame(self.main_frame_foodservice, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_frame_repairingservice = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
         self.main_frame_cleaningservice = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
         self.main_frame_about = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
@@ -121,18 +126,22 @@ class App(ctk.CTk):
         self.main_frame_checkin_identityformdouble.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
         self.main_frame_checkin_identityformsuite.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
         self.main_frame_checkin_identityformpresidentsuite.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
-        self.main_framebar_checkin_identityformsingle.grid(row=1, column=0, columnspan=10, padx=(17.5,10), ipady=10, pady=15, sticky='news')
-        self.main_framebar_checkin_identityformdouble.grid(row=1, column=0, columnspan=10, padx=(17.5,10), ipady=10, pady=15, sticky='news')
-        self.main_framebar_checkin_identityformsuite.grid(row=1, column=0, columnspan=10, padx=(17.5,10), ipady=10, pady=15, sticky='news')
-        self.main_framebar_checkin_identityformpresidentsuite.grid(row=1, column=0, columnspan=10, padx=(17.5,10), ipady=10, pady=15, sticky='news')
-        self.main_framebar_checkin_singleroom.grid(row=1, column=0, columnspan=10, padx=(17.5,10), ipady=10, pady=15, sticky='news')
-        self.main_framebar_checkin_doubleroom.grid(row=1, column=0, columnspan=10, padx=(17.5,10), ipady=10, pady=15, sticky='news')
-        self.main_framebar_checkin_suiteroom.grid(row=1, column=0, columnspan=10, padx=(17.5,10), ipady=10, pady=15, sticky='news')
-        self.main_framebar_checkin_presidentsuiteroom.grid(row=1, column=0, columnspan=10, padx=(17.5,10), ipady=10, pady=15, sticky='news')
-        self.main_framebar_guestlist.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=0, pady=(5,0), sticky='news')
+        self.main_framebar_checkin_identityformsingle.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=10, pady=(0,0), sticky='news')
+        self.main_framebar_checkin_identityformdouble.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=10, pady=(0,0), sticky='news')
+        self.main_framebar_checkin_identityformsuite.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=10, pady=(0,0), sticky='news')
+        self.main_framebar_checkin_identityformpresidentsuite.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=10, pady=(0,0), sticky='news')
+        self.main_framebar_checkin_singleroom.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=10, pady=(0,0), sticky='news')
+        self.main_framebar_checkin_doubleroom.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=10, pady=(0,0), sticky='news')
+        self.main_framebar_checkin_suiteroom.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=10, pady=(0,0), sticky='news')
+        self.main_framebar_checkin_presidentsuiteroom.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=10, pady=(0,0), sticky='news')
         self.main_frame_guestlist.grid(row=1, column=1, rowspan=3, ipady=300, padx=0, pady=0, sticky='news')
+        self.main_frame_guesthistory.grid(row=1, column=1, rowspan=3, ipady=300, padx=0, pady=0, sticky='news')
+        self.main_framebar_guestlist.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=0, pady=(5,0), sticky='news')
+        self.main_framebar_guesthistory.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=0, pady=(5,0), sticky='news')
         self.main_frame_roomservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')        
         self.main_frame_foodservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')        
+        self.main_framebar_foodservice_menu.grid(row=1, column=0, padx=(10,10), pady=(0,0), sticky='news')        
+        self.main_framebar_foodservice_order.grid(row=1, column=1, padx=(10,10), ipady=235, ipadx=90, pady=(0,0), sticky='news')        
         self.main_frame_repairingservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')        
         self.main_frame_cleaningservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')        
         self.main_frame_about.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
@@ -152,6 +161,7 @@ class App(ctk.CTk):
         self.sidebar_button_checkin = ctk.CTkButton(self.sidebar_frame, corner_radius=20, width=140, height=40, text="Check In", font=ctk.CTkFont('Mona-Sans SemiBold', 12), fg_color="transparent", text_color=("#FFFFFF"), hover_color='#4646DD', cursor='hand2', anchor="w", compound='left', image=self.checkin_image, command=self.checkin_menu)
         self.sidebar_button_checkout = ctk.CTkButton(self.sidebar_frame, corner_radius=20, width=140, height=40, text="Check Out", font=ctk.CTkFont('Mona-Sans SemiBold', 12), fg_color="transparent", text_color=("#FFFFFF"), hover_color='#4646DD', cursor='hand2', anchor="w", compound='left', image=self.checkout_image)
         self.sidebar_button_guestlist = ctk.CTkButton(self.sidebar_frame, corner_radius=20, width=30, height=45, text="Guest List", font=ctk.CTkFont('Mona-Sans SemiBold', 14), text_color=("#FFFFFF"), hover_color='#4646DD', cursor='hand2', anchor="w", image=self.guestlist_image, command=self.guestlist_menu)
+        self.sidebar_button_guesthistory = ctk.CTkButton(self.sidebar_frame, corner_radius=20, width=30, height=45, text="Guest History", font=ctk.CTkFont('Mona-Sans SemiBold', 14), text_color=("#FFFFFF"), hover_color='#4646DD', cursor='hand2', anchor="w", image=self.guesthistory_image, command=self.guesthistory_menu)
         self.sidebar_button_roomservice = ctk.CTkButton(self.sidebar_frame, corner_radius=20, width=30, height=45, text="Room Services", font=ctk.CTkFont('Mona-Sans SemiBold', 14), fg_color="transparent", text_color=("#FFFFFF"), hover_color='#4646DD', cursor='hand2', anchor="w", image=self.roomservice_image, command=self.roomservice_menu)
         self.sidebar_button_about = ctk.CTkButton(self.sidebar_frame, corner_radius=20, width=30, height=45, text="About", font=ctk.CTkFont('Mona-Sans SemiBold', 14), fg_color="transparent", text_color=("#FFFFFF"), hover_color='#4646DD', cursor='hand2', anchor="w", image=self.about_image, command=self.about_menu)
 
@@ -159,8 +169,9 @@ class App(ctk.CTk):
         self.sidebar_button_dashboard.grid(row=1, column=0, padx=20, pady=5, sticky='news')
         self.sidebar_button_checkinout.grid(row=2, column=0, padx=20, pady=5, sticky='news')
         self.sidebar_button_guestlist.grid(row=3, column=0, padx=20, pady=5, sticky='news')
-        self.sidebar_button_roomservice.grid(row=4, column=0, padx=20, pady=5, sticky='news')
-        self.sidebar_button_about.grid(row=5, column=0, padx=20, pady=5, sticky='news')
+        self.sidebar_button_guesthistory.grid(row=4, column=0, padx=20, pady=5, sticky='news')
+        self.sidebar_button_roomservice.grid(row=5, column=0, padx=20, pady=5, sticky='news')
+        self.sidebar_button_about.grid(row=6, column=0, padx=20, pady=5, sticky='news')
 
         # HEADBAR WIDGETS
 
@@ -184,10 +195,10 @@ class App(ctk.CTk):
         self.main_dashboard_vacatedrooms_frame = ctk.CTkFrame(self.main_frame_dashboard, fg_color='transparent', width=300, height=200)
         self.main_dashboard_requiringservice_frame = ctk.CTkFrame(self.main_frame_dashboard, fg_color='transparent', width=300, height=200)
        
-        self.main_dashboard_vacantrooms_label = ctk.CTkLabel(self.main_dashboard_vacantrooms_frame, text='\n\n                   27', font=ctk.CTkFont('Mona-Sans Bold', 50), text_color='#FFFFFF', image=self.vacantrooms_image)
-        self.main_dashboard_occupiedrooms_label = ctk.CTkLabel(self.main_dashboard_occupiedrooms_frame, text='\n\n                   1', font=ctk.CTkFont('Mona-Sans Bold', 50), text_color='#FFFFFF', image=self.occupiedrooms_image)
-        self.main_dashboard_vacatedrooms_label = ctk.CTkLabel(self.main_dashboard_vacatedrooms_frame, text='\n\n                   1', font=ctk.CTkFont('Mona-Sans Bold', 50), text_color='#FFFFFF', image=self.vacatedrooms_image)
-        self.main_dashboard_requiringservice_label = ctk.CTkLabel(self.main_dashboard_requiringservice_frame, text='\n\n                   1', font=ctk.CTkFont('Mona-Sans Bold', 50), text_color='#FFFFFF', image=self.requiringservice_image)
+        self.main_dashboard_vacantrooms_label = ctk.CTkLabel(self.main_dashboard_vacantrooms_frame, text='\n\n                   30', font=ctk.CTkFont('Mona-Sans Bold', 50), text_color='#FFFFFF', image=self.vacantready_image)
+        self.main_dashboard_occupiedrooms_label = ctk.CTkLabel(self.main_dashboard_occupiedrooms_frame, text='\n\n                   0', font=ctk.CTkFont('Mona-Sans Bold', 50), text_color='#FFFFFF', image=self.occupiedrooms_image)
+        self.main_dashboard_vacatedrooms_label = ctk.CTkLabel(self.main_dashboard_vacatedrooms_frame, text='\n\n                   0', font=ctk.CTkFont('Mona-Sans Bold', 50), text_color='#FFFFFF', image=self.vacantdirty_image)
+        self.main_dashboard_requiringservice_label = ctk.CTkLabel(self.main_dashboard_requiringservice_frame, text='\n\n                   0', font=ctk.CTkFont('Mona-Sans Bold', 50), text_color='#FFFFFF', image=self.requiringservice_image)
         
         self.main_dashboard_vacantrooms_frame.grid(row=1, column=0, pady=0, sticky='news')
         self.main_dashboard_occupiedrooms_frame.grid(row=1, column=1, pady=0, sticky='news')
@@ -237,9 +248,9 @@ class App(ctk.CTk):
         self.room30_frame = ctk.CTkFrame(self.main_scrollframe_dashboard_roomstatus, width=94, height=125, fg_color='#242531', border_color='#1E1F29', border_width=3, corner_radius=20)
         
         self.room01_frame_indicator = ctk.CTkFrame(self.room01_frame, width=70, height=10, fg_color='#0FBFB0', corner_radius=20)
-        self.room02_frame_indicator = ctk.CTkFrame(self.room02_frame, width=70, height=10, fg_color='#3C58F7', corner_radius=20)
-        self.room03_frame_indicator = ctk.CTkFrame(self.room03_frame, width=70, height=10, fg_color='#9031D3', corner_radius=20)
-        self.room04_frame_indicator = ctk.CTkFrame(self.room04_frame, width=70, height=10, fg_color='#B52483', corner_radius=20)
+        self.room02_frame_indicator = ctk.CTkFrame(self.room02_frame, width=70, height=10, fg_color='#0FBFB0', corner_radius=20) #3C58F7
+        self.room03_frame_indicator = ctk.CTkFrame(self.room03_frame, width=70, height=10, fg_color='#0FBFB0', corner_radius=20) #9031D3
+        self.room04_frame_indicator = ctk.CTkFrame(self.room04_frame, width=70, height=10, fg_color='#0FBFB0', corner_radius=20) #B52483
         self.room05_frame_indicator = ctk.CTkFrame(self.room05_frame, width=70, height=10, fg_color='#0FBFB0', corner_radius=20)
         self.room06_frame_indicator = ctk.CTkFrame(self.room06_frame, width=70, height=10, fg_color='#0FBFB0', corner_radius=20)
         self.room07_frame_indicator = ctk.CTkFrame(self.room07_frame, width=70, height=10, fg_color='#0FBFB0', corner_radius=20)
@@ -267,36 +278,36 @@ class App(ctk.CTk):
         self.room29_frame_indicator = ctk.CTkFrame(self.room29_frame, width=70, height=10, fg_color='#0FBFB0', corner_radius=20)
         self.room30_frame_indicator = ctk.CTkFrame(self.room30_frame, width=70, height=10, fg_color='#0FBFB0', corner_radius=20)
         
-        self.room01_frame_status = ctk.CTkLabel(self.room01_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room02_frame_status = ctk.CTkLabel(self.room02_frame, text='Occupied', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room03_frame_status = ctk.CTkLabel(self.room03_frame, text='Vacated', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room04_frame_status = ctk.CTkLabel(self.room04_frame, text='Requiring', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room05_frame_status = ctk.CTkLabel(self.room05_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room06_frame_status = ctk.CTkLabel(self.room06_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room07_frame_status = ctk.CTkLabel(self.room07_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room08_frame_status = ctk.CTkLabel(self.room08_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room09_frame_status = ctk.CTkLabel(self.room09_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room10_frame_status = ctk.CTkLabel(self.room10_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room11_frame_status = ctk.CTkLabel(self.room11_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room12_frame_status = ctk.CTkLabel(self.room12_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room13_frame_status = ctk.CTkLabel(self.room13_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room14_frame_status = ctk.CTkLabel(self.room14_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room15_frame_status = ctk.CTkLabel(self.room15_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room16_frame_status = ctk.CTkLabel(self.room16_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room17_frame_status = ctk.CTkLabel(self.room17_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room18_frame_status = ctk.CTkLabel(self.room18_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room19_frame_status = ctk.CTkLabel(self.room19_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room20_frame_status = ctk.CTkLabel(self.room20_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room21_frame_status = ctk.CTkLabel(self.room21_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room22_frame_status = ctk.CTkLabel(self.room22_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room23_frame_status = ctk.CTkLabel(self.room23_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room24_frame_status = ctk.CTkLabel(self.room24_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room25_frame_status = ctk.CTkLabel(self.room25_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room26_frame_status = ctk.CTkLabel(self.room26_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room27_frame_status = ctk.CTkLabel(self.room27_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room28_frame_status = ctk.CTkLabel(self.room28_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room29_frame_status = ctk.CTkLabel(self.room29_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
-        self.room30_frame_status = ctk.CTkLabel(self.room30_frame, text='Available', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room01_frame_status = ctk.CTkLabel(self.room01_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room02_frame_status = ctk.CTkLabel(self.room02_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room03_frame_status = ctk.CTkLabel(self.room03_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room04_frame_status = ctk.CTkLabel(self.room04_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room05_frame_status = ctk.CTkLabel(self.room05_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room06_frame_status = ctk.CTkLabel(self.room06_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room07_frame_status = ctk.CTkLabel(self.room07_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room08_frame_status = ctk.CTkLabel(self.room08_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room09_frame_status = ctk.CTkLabel(self.room09_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room10_frame_status = ctk.CTkLabel(self.room10_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room11_frame_status = ctk.CTkLabel(self.room11_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room12_frame_status = ctk.CTkLabel(self.room12_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room13_frame_status = ctk.CTkLabel(self.room13_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room14_frame_status = ctk.CTkLabel(self.room14_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room15_frame_status = ctk.CTkLabel(self.room15_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room16_frame_status = ctk.CTkLabel(self.room16_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room17_frame_status = ctk.CTkLabel(self.room17_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room18_frame_status = ctk.CTkLabel(self.room18_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room19_frame_status = ctk.CTkLabel(self.room19_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room20_frame_status = ctk.CTkLabel(self.room20_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room21_frame_status = ctk.CTkLabel(self.room21_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room22_frame_status = ctk.CTkLabel(self.room22_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room23_frame_status = ctk.CTkLabel(self.room23_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room24_frame_status = ctk.CTkLabel(self.room24_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room25_frame_status = ctk.CTkLabel(self.room25_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room26_frame_status = ctk.CTkLabel(self.room26_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room27_frame_status = ctk.CTkLabel(self.room27_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room28_frame_status = ctk.CTkLabel(self.room28_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room29_frame_status = ctk.CTkLabel(self.room29_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
+        self.room30_frame_status = ctk.CTkLabel(self.room30_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
       
         self.room01_frame_label = ctk.CTkLabel(self.room01_frame, text='01', font=ctk.CTkFont('Mona-Sans ExtraBold', 40), text_color='#FFDC99')
         self.room02_frame_label = ctk.CTkLabel(self.room02_frame, text='02', font=ctk.CTkFont('Mona-Sans ExtraBold', 40), text_color='#FFDC99')
@@ -623,7 +634,6 @@ class App(ctk.CTk):
         
         self.room27_button.configure(state='disabled', text='Unavailable', font=ctk.CTkFont('Mona-Sans ExtraBold', 25), text_color='#FFFFFF')
 
-
        # GUEST LIST WIDGET
 
         self.main_guestlist_heading_label = ctk.CTkLabel(self.main_frame_guestlist, text="Guest List", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='sw')
@@ -632,51 +642,104 @@ class App(ctk.CTk):
         self.main_guestlist_desc_label.place(x=430, y=45, anchor='center')
 
         self.guest_list = [
-            ["No", "Room Number", "Room Type", "Guest Name", "Check In Date", "Status"],
-            ['1', 'Room 01', 'Single Room','','','Available'],
-            ['2', 'Room 02', 'Single Room','','','Available'],
-            ['3', 'Room 03', 'Single Room','','','Available'],
-            ['4', 'Room 04', 'Single Room','','','Available'],
-            ['5', 'Room 05', 'Single Room','','','Available'],
-            ['6', 'Room 06', 'Single Room','','','Available'],
-            ['7', 'Room 07', 'Single Room','','','Available'],
-            ['8', 'Room 08', 'Single Room','','','Available'],        
-            ['9', 'Room 09', 'Single Room','','','Available'],        
-            ['10', 'Room 10', 'Single Room','','','Available'],        
-            ['11', 'Room 11', 'Double Room','','','Available'],        
-            ['12', 'Room 12', 'Double Room','','','Available'],        
-            ['13', 'Room 13', 'Double Room','','','Available'],        
-            ['14', 'Room 14', 'Double Room','','','Available'],        
-            ['15', 'Room 15', 'Double Room','','','Available'],        
-            ['16', 'Room 16', 'Double Room','','','Available'],        
-            ['17', 'Room 17', 'Double Room','','','Available'],        
-            ['18', 'Room 18', 'Double Room','','','Available'],        
-            ['19', 'Room 19', 'Double Room','','','Available'],        
-            ['20', 'Room 20', 'Double Room','','','Available'],        
-            ['21', 'Room 21', 'Suite Room','','','Available'],        
-            ['22', 'Room 22', 'Suite Room','','','Available'],        
-            ['23', 'Room 23', 'Suite Room','','','Available'],        
-            ['24', 'Room 24', 'Suite Room','','','Available'],        
-            ['25', 'Room 25', 'Suite Room','','','Available'],        
-            ['26', 'Room 26', 'Suite Room','','','Available'],        
-            ['27', 'Room 27', 'President Suite Room','','','Available'],        
-            ['28', 'Room 28', 'President Suite Room','','','Available'],        
-            ['29', 'Room 29', 'President Suite Room','','','Available'],        
-            ['30', 'Room 30', 'President Suite Room','','','Available'],        
+            ["Room Number", "Room Type", "Guest Name", "Check In Date", 'Check Out Date',"Status"],
+            ['01', 'Single','','','','Ready'],
+            ['02', 'Single','','','','Ready'],
+            ['03', 'Single','','','','Ready'],
+            ['04', 'Single','','','','Ready'],
+            ['05', 'Single','','','','Ready'],
+            ['06', 'Single','','','','Ready'],
+            ['07', 'Single','','','','Ready'],
+            ['08', 'Single','','','','Ready'],        
+            ['09', 'Single','','','','Ready'],        
+            ['10', 'Single','','','','Ready'],        
+            ['11', 'Double','','','','Ready'],        
+            ['12', 'Double','','','','Ready'],        
+            ['13', 'Double','','','','Ready'],        
+            ['14', 'Double','','','','Ready'],        
+            ['15', 'Double','','','','Ready'],        
+            ['16', 'Double','','','','Ready'],        
+            ['17', 'Double','','','','Ready'],        
+            ['18', 'Double','','','','Ready'],        
+            ['19', 'Double','','','','Ready'],        
+            ['20', 'Double','','','','Ready'],        
+            ['21', 'Suite','','','','Ready'],        
+            ['22', 'Suite','','','','Ready'],        
+            ['23', 'Suite','','','','Ready'],        
+            ['24', 'Suite','','','','Ready'],        
+            ['25', 'Suite','','','','Ready'],        
+            ['26', 'Suite','','','','Ready'],        
+            ['27', 'President Suite','','','','Ready'],        
+            ['28', 'President Suite','','','','Ready'],        
+            ['29', 'President Suite','','','','Ready'],        
+            ['30', 'President Suite','','','','Ready'],        
         ]
 
         self.main_guestlist_scrollableframe = ctk.CTkScrollableFrame(self.main_framebar_guestlist, width=1200, height=550, fg_color='transparent')
         self.main_guestlist_scrollableframe.grid(row=1, column=0, pady=(15,15), padx=(10,0), columnspan=12, sticky='news')
-        self.main_guestlist_table = CTkTable(self.main_guestlist_scrollableframe, font=ctk.CTkFont('Mona-Sans Bold', 15), values=self.guest_list, header_color='#4646DD', colors=['#131318', '#15151B'], border_color='#101016', corner_radius=0, border_width=2, color_phase='horizontal', wraplength=300)
+        self.main_guestlist_table = CTkTable(self.main_guestlist_scrollableframe, font=ctk.CTkFont('Mona-Sans Bold', 14), values=self.guest_list, header_color='#4646DD', colors=['#131318', '#15151B'], border_color='#101016', corner_radius=0, border_width=2, color_phase='horizontal', wraplength=200)
         self.main_guestlist_table.pack(expand=True)
-        self.main_guestlist_table.edit_column(0, width=50)
-        self.main_guestlist_table.edit_column(1, width=200)
-        self.main_guestlist_table.edit_column(2, width=200)
-        self.main_guestlist_table.edit_column(3, width=300)
-        self.main_guestlist_table.edit_column(4, width=200)
+        self.main_guestlist_table.edit_column(0, width=130)
+        self.main_guestlist_table.edit_column(1, width=150)
+        self.main_guestlist_table.edit_column(2, width=400)
+        self.main_guestlist_table.edit_column(3, width=150)
+        self.main_guestlist_table.edit_column(4, width=150)
         self.main_guestlist_table.edit_column(5, width=200)
 
+        # GUEST HISTORY WIDGET
 
+        self.main_guesthistory_heading_label = ctk.CTkLabel(self.main_frame_guesthistory, text="Guest History", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='sw')
+        self.main_guesthistory_heading_label.grid(row=0, column=0, rowspan=1, pady=(5,0), padx=(20,100), sticky='news')
+        self.main_guesthistory_desc_label =  ctk.CTkLabel(self.main_frame_guesthistory, text="List of guest's history", font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
+        self.main_guesthistory_desc_label.place(x=475, y=45, anchor='center')
+
+        self.guest_history = [
+            ['Check In Date', 'Check Out Date', 'Guest Name', 'NIN', 'Mobile Phone Number','Email','Adress','Room Number'],
+            ['31/07/05','02/08/05','Muhammad Shadiq Al-Fatiy','6471053011690007','082138140621','mshadiqaf@gmail.com','Perum. Papan Lestari, Jl. Sepinggan Asri Utara II RT 45, No.11', '01'],
+            ['','','','','',''],
+            ['','','','','',''],
+            ['','','','','',''],
+            ['','','','','',''],
+            ['','','','','',''],
+            ['','','','','',''],
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+            ['','','','','',''],        
+        ]
+
+        self.main_guesthistory_scrollableframe = ctk.CTkScrollableFrame(self.main_framebar_guesthistory, width=1200, height=550, fg_color='transparent')
+        self.main_guesthistory_scrollableframe.grid(row=1, column=0, pady=(15,15), padx=(10,0), columnspan=12, sticky='news')
+        self.main_guesthistory_table = CTkTable(self.main_guesthistory_scrollableframe, font=ctk.CTkFont('Mona-Sans Bold', 12), values=self.guest_history, header_color='#4646DD', colors=['#131318', '#15151B'], border_color='#101016', corner_radius=0, border_width=2, color_phase='horizontal', wraplength=200)
+        self.main_guesthistory_table.pack(expand=True)
+        self.main_guesthistory_table.edit_column(0, width=100)
+        self.main_guesthistory_table.edit_column(1, width=110)
+        self.main_guesthistory_table.edit_column(2, width=200)
+        self.main_guesthistory_table.edit_column(3, width=130)
+        self.main_guesthistory_table.edit_column(4, width=150)
+        self.main_guesthistory_table.edit_column(5, width=170)
+        self.main_guesthistory_table.edit_column(6, width=200)
+        self.main_guesthistory_table.edit_column(7, width=120)
+        
        # ROOM SERVICES WIDGET
 
         self.main_roomservice_heading_label = ctk.CTkLabel(self.main_frame_roomservice, text="Room Services", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='sw')
@@ -717,13 +780,17 @@ class App(ctk.CTk):
         self.main_foodservice_back = ctk.CTkButton(self.main_frame_foodservice, width=20, height=20, fg_color='transparent', bg_color='transparent', text='', hover_color='#0C0B10', cursor='hand2', image=self.back_image, command=self.roomservice_menu)
         self.main_foodservice_back.place(x=25, y=33, anchor='center')
 
-        self.main_tabview = ctk.CTkTabview(self.main_frame_foodservice, width=500)
-        self.main_tabview.grid(row=1, column=0)
-        self.main_tabview.add('Main Course')
-        self.main_tabview.add('Appetizer')
-        self.main_tabview.add('Dessert')
-        self.main_tabview.add('Drinks')
+        self.main_foodservice_menu_frame = ctk.CTkFrame(self.main_framebar_foodservice_menu, fg_color='#191922', border_color='#171720', border_width=5, corner_radius=20)
+        self.main_foodservice_appetizer_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text='Appetizer', font=ctk.CTkFont('Mona-Sans Bold', 18))
+        self.main_foodservice_maincourse_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text='Main Course', font=ctk.CTkFont('Mona-Sans Bold', 18))
+        self.main_foodservice_dessert_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text='Dessert', font=ctk.CTkFont('Mona-Sans Bold', 18))
+        self.main_foodservice_drinks_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text='Drinks', font=ctk.CTkFont('Mona-Sans Bold', 18))
 
+        self.main_foodservice_menu_frame.grid(row=0, column=0, columnspan=8, padx=(15,15), pady=(15,15), sticky='new')
+        self.main_foodservice_appetizer_button.grid(row=0, column=0, padx=(10,5), pady=(10,10), sticky='news')
+        self.main_foodservice_maincourse_button.grid(row=0, column=1, padx=(5,5), pady=(10,10), sticky='news')
+        self.main_foodservice_dessert_button.grid(row=0, column=2, padx=(5,5), pady=(10,10), sticky='news')
+        self.main_foodservice_drinks_button.grid(row=0, column=3, padx=(5,10), pady=(10,10), sticky='news')
 
         # ABOUT WIDGET
 
@@ -769,6 +836,11 @@ class App(ctk.CTk):
         self.main_about_copyright.place(x=600, y=635, anchor='center')
         self.main_about_credit = ctk.CTkLabel(self.main_frame_about, height=10, font=ctk.CTkFont('Mona-Sans', 12), text='by Kelompok 4', text_color='#4646DD', fg_color='transparent', bg_color='transparent')
         self.main_about_credit.place(x=600, y=655, anchor='center')
+
+
+
+
+
         self.select_frame("dashboard")
     
     def select_frame(self, name):
@@ -776,6 +848,7 @@ class App(ctk.CTk):
         self.sidebar_button_checkinout.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'checkinout' else 'transparent')
         self.sidebar_button_checkin.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'checkin' or name == 'singleroom' or name == 'identityroomsingle' else 'transparent')
         self.sidebar_button_guestlist.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'guestlist' else 'transparent')
+        self.sidebar_button_guesthistory.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'guesthistory' else 'transparent')
         self.sidebar_button_roomservice.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'roomservice' else 'transparent')
         self.sidebar_button_about.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'about' else 'transparent')
         self.headbar_button_profile.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'profile' else 'transparent')
@@ -824,6 +897,10 @@ class App(ctk.CTk):
             self.main_frame_guestlist.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
         else:
             self.main_frame_guestlist.grid_forget()
+        if name == "guesthistory":
+            self.main_frame_guesthistory.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
+        else:
+            self.main_frame_guesthistory.grid_forget()
         if name == "roomservice":
             self.main_frame_roomservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
         else:
@@ -878,6 +955,9 @@ class App(ctk.CTk):
     def guestlist_menu(self):
         self.select_frame('guestlist')
 
+    def guesthistory_menu(self):
+        self.select_frame('guesthistory')
+
     def about_menu(self):
         self.select_frame('about')
 
@@ -889,7 +969,7 @@ class App(ctk.CTk):
         self.main_checkin_fillform_label.place(x=392.5, y=45, anchor='center')
         self.main_checkin_back =  ctk.CTkButton(self.main_frame_checkin_identityformsingle, width=20, height=20, fg_color='transparent', bg_color='transparent', text='', hover_color='#0C0B10', cursor='hand2', image=self.back_image, command=self.singleroom_menu)
         self.main_checkin_back.place(x=25, y=33, anchor='center')
-        self.identityform_roomtype_button = ctk.CTkButton(self.main_framebar_checkin_identityformsingle, text=f"Room Number :   {roomnumber}", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color="#B6B6C6", fg_color='#191922', corner_radius=25, width=180, height=45, bg_color='transparent', hover=False, border_color='#171720', border_width=3)
+        self.identityform_roomtype_button = ctk.CTkLabel(self.main_framebar_checkin_identityformsingle, text=f"ROOM NUMBER :   {roomnumber}", font=ctk.CTkFont('Mona-Sans Bold', 30), text_color="#B6B6C6", fg_color='transparent', bg_color='transparent')
         self.identityform_checkin_button = ctk.CTkButton(self.main_framebar_checkin_identityformsingle, text='Check In', font=ctk.CTkFont('Mona-Sans Bold', 25), text_color='#FFFFFF',  fg_color='#4646DD', hover_color='#3434A6', corner_radius=25, width=220, height=50, bg_color='transparent', cursor='hand2')
         
         self.identityform_firstname_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsingle, text="First Name", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
@@ -902,6 +982,7 @@ class App(ctk.CTk):
         self.identityform_email_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsingle, text="Email", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_address_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsingle, text="Address", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_checkindate_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsingle, text="Check In Date", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.identityform_checkoutdate_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsingle, text="Check Out Date", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_deposit_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsingle, text="Deposit", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_guestnote_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsingle, text="Guest Note", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
 
@@ -915,11 +996,12 @@ class App(ctk.CTk):
         self.identityform_email_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsingle, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's email here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_address_entry = ctk.CTkTextbox(self.main_framebar_checkin_identityformsingle, width=341.5, height=80, text_color='#FFFFFF', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=15, activate_scrollbars=True, wrap='word')
         self.identityform_checkindate_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsingle, width=341.5, height=40, text_color='#FFFFFF', placeholder_text='Enter check-in date here', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
+        self.identityform_checkoutdate_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsingle, width=341.5, height=40, text_color='#FFFFFF', placeholder_text='Enter check-out date here', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_deposit_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsingle, width=341.5, height=40, text_color='#FFFFFF', placeholder_text='Enter deposit ammount here', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
-        self.identityform_guestnote_entry = ctk.CTkTextbox(self.main_framebar_checkin_identityformsingle, width=341.5, height=80, text_color='#FFFFFF', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=15)
+        self.identityform_guestnote_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsingle, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's requests here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         
         self.identityform_roomtype_button.grid(row=1, column=0, sticky='news', padx=(35,0), pady=(25,20))
-        self.identityform_checkin_button.grid(row=9, column=2, sticky='ne', padx=(0,30), pady=(90,10))
+        self.identityform_checkin_button.grid(row=9, column=2, sticky='ne', padx=(0,30), pady=(120,10))
         self.identityform_firstname_label.grid(row=2, column=0, sticky='news', padx=(55,0), pady=(20,0))
         self.identityform_lastname_label.grid(row=4, column=0, sticky='news', padx=(55,0))
         self.identityform_age_label.grid(row=6, column=0, sticky='news', padx=(55,0))
@@ -929,8 +1011,9 @@ class App(ctk.CTk):
         self.identityform_email_label.grid(row=6, column=1, sticky='news', padx=(85,0))
         self.identityform_address_label.grid(row=8, column=1, sticky='news', padx=(85,0))
         self.identityform_checkindate_label.grid(row=2, column=2, sticky='news', padx=(85,20), pady=(20,0))
-        self.identityform_deposit_label.grid(row=4, column=2, sticky='news', padx=(85,20))
-        self.identityform_guestnote_label.grid(row=6, column=2, sticky='news', padx=(85,20))
+        self.identityform_checkoutdate_label.grid(row=4, column=2, sticky='news', padx=(85,20))
+        self.identityform_deposit_label.grid(row=6, column=2, sticky='news', padx=(85,20))
+        self.identityform_guestnote_label.grid(row=8, column=2, sticky='news', padx=(85,20))
 
         self.identityform_firstname_entry.grid(row=3, column=0, sticky='new', padx=(35,0), pady=(3,15))
         self.identityform_lastname_entry.grid(row=5, column=0, sticky='new', padx=(35,0), pady=(3,15)) 
@@ -941,8 +1024,9 @@ class App(ctk.CTk):
         self.identityform_email_entry.grid(row=7, column=1, sticky='new', padx=(65,0), pady=(3,17.5))
         self.identityform_address_entry.grid(row=9, column=1, sticky='new', padx=(65,0), pady=(3,15))
         self.identityform_checkindate_entry.grid(row=3, column=2, sticky='new', padx=(65,35), pady=(3,15))
-        self.identityform_deposit_entry.grid(row=5, column=2, sticky='new', padx=(65,35), pady=(3,15))
-        self.identityform_guestnote_entry.grid(row=7, column=2, rowspan=2, sticky='new', padx=(65,35), pady=(3,15))
+        self.identityform_checkoutdate_entry.grid(row=5, column=2, sticky='new', padx=(65,35), pady=(3,15))
+        self.identityform_deposit_entry.grid(row=7, column=2, sticky='new', padx=(65,35), pady=(3,15))
+        self.identityform_guestnote_entry.grid(row=9, column=2, rowspan=2, sticky='new', padx=(65,35), pady=(3,15))
         
         
     def identityform_doubleroom(self, roomnumber):
@@ -953,7 +1037,7 @@ class App(ctk.CTk):
         self.main_checkin_fillform_label.place(x=392.5, y=45, anchor='center')
         self.main_checkin_back =  ctk.CTkButton(self.main_frame_checkin_identityformdouble, width=20, height=20, fg_color='transparent', bg_color='transparent', text='', hover_color='#0C0B10', cursor='hand2', image=self.back_image, command=self.doubleroom_menu)
         self.main_checkin_back.place(x=25, y=33, anchor='center')
-        self.identityform_roomtype_button = ctk.CTkButton(self.main_framebar_checkin_identityformdouble, text=f"Room Number :   {roomnumber}", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color="#B6B6C6", fg_color='#191922', corner_radius=25, width=180, height=45, bg_color='transparent', hover=False, border_color='#171720', border_width=3)
+        self.identityform_roomtype_button = ctk.CTkLabel(self.main_framebar_checkin_identityformdouble, text=f"ROOM NUMBER :   {roomnumber}", font=ctk.CTkFont('Mona-Sans Bold', 30), text_color="#B6B6C6", fg_color='transparent', bg_color='transparent')
         self.identityform_checkin_button = ctk.CTkButton(self.main_framebar_checkin_identityformdouble, text='Check In', font=ctk.CTkFont('Mona-Sans Bold', 25), text_color='#FFFFFF',  fg_color='#4646DD', hover_color='#3434A6', corner_radius=25, width=220, height=50, bg_color='transparent', cursor='hand2')
         
         self.identityform_firstname_label = ctk.CTkLabel(self.main_framebar_checkin_identityformdouble, text="First Name", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
@@ -966,6 +1050,7 @@ class App(ctk.CTk):
         self.identityform_email_label = ctk.CTkLabel(self.main_framebar_checkin_identityformdouble, text="Email", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_address_label = ctk.CTkLabel(self.main_framebar_checkin_identityformdouble, text="Address", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_checkindate_label = ctk.CTkLabel(self.main_framebar_checkin_identityformdouble, text="Check In Date", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.identityform_checkoutdate_label = ctk.CTkLabel(self.main_framebar_checkin_identityformdouble, text="Check Out Date", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_deposit_label = ctk.CTkLabel(self.main_framebar_checkin_identityformdouble, text="Deposit", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_guestnote_label = ctk.CTkLabel(self.main_framebar_checkin_identityformdouble, text="Guest Note", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
 
@@ -979,11 +1064,12 @@ class App(ctk.CTk):
         self.identityform_email_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformdouble, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's email here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_address_entry = ctk.CTkTextbox(self.main_framebar_checkin_identityformdouble, width=341.5, height=80, text_color='#FFFFFF', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=15, activate_scrollbars=True, wrap='word')
         self.identityform_checkindate_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformdouble, width=341.5, height=40, text_color='#FFFFFF', placeholder_text='Enter check-in date here', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
+        self.identityform_checkoutdate_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformdouble, width=341.5, height=40, text_color='#FFFFFF', placeholder_text='Enter check-out date here', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_deposit_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformdouble, width=341.5, height=40, text_color='#FFFFFF', placeholder_text='Enter deposit ammount here', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
-        self.identityform_guestnote_entry = ctk.CTkTextbox(self.main_framebar_checkin_identityformdouble, width=341.5, height=80, text_color='#FFFFFF', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=15)
+        self.identityform_guestnote_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformdouble, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's requests here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         
         self.identityform_roomtype_button.grid(row=1, column=0, sticky='news', padx=(35,0), pady=(25,20))
-        self.identityform_checkin_button.grid(row=9, column=2, sticky='ne', padx=(0,30), pady=(90,10))
+        self.identityform_checkin_button.grid(row=9, column=2, sticky='ne', padx=(0,30), pady=(120,10))
         self.identityform_firstname_label.grid(row=2, column=0, sticky='news', padx=(55,0), pady=(20,0))
         self.identityform_lastname_label.grid(row=4, column=0, sticky='news', padx=(55,0))
         self.identityform_age_label.grid(row=6, column=0, sticky='news', padx=(55,0))
@@ -993,8 +1079,9 @@ class App(ctk.CTk):
         self.identityform_email_label.grid(row=6, column=1, sticky='news', padx=(85,0))
         self.identityform_address_label.grid(row=8, column=1, sticky='news', padx=(85,0))
         self.identityform_checkindate_label.grid(row=2, column=2, sticky='news', padx=(85,20), pady=(20,0))
-        self.identityform_deposit_label.grid(row=4, column=2, sticky='news', padx=(85,20))
-        self.identityform_guestnote_label.grid(row=6, column=2, sticky='news', padx=(85,20))
+        self.identityform_checkoutdate_label.grid(row=4, column=2, sticky='news', padx=(85,20))
+        self.identityform_deposit_label.grid(row=6, column=2, sticky='news', padx=(85,20))
+        self.identityform_guestnote_label.grid(row=8, column=2, sticky='news', padx=(85,20))
 
         self.identityform_firstname_entry.grid(row=3, column=0, sticky='new', padx=(35,0), pady=(3,15))
         self.identityform_lastname_entry.grid(row=5, column=0, sticky='new', padx=(35,0), pady=(3,15)) 
@@ -1005,9 +1092,10 @@ class App(ctk.CTk):
         self.identityform_email_entry.grid(row=7, column=1, sticky='new', padx=(65,0), pady=(3,17.5))
         self.identityform_address_entry.grid(row=9, column=1, sticky='new', padx=(65,0), pady=(3,15))
         self.identityform_checkindate_entry.grid(row=3, column=2, sticky='new', padx=(65,35), pady=(3,15))
-        self.identityform_deposit_entry.grid(row=5, column=2, sticky='new', padx=(65,35), pady=(3,15))
-        self.identityform_guestnote_entry.grid(row=7, column=2, rowspan=2, sticky='new', padx=(65,35), pady=(3,15))
-        
+        self.identityform_checkoutdate_entry.grid(row=5, column=2, sticky='new', padx=(65,35), pady=(3,15))
+        self.identityform_deposit_entry.grid(row=7, column=2, sticky='new', padx=(65,35), pady=(3,15))
+        self.identityform_guestnote_entry.grid(row=9, column=2, rowspan=2, sticky='new', padx=(65,35), pady=(3,15))
+
     def identityform_suiteroom(self, roomnumber):
         self.select_frame('identityroomsuite')
         self.main_checkin_label = ctk.CTkLabel(self.main_frame_checkin_identityformsuite, text="Check In", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='s')
@@ -1016,7 +1104,7 @@ class App(ctk.CTk):
         self.main_checkin_fillform_label.place(x=392.5, y=45, anchor='center')
         self.main_checkin_back =  ctk.CTkButton(self.main_frame_checkin_identityformsuite, width=20, height=20, fg_color='transparent', bg_color='transparent', text='', hover_color='#0C0B10', cursor='hand2', image=self.back_image, command=self.suiteroom_menu)
         self.main_checkin_back.place(x=25, y=33, anchor='center')
-        self.identityform_roomtype_button = ctk.CTkButton(self.main_framebar_checkin_identityformsuite, text=f"Room Number :   {roomnumber}", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color="#B6B6C6", fg_color='#191922', corner_radius=25, width=180, height=45, bg_color='transparent', hover=False, border_color='#171720', border_width=3)
+        self.identityform_roomtype_button = ctk.CTkLabel(self.main_framebar_checkin_identityformsuite, text=f"ROOM NUMBER :   {roomnumber}", font=ctk.CTkFont('Mona-Sans Bold', 30), text_color="#B6B6C6", fg_color='transparent', bg_color='transparent')
         self.identityform_checkin_button = ctk.CTkButton(self.main_framebar_checkin_identityformsuite, text='Check In', font=ctk.CTkFont('Mona-Sans Bold', 25), text_color='#FFFFFF',  fg_color='#4646DD', hover_color='#3434A6', corner_radius=25, width=220, height=50, bg_color='transparent', cursor='hand2')
         
         self.identityform_firstname_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsuite, text="First Name", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
@@ -1029,6 +1117,7 @@ class App(ctk.CTk):
         self.identityform_email_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsuite, text="Email", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_address_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsuite, text="Address", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_checkindate_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsuite, text="Check In Date", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.identityform_checkoutdate_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsuite, text="Check Out Date", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_deposit_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsuite, text="Deposit", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_guestnote_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsuite, text="Guest Note", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
 
@@ -1042,11 +1131,12 @@ class App(ctk.CTk):
         self.identityform_email_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's email here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_address_entry = ctk.CTkTextbox(self.main_framebar_checkin_identityformsuite, width=341.5, height=80, text_color='#FFFFFF', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=15, activate_scrollbars=True, wrap='word')
         self.identityform_checkindate_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text='Enter check-in date here', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
+        self.identityform_checkoutdate_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text='Enter check-out date here', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_deposit_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text='Enter deposit ammount here', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
-        self.identityform_guestnote_entry = ctk.CTkTextbox(self.main_framebar_checkin_identityformsuite, width=341.5, height=80, text_color='#FFFFFF', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=15)
+        self.identityform_guestnote_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's requests here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         
         self.identityform_roomtype_button.grid(row=1, column=0, sticky='news', padx=(35,0), pady=(25,20))
-        self.identityform_checkin_button.grid(row=9, column=2, sticky='ne', padx=(0,30), pady=(90,10))
+        self.identityform_checkin_button.grid(row=9, column=2, sticky='ne', padx=(0,30), pady=(120,10))
         self.identityform_firstname_label.grid(row=2, column=0, sticky='news', padx=(55,0), pady=(20,0))
         self.identityform_lastname_label.grid(row=4, column=0, sticky='news', padx=(55,0))
         self.identityform_age_label.grid(row=6, column=0, sticky='news', padx=(55,0))
@@ -1056,8 +1146,9 @@ class App(ctk.CTk):
         self.identityform_email_label.grid(row=6, column=1, sticky='news', padx=(85,0))
         self.identityform_address_label.grid(row=8, column=1, sticky='news', padx=(85,0))
         self.identityform_checkindate_label.grid(row=2, column=2, sticky='news', padx=(85,20), pady=(20,0))
-        self.identityform_deposit_label.grid(row=4, column=2, sticky='news', padx=(85,20))
-        self.identityform_guestnote_label.grid(row=6, column=2, sticky='news', padx=(85,20))
+        self.identityform_checkoutdate_label.grid(row=4, column=2, sticky='news', padx=(85,20))
+        self.identityform_deposit_label.grid(row=6, column=2, sticky='news', padx=(85,20))
+        self.identityform_guestnote_label.grid(row=8, column=2, sticky='news', padx=(85,20))
 
         self.identityform_firstname_entry.grid(row=3, column=0, sticky='new', padx=(35,0), pady=(3,15))
         self.identityform_lastname_entry.grid(row=5, column=0, sticky='new', padx=(35,0), pady=(3,15)) 
@@ -1068,8 +1159,9 @@ class App(ctk.CTk):
         self.identityform_email_entry.grid(row=7, column=1, sticky='new', padx=(65,0), pady=(3,17.5))
         self.identityform_address_entry.grid(row=9, column=1, sticky='new', padx=(65,0), pady=(3,15))
         self.identityform_checkindate_entry.grid(row=3, column=2, sticky='new', padx=(65,35), pady=(3,15))
-        self.identityform_deposit_entry.grid(row=5, column=2, sticky='new', padx=(65,35), pady=(3,15))
-        self.identityform_guestnote_entry.grid(row=7, column=2, rowspan=2, sticky='new', padx=(65,35), pady=(3,15))
+        self.identityform_checkoutdate_entry.grid(row=5, column=2, sticky='new', padx=(65,35), pady=(3,15))
+        self.identityform_deposit_entry.grid(row=7, column=2, sticky='new', padx=(65,35), pady=(3,15))
+        self.identityform_guestnote_entry.grid(row=9, column=2, rowspan=2, sticky='new', padx=(65,35), pady=(3,15))
         
     def identityform_presidentsuiteroom(self, roomnumber):
         self.select_frame('identityroompresidentsuite')
@@ -1079,7 +1171,7 @@ class App(ctk.CTk):
         self.main_checkin_fillform_label.place(x=392.5, y=45, anchor='center')
         self.main_checkin_back =  ctk.CTkButton(self.main_frame_checkin_identityformpresidentsuite, width=20, height=20, fg_color='transparent', bg_color='transparent', text='', hover_color='#0C0B10', cursor='hand2', image=self.back_image, command=self.presidentsuiteroom_menu)
         self.main_checkin_back.place(x=25, y=33, anchor='center')
-        self.identityform_roomtype_button = ctk.CTkButton(self.main_framebar_checkin_identityformpresidentsuite, text=f"Room Number :   {roomnumber}", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color="#B6B6C6", fg_color='#191922', corner_radius=25, width=180, height=45, bg_color='transparent', hover=False, border_color='#171720', border_width=3)
+        self.identityform_roomtype_button = ctk.CTkLabel(self.main_framebar_checkin_identityformpresidentsuite, text=f"ROOM NUMBER :   {roomnumber}", font=ctk.CTkFont('Mona-Sans Bold', 30), text_color="#B6B6C6", fg_color='transparent', bg_color='transparent')
         self.identityform_checkin_button = ctk.CTkButton(self.main_framebar_checkin_identityformpresidentsuite, text='Check In', font=ctk.CTkFont('Mona-Sans Bold', 25), text_color='#FFFFFF',  fg_color='#4646DD', hover_color='#3434A6', corner_radius=25, width=220, height=50, bg_color='transparent', cursor='hand2')
         
         self.identityform_firstname_label = ctk.CTkLabel(self.main_framebar_checkin_identityformpresidentsuite, text="First Name", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
@@ -1092,6 +1184,7 @@ class App(ctk.CTk):
         self.identityform_email_label = ctk.CTkLabel(self.main_framebar_checkin_identityformpresidentsuite, text="Email", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_address_label = ctk.CTkLabel(self.main_framebar_checkin_identityformpresidentsuite, text="Address", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_checkindate_label = ctk.CTkLabel(self.main_framebar_checkin_identityformpresidentsuite, text="Check In Date", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.identityform_checkoutdate_label = ctk.CTkLabel(self.main_framebar_checkin_identityformpresidentsuite, text="Check Out Date", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_deposit_label = ctk.CTkLabel(self.main_framebar_checkin_identityformpresidentsuite, text="Deposit", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_guestnote_label = ctk.CTkLabel(self.main_framebar_checkin_identityformpresidentsuite, text="Guest Note", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
 
@@ -1105,11 +1198,12 @@ class App(ctk.CTk):
         self.identityform_email_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformpresidentsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's email here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_address_entry = ctk.CTkTextbox(self.main_framebar_checkin_identityformpresidentsuite, width=341.5, height=80, text_color='#FFFFFF', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=15, activate_scrollbars=True, wrap='word')
         self.identityform_checkindate_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformpresidentsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text='Enter check-in date here', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
+        self.identityform_checkoutdate_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformpresidentsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text='Enter check-out date here', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_deposit_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformpresidentsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text='Enter deposit ammount here', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
-        self.identityform_guestnote_entry = ctk.CTkTextbox(self.main_framebar_checkin_identityformpresidentsuite, width=341.5, height=80, text_color='#FFFFFF', font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=15)
+        self.identityform_guestnote_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformpresidentsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's requests here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         
         self.identityform_roomtype_button.grid(row=1, column=0, sticky='news', padx=(35,0), pady=(25,20))
-        self.identityform_checkin_button.grid(row=9, column=2, sticky='ne', padx=(0,30), pady=(90,10))
+        self.identityform_checkin_button.grid(row=9, column=2, sticky='ne', padx=(0,30), pady=(120,10))
         self.identityform_firstname_label.grid(row=2, column=0, sticky='news', padx=(55,0), pady=(20,0))
         self.identityform_lastname_label.grid(row=4, column=0, sticky='news', padx=(55,0))
         self.identityform_age_label.grid(row=6, column=0, sticky='news', padx=(55,0))
@@ -1119,8 +1213,9 @@ class App(ctk.CTk):
         self.identityform_email_label.grid(row=6, column=1, sticky='news', padx=(85,0))
         self.identityform_address_label.grid(row=8, column=1, sticky='news', padx=(85,0))
         self.identityform_checkindate_label.grid(row=2, column=2, sticky='news', padx=(85,20), pady=(20,0))
-        self.identityform_deposit_label.grid(row=4, column=2, sticky='news', padx=(85,20))
-        self.identityform_guestnote_label.grid(row=6, column=2, sticky='news', padx=(85,20))
+        self.identityform_checkoutdate_label.grid(row=4, column=2, sticky='news', padx=(85,20))
+        self.identityform_deposit_label.grid(row=6, column=2, sticky='news', padx=(85,20))
+        self.identityform_guestnote_label.grid(row=8, column=2, sticky='news', padx=(85,20))
 
         self.identityform_firstname_entry.grid(row=3, column=0, sticky='new', padx=(35,0), pady=(3,15))
         self.identityform_lastname_entry.grid(row=5, column=0, sticky='new', padx=(35,0), pady=(3,15)) 
@@ -1131,8 +1226,9 @@ class App(ctk.CTk):
         self.identityform_email_entry.grid(row=7, column=1, sticky='new', padx=(65,0), pady=(3,17.5))
         self.identityform_address_entry.grid(row=9, column=1, sticky='new', padx=(65,0), pady=(3,15))
         self.identityform_checkindate_entry.grid(row=3, column=2, sticky='new', padx=(65,35), pady=(3,15))
-        self.identityform_deposit_entry.grid(row=5, column=2, sticky='new', padx=(65,35), pady=(3,15))
-        self.identityform_guestnote_entry.grid(row=7, column=2, rowspan=2, sticky='new', padx=(65,35), pady=(3,15))
+        self.identityform_checkoutdate_entry.grid(row=5, column=2, sticky='new', padx=(65,35), pady=(3,15))
+        self.identityform_deposit_entry.grid(row=7, column=2, sticky='new', padx=(65,35), pady=(3,15))
+        self.identityform_guestnote_entry.grid(row=9, column=2, rowspan=2, sticky='new', padx=(65,35), pady=(3,15))
         
     def profile_menu(self):
         self.profile_frame = ctk.CTkFrame(self, width=180, height=140, fg_color='#242531', bg_color='#1E1F29', border_width=7, border_color='#1E1F29', corner_radius=20)
@@ -1177,13 +1273,14 @@ class App(ctk.CTk):
         self.registration_page.login_label_button.configure(command=self.show_login_page)
 
     def expand_button(self):
-        self.sidebar_button_checkinout = ctk.CTkButton(self.sidebar_frame, corner_radius=20, width=30, height=45, text="Check In/Out      ", font=ctk.CTkFont('Mona-Sans SemiBold', 14), fg_color="transparent", text_color=("#FFFFFF"), hover_color='#4646DD', cursor='hand2', anchor="center", image=self.rightarrow_image, compound='left', command=self.close_button)
+        self.sidebar_button_checkinout = ctk.CTkButton(self.sidebar_frame, corner_radius=20, width=30, height=45, text="Check In/Out      ", font=ctk.CTkFont('Mona-Sans SemiBold', 14), fg_color="transparent", text_color=("#FFFFFF"), hover_color='#4646DD', cursor='hand2', anchor="center", image=self.downarrow_image, compound='left', command=self.close_button)
         self.sidebar_button_checkinout.grid(row=2, column=0, padx=20, pady=5, sticky='news')
         self.sidebar_button_checkin.grid(row=3, column=0, padx=20, pady=0, sticky='ns')
         self.sidebar_button_checkout.grid(row=4, column=0, padx=20, pady=3, sticky='ns')
         self.sidebar_button_guestlist.grid(row=5, column=0, padx=20, pady=5, sticky='news')
-        self.sidebar_button_roomservice.grid(row=6, column=0, padx=20, pady=5, sticky='news')
-        self.sidebar_button_about.grid(row=7, column=0, padx=20, pady=5, sticky='ew')
+        self.sidebar_button_guesthistory.grid(row=6, column=0, padx=20, pady=5, sticky='news')
+        self.sidebar_button_roomservice.grid(row=7, column=0, padx=20, pady=5, sticky='news')
+        self.sidebar_button_about.grid(row=8, column=0, padx=20, pady=5, sticky='ew')
 
     def close_button(self):
         self.sidebar_button_checkinout = ctk.CTkButton(self.sidebar_frame, corner_radius=20, width=30, height=45, text="Check In/Out      ", font=ctk.CTkFont('Mona-Sans SemiBold', 14), fg_color="transparent", text_color=("#FFFFFF"), hover_color='#4646DD', cursor='hand2', anchor="center", image=self.rightarrow_image, compound='left', command=self.expand_button)
@@ -1191,17 +1288,18 @@ class App(ctk.CTk):
         self.sidebar_button_checkout.grid_forget()
         self.sidebar_button_checkinout.grid(row=2, column=0, padx=20, pady=5, sticky='news')
         self.sidebar_button_guestlist.grid(row=3, column=0, padx=20, pady=5, sticky='news')
-        self.sidebar_button_roomservice.grid(row=4, column=0, padx=20, pady=5, sticky='news')
-        self.sidebar_button_about.grid(row=5, column=0, padx=20, pady=5, sticky='ew')
+        self.sidebar_button_guesthistory.grid(row=4, column=0, padx=20, pady=5, sticky='news')
+        self.sidebar_button_roomservice.grid(row=5, column=0, padx=20, pady=5, sticky='news')
+        self.sidebar_button_about.grid(row=6, column=0, padx=20, pady=5, sticky='ew')
 
 class LoginPage(CTkFrame):
     def __init__(self, master):
         super().__init__(master, bg_color='#FFFFFF', fg_color='#FFFFFF', border_width=20, border_color='#FFFFFF', corner_radius=30, width=250, height=300)
         self.place(relx=0.5, rely=0.5, anchor='center')
 
-        self.hide_eye = ctk.CTkImage(Image.open('Aset/hide.png'), size=(17, 17))
-        self.show_eye = ctk.CTkImage(Image.open('Aset/show.png'), size=(17, 17))
-        self.img_logo = ctk.CTkImage(Image.open('Aset/Hostay Logo.png'), size=(140, 70))
+        self.hide_eye = ctk.CTkImage(Image.open('Aset Projek/hide.png'), size=(17, 17))
+        self.show_eye = ctk.CTkImage(Image.open('Aset Projek/show.png'), size=(17, 17))
+        self.img_logo = ctk.CTkImage(Image.open('Aset Projek/Hostay Logo.png'), size=(140, 70))
     
         self.hostay_logo = ctk.CTkLabel(self, image=self.img_logo, text="")
         self.hostay_logo.place(relx=0.5, rely=0.14, anchor='center')
@@ -1252,7 +1350,7 @@ class LoginPage(CTkFrame):
             self.username = self.username_input.get()
             self.password = self.password_input.get()
 
-        self.file = open('Aset/DataAkun.txt', 'r')
+        self.file = open('Aset Projek/DataAkun.txt', 'r')
         d = self.file.read()
         r = ast.literal_eval(d)
         self.file.close()
@@ -1285,7 +1383,7 @@ class RegistrationPage(CTkFrame):
         super().__init__(master, bg_color='#FFFFFF', fg_color='#FFFFFF', border_width=20, border_color='#FFFFFF', corner_radius=30, width=230, height=345)
         self.place(relx=0.5, rely=0.5, anchor='center')
 
-        self.img_logo = ctk.CTkImage(Image.open('Aset/Hostay Logo.png'), size=(140, 70))
+        self.img_logo = ctk.CTkImage(Image.open('Aset Projek/Hostay Logo.png'), size=(140, 70))
 
         self.hostay_logo = ctk.CTkLabel(self, image=self.img_logo, text="")
         self.hostay_logo.place(relx=0.5, rely=0.11, anchor='center')
@@ -1330,7 +1428,7 @@ class RegistrationPage(CTkFrame):
 
         password_regex = r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
 
-        with open("Aset/DataAkun.txt", "r") as file:
+        with open("Aset Projek/DataAkun.txt", "r") as file:
             existing_users = ast.literal_eval(file.read())
 
         if username in existing_users:
@@ -1355,7 +1453,7 @@ class RegistrationPage(CTkFrame):
         else:
             if password == confirmpassword:
                 try:
-                    file = open("Aset/DataAkun.txt", "r+")
+                    file = open("Aset Projek/DataAkun.txt", "r+")
                     d = file.read()
                     r = ast.literal_eval(d)
 
@@ -1364,7 +1462,7 @@ class RegistrationPage(CTkFrame):
                     file.truncate(0)
                     file.close()
 
-                    file = open("Aset/DataAkun.txt", "w")
+                    file = open("Aset Projek/DataAkun.txt", "w")
                     w = file.write(str(r))
 
                     self.warning_label.configure(text="Akun berhasil dibuat! Tunggu Sebentar...", font=CTkFont('Mona-Sans', 11), text_color="green")
@@ -1372,7 +1470,7 @@ class RegistrationPage(CTkFrame):
                     self.warning_label.after(1500, self.master.show_login_page)
 
                 except:
-                    file = open('Aset/DataAkun.txt', 'w')
+                    file = open('Aset Projek/DataAkun.txt', 'w')
                     pp = str({"Username": "password"})
                     file.write(pp)
                     file.close()
