@@ -114,7 +114,7 @@ class App(ctk.CTk):
         self.main_frame_about = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
         self.main_frame_dashboard_roomstatus = ctk.CTkFrame(self.main_frame_dashboard, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_scrollframe_dashboard_roomstatus = ctk.CTkScrollableFrame(self.main_frame_dashboard_roomstatus, width=1150, corner_radius=20, height=30, fg_color='#191922', bg_color='transparent', scrollbar_button_color='#9599C8', scrollbar_button_hover_color='#636685', scrollbar_fg_color='#242531', border_color='#171720', border_width=5)
-
+        
         self.sidebar_frame.grid(row=1, column=0, rowspan=3, padx=(30,20), pady=(10,25), sticky='nsew')
         self.headbar_frame.grid(row=0, column=0, columnspan=4, padx=30, pady=20, sticky='news')
         self.main_frame_dashboard.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
@@ -141,7 +141,7 @@ class App(ctk.CTk):
         self.main_frame_roomservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')        
         self.main_frame_foodservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')        
         self.main_framebar_foodservice_menu.grid(row=1, column=0, padx=(10,10), pady=(0,0), sticky='news')        
-        self.main_framebar_foodservice_order.grid(row=1, column=1, padx=(10,10), ipady=235, ipadx=90, pady=(0,0), sticky='news')        
+        self.main_framebar_foodservice_order.grid(row=1, column=1, padx=(20,10), pady=(0,0), sticky='news')        
         self.main_frame_repairingservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')        
         self.main_frame_cleaningservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')        
         self.main_frame_about.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
@@ -634,6 +634,10 @@ class App(ctk.CTk):
         
         self.room27_button.configure(state='disabled', text='Unavailable', font=ctk.CTkFont('Mona-Sans ExtraBold', 25), text_color='#FFFFFF')
 
+
+       # CHECK OUT WIDGET
+
+         
        # GUEST LIST WIDGET
 
         self.main_guestlist_heading_label = ctk.CTkLabel(self.main_frame_guestlist, text="Guest List", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='sw')
@@ -781,16 +785,26 @@ class App(ctk.CTk):
         self.main_foodservice_back.place(x=25, y=33, anchor='center')
 
         self.main_foodservice_menu_frame = ctk.CTkFrame(self.main_framebar_foodservice_menu, fg_color='#191922', border_color='#171720', border_width=5, corner_radius=20)
-        self.main_foodservice_appetizer_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text='Appetizer', font=ctk.CTkFont('Mona-Sans Bold', 18))
-        self.main_foodservice_maincourse_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text='Main Course', font=ctk.CTkFont('Mona-Sans Bold', 18))
-        self.main_foodservice_dessert_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text='Dessert', font=ctk.CTkFont('Mona-Sans Bold', 18))
-        self.main_foodservice_drinks_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text='Drinks', font=ctk.CTkFont('Mona-Sans Bold', 18))
+        self.main_foodservice_appetizer_scrollableframe = ctk.CTkScrollableFrame(self.main_framebar_foodservice_menu, corner_radius=20, height=30, fg_color='#191922', bg_color='transparent', scrollbar_button_color='#9599C8', scrollbar_button_hover_color='#636685', scrollbar_fg_color='#242531', border_color='#171720', border_width=5)
+        self.main_foodservice_maincourse_scrollableframe = ctk.CTkScrollableFrame(self.main_framebar_foodservice_menu, corner_radius=20, height=30, fg_color='#191922', bg_color='transparent', scrollbar_button_color='#9599C8', scrollbar_button_hover_color='#636685', scrollbar_fg_color='#242531', border_color='#171720', border_width=5)
+        self.main_foodservice_dessert_scrollableframe = ctk.CTkScrollableFrame(self.main_framebar_foodservice_menu, corner_radius=20, height=30, fg_color='#191922', bg_color='transparent', scrollbar_button_color='#9599C8', scrollbar_button_hover_color='#636685', scrollbar_fg_color='#242531', border_color='#171720', border_width=5)
+        self.main_foodservice_drinks_scrollableframe = ctk.CTkScrollableFrame(self.main_framebar_foodservice_menu, corner_radius=20, height=30, fg_color='#191922', bg_color='transparent', scrollbar_button_color='#9599C8', scrollbar_button_hover_color='#636685', scrollbar_fg_color='#242531', border_color='#171720', border_width=5)
+        self.main_foodservice_appetizer_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text_color='#D9D9FF', text='Appetizer', font=ctk.CTkFont('Mona-Sans Bold', 18), command=self.appetizer_menu)
+        self.main_foodservice_maincourse_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text_color='#D9D9FF', text='Main Course', font=ctk.CTkFont('Mona-Sans Bold', 18), command=self.maincourse_menu)
+        self.main_foodservice_dessert_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text_color='#D9D9FF', text='Dessert', font=ctk.CTkFont('Mona-Sans Bold', 18), command=self.dessert_menu)
+        self.main_foodservice_drinks_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text_color='#D9D9FF', text='Drinks', font=ctk.CTkFont('Mona-Sans Bold', 18), command=self.drinks_menu)
 
-        self.main_foodservice_menu_frame.grid(row=0, column=0, columnspan=8, padx=(15,15), pady=(15,15), sticky='new')
+        self.main_foodservice_order_frame = ctk.CTkButton(self.main_framebar_foodservice_order, corner_radius=25, width=315, height=45, text="Order", text_color="#D9D9FF",font=ctk.CTkFont('Mona-Sans Bold', 30), fg_color='#191922', bg_color='transparent', hover_color='#191922', border_color='#171720', border_width=5)
+
+        self.main_foodservice_menu_frame.grid(row=0, column=0, padx=(15,15), pady=(15,15), sticky='new')
+        self.main_foodservice_appetizer_scrollableframe.grid(row=1, column=0, padx=(20,20), sticky='news')
         self.main_foodservice_appetizer_button.grid(row=0, column=0, padx=(10,5), pady=(10,10), sticky='news')
         self.main_foodservice_maincourse_button.grid(row=0, column=1, padx=(5,5), pady=(10,10), sticky='news')
         self.main_foodservice_dessert_button.grid(row=0, column=2, padx=(5,5), pady=(10,10), sticky='news')
         self.main_foodservice_drinks_button.grid(row=0, column=3, padx=(5,10), pady=(10,10), sticky='news')
+
+        self.main_foodservice_order_frame.grid(row=0, column=0, columnspan=2, padx=(15,20), pady=(20,15), sticky='new')
+
 
         # ABOUT WIDGET
 
@@ -841,7 +855,8 @@ class App(ctk.CTk):
 
 
 
-        self.select_frame("dashboard")
+        self.select_frame('dashboard')
+        self.select_foodservice_menu('appetizer')
     
     def select_frame(self, name):
         self.sidebar_button_dashboard.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'dashboard' else 'transparent')
@@ -945,6 +960,41 @@ class App(ctk.CTk):
 
     def foodservice_menu(self):
         self.select_frame('foodservice')
+
+    def select_foodservice_menu(self, name):
+        self.main_foodservice_appetizer_button.configure(self.main_foodservice_menu_frame, fg_color=('#3434A6') if name == 'appetizer' else '#242432')
+        self.main_foodservice_maincourse_button.configure(self.main_foodservice_menu_frame, fg_color=('#3434A6') if name == 'maincourse' else '#242432')
+        self.main_foodservice_dessert_button.configure(self.main_foodservice_menu_frame, fg_color=('#3434A6') if name == 'dessert' else '#242432')
+        self.main_foodservice_drinks_button.configure(self.main_foodservice_menu_frame, fg_color=('#3434A6') if name == 'drinks' else '#242432')
+        
+        if name == "appetizer":
+            self.main_foodservice_appetizer_scrollableframe.grid(row=1, column=0, padx=(20,20), sticky='news')
+        else:
+            self.main_foodservice_appetizer_scrollableframe.grid_forget()   
+        if name == "maincourse":
+            self.main_frame_checkin.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
+        else:
+            self.main_frame_checkin.grid_forget()
+        if name == "dessert":
+            self.main_frame_checkin_singleroom.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
+        else:
+            self.main_frame_checkin_singleroom.grid_forget()
+        if name == "drinks":
+            self.main_frame_checkin_doubleroom.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
+        else:
+            self.main_frame_checkin_doubleroom.grid_forget()
+
+    def appetizer_menu(self):
+        self.select_foodservice_menu('appetizer')
+
+    def maincourse_menu(self):
+        self.select_foodservice_menu('maincourse')
+        
+    def dessert_menu(self):
+        self.select_foodservice_menu('dessert')
+
+    def drinks_menu(self):
+        self.select_foodservice_menu('drinks')            
 
     def repairingservice_menu(self):
         self.select_frame('repairingservice')
