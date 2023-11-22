@@ -48,10 +48,6 @@ class App(ctk.CTk):
         self.background.place(relx=0.5, rely=0.5, anchor='center')
         self.background.configure(self, text='', image=self.img_mainmenu_background)
 
-        # =====================================================================================================
-        #                                         -----  IMAGES  -----
-        # =====================================================================================================
-
         self.logo_image = ctk.CTkImage(Image.open('Aset Projek/Hostay White.png'), size=(110, 55))
         self.logoshadow_image = ctk.CTkImage(Image.open('Aset Projek/Hostay Dark.png'), size=(250, 125))
         self.dashboard_image = ctk.CTkImage(Image.open('Aset Projek/Dashboard.png'), size=(20, 20))
@@ -78,36 +74,12 @@ class App(ctk.CTk):
         self.repairingservice_image = ctk.CTkImage(Image.open('Aset Projek/Repairing Service.png'), size=(405,351))
         self.cleaningservice_image = ctk.CTkImage(Image.open('Aset Projek/Cleaning Service.png'), size=(405,351))
         self.logout_image = ctk.CTkImage(Image.open('Aset Projek/Logout.png'), size=(20,20))
-        self.appetizer_cireng_image = ctk.CTkImage(Image.open('Aset Projek/A_Cireng.png'), size=(175,159))
-        self.appetizer_risoles_image = ctk.CTkImage(Image.open('Aset Projek/A_Risoles.png'), size=(175,159))
-        self.appetizer_tahuisi_image = ctk.CTkImage(Image.open('Aset Projek/A_Tahu Isi.png'), size=(175,159))
-        self.appetizer_tempemendoan_image = ctk.CTkImage(Image.open('Aset Projek/A_Tempe Mendoan.png'), size=(175,159))
-        self.appetizer_kroketkentang_image = ctk.CTkImage(Image.open('Aset Projek/A_Kroket Kentang.png'), size=(175,159))
-        self.maincourse_ayambetutu_image = ctk.CTkImage(Image.open('Aset Projek/M_Ayam Betutu.png'), size=(175,159))
-        self.maincourse_ayamsambalmatah_image = ctk.CTkImage(Image.open('Aset Projek/M_Ayam Sambal Matah.png'), size=(175,159))
-        self.maincourse_ayamtaliwang_image = ctk.CTkImage(Image.open('Aset Projek/M_Ayam Taliwang.png'), size=(175,159))
-        self.maincourse_miegoreng_image = ctk.CTkImage(Image.open('Aset Projek/M_Mie Goreng.png'), size=(175,159))
-        self.maincourse_nasigoreng_image = ctk.CTkImage(Image.open('Aset Projek/M_Nasi Goreng.png'), size=(175,159))
-        self.maincourse_sateayam_image = ctk.CTkImage(Image.open('Aset Projek/M_Sate Ayam.png'), size=(175,159))
-        self.maincourse_sopbuntut_image = ctk.CTkImage(Image.open('Aset Projek/M_Sop Buntut.png'), size=(175,159))
-        self.dessert_escampur_image = ctk.CTkImage(Image.open('Aset Projek/D_Es Campur.png'), size=(175,159))
-        self.dessert_esdawet_image = ctk.CTkImage(Image.open('Aset Projek/D_Es Dawet.png'), size=(175,159))
-        self.dessert_espisangijo_image = ctk.CTkImage(Image.open('Aset Projek/D_Es Pisang Ijo.png'), size=(175,159))
-        self.dessert_klepon_image = ctk.CTkImage(Image.open('Aset Projek/D_Klepon.png'), size=(175,159))
-        self.dessert_pisangkeju_image = ctk.CTkImage(Image.open('Aset Projek/D_Pisang Keju.png'), size=(175,159))
-        self.drinks_esjeruk_image = ctk.CTkImage(Image.open('Aset Projek/Dr_Es Jeruk.png'), size=(175,159))
-        self.drinks_eskelapa_image = ctk.CTkImage(Image.open('Aset Projek/Dr_Es Kelapa.png'), size=(175,159))
-        self.drinks_esteh_image = ctk.CTkImage(Image.open('Aset Projek/Dr_Es Teh.png'), size=(175,159))
-        self.drinks_kopi_image = ctk.CTkImage(Image.open('Aset Projek/Dr_Kopi.png'), size=(175,159))
-        self.drinks_susu_image = ctk.CTkImage(Image.open('Aset Projek/Dr_Susu.png'), size=(175,159))
 
         self.grid_columnconfigure(1, weight=1)
         self.grid_columnconfigure((2, 3), weight=0)
         self.grid_rowconfigure((1, 2), weight=1)
 
-        # =====================================================================================================
-        #                                         -----  FRAMES  -----
-        # =====================================================================================================
+        # FRAMES
 
         self.sidebar_frame = ctk.CTkFrame(self, fg_color='#1F1F27', bg_color='#0C0B10', border_color='#1B1B22', corner_radius=40, border_width=5)
         self.headbar_frame = ctk.CTkFrame(self, fg_color='#242531', bg_color='#0C0B10', corner_radius=30, border_color='#1F1F27', border_width=5)
@@ -143,8 +115,6 @@ class App(ctk.CTk):
         self.main_frame_dashboard_roomstatus = ctk.CTkFrame(self.main_frame_dashboard, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_scrollframe_dashboard_roomstatus = ctk.CTkScrollableFrame(self.main_frame_dashboard_roomstatus, width=1150, corner_radius=20, height=30, fg_color='#191922', bg_color='transparent', scrollbar_button_color='#9599C8', scrollbar_button_hover_color='#636685', scrollbar_fg_color='#242531', border_color='#171720', border_width=5)
         
-        # ========================================== FRAMES POSITIONING ==========================================
-
         self.sidebar_frame.grid(row=1, column=0, rowspan=3, padx=(30,20), pady=(10,25), sticky='nsew')
         self.headbar_frame.grid(row=0, column=0, columnspan=4, padx=30, pady=20, sticky='news')
         self.main_frame_dashboard.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
@@ -182,12 +152,9 @@ class App(ctk.CTk):
         self.main_frame_dashboard.grid_columnconfigure(3, weight=1)
         self.main_frame_checkin.grid_columnconfigure(3, weight=1)        
 
-        # =====================================================================================================
-        #                                         -----  WIDGETS  -----
-        # =====================================================================================================
+        # WIDGETS
 
-        # ========================================== SIDEBAR WIDGETS ==========================================
-
+        # SIDEBAR WIDGETS
         self.sidebar_label_mainnav = ctk.CTkButton(self.sidebar_frame, corner_radius=25, width=180, height=45, text="Main Nav", font=ctk.CTkFont('Mona-Sans Bold', 20), fg_color='#19191F', bg_color='transparent', text_color="#D2D2DD", hover_color='#191922', border_color='#1B1B22', border_width=4)
         self.sidebar_button_dashboard = ctk.CTkButton(self.sidebar_frame, corner_radius=20, width=30, height=45, text="Dashboard", font=ctk.CTkFont('Mona-Sans SemiBold', 14), text_color=("#FFFFFF"), hover_color='#4646DD', cursor='hand2', anchor="w", image=self.dashboard_image, command=self.dashboard_menu)
         self.sidebar_button_checkinout = ctk.CTkButton(self.sidebar_frame, corner_radius=20, width=30, height=45, text="Check In/Out      ", font=ctk.CTkFont('Mona-Sans SemiBold', 14), fg_color="transparent", text_color=("#FFFFFF"), hover_color='#4646DD', cursor='hand2', anchor="center", image=self.rightarrow_image, compound='left', command=self.expand_button)
@@ -206,7 +173,7 @@ class App(ctk.CTk):
         self.sidebar_button_roomservice.grid(row=5, column=0, padx=20, pady=5, sticky='news')
         self.sidebar_button_about.grid(row=6, column=0, padx=20, pady=5, sticky='news')
 
-        # ========================================== HEADBAR WIDGETS ==========================================
+        # HEADBAR WIDGETS
 
         self.headbar_logo_label = ctk.CTkLabel(self.headbar_frame, text="", image=self.logo_image)
         self.headbar_button_profile = ctk.CTkButton(self.headbar_frame, corner_radius=30, width=50, height=45, image=self.user_image, text="Profile", font=ctk.CTkFont('Mona-Sans', 20), fg_color="transparent", text_color=("#FFFFFF"), hover_color='#4646DD', cursor='hand2', anchor="center", command=self.profile_menu)
@@ -216,7 +183,7 @@ class App(ctk.CTk):
         self.headbar_clock_label.grid(row=0, column=5, padx=(0,10), pady=10)
         self.current_time()
 
-        # ========================================= DASHBOARD WIDGETS ==========================================
+        # DASHBOARD WIDGET
 
         self.main_dashboard_heading_label = ctk.CTkLabel(self.main_frame_dashboard, text="Dashboard", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='s')
         self.main_dashboard_desc_label =  ctk.CTkLabel(self.main_frame_dashboard, text="Welcome to Hotel Management System  |  by Kelompok 4", font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
@@ -243,13 +210,12 @@ class App(ctk.CTk):
         self.main_dashboard_vacatedrooms_label.grid(row=0, column=0)
         self.main_dashboard_requiringservice_label.grid(row=0, column=0)  
         
-        # ===================================== DASHBOARD - ROOM STATUS WIDGETS ==========================================
+        # DASHBOARD ROOM STATUS WIDGET
 
         self.main_dashboard_roomstatus_frame = ctk.CTkButton(self.main_frame_dashboard_roomstatus, corner_radius=25, width=180, height=45, text="Room Status", font=ctk.CTkFont('Mona-Sans Bold', 30), fg_color='#191922', bg_color='transparent', hover_color='#191922', text_color="#FFFFFF", border_color='#171720', border_width=3)
         self.main_dashboard_roomstatus_frame.grid(row=0, column=0, columnspan=10, padx=(20,12), pady=(15,20), sticky='news')
 
-        # =========================================== FRAMES ROOM 01 - 30 ================================================
-
+        # 1-10
         self.room01_frame = ctk.CTkFrame(self.main_scrollframe_dashboard_roomstatus, width=94, height=125, fg_color='#242531', border_color='#1E1F29', border_width=3, corner_radius=20)
         self.room02_frame = ctk.CTkFrame(self.main_scrollframe_dashboard_roomstatus, width=94, height=125, fg_color='#242531', border_color='#1E1F29', border_width=3, corner_radius=20)
         self.room03_frame = ctk.CTkFrame(self.main_scrollframe_dashboard_roomstatus, width=94, height=125, fg_color='#242531', border_color='#1E1F29', border_width=3, corner_radius=20)
@@ -281,8 +247,6 @@ class App(ctk.CTk):
         self.room29_frame = ctk.CTkFrame(self.main_scrollframe_dashboard_roomstatus, width=94, height=125, fg_color='#242531', border_color='#1E1F29', border_width=3, corner_radius=20)
         self.room30_frame = ctk.CTkFrame(self.main_scrollframe_dashboard_roomstatus, width=94, height=125, fg_color='#242531', border_color='#1E1F29', border_width=3, corner_radius=20)
         
-        # ======================================== FRAMES ROOM INDICATOR 01 - 30 ===================================================
-
         self.room01_frame_indicator = ctk.CTkFrame(self.room01_frame, width=70, height=10, fg_color='#0FBFB0', corner_radius=20)
         self.room02_frame_indicator = ctk.CTkFrame(self.room02_frame, width=70, height=10, fg_color='#0FBFB0', corner_radius=20) #3C58F7
         self.room03_frame_indicator = ctk.CTkFrame(self.room03_frame, width=70, height=10, fg_color='#0FBFB0', corner_radius=20) #9031D3
@@ -314,8 +278,6 @@ class App(ctk.CTk):
         self.room29_frame_indicator = ctk.CTkFrame(self.room29_frame, width=70, height=10, fg_color='#0FBFB0', corner_radius=20)
         self.room30_frame_indicator = ctk.CTkFrame(self.room30_frame, width=70, height=10, fg_color='#0FBFB0', corner_radius=20)
         
-        # =========================================== FRAMES ROOM STATUS 01 - 30 ================================================
-
         self.room01_frame_status = ctk.CTkLabel(self.room01_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
         self.room02_frame_status = ctk.CTkLabel(self.room02_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
         self.room03_frame_status = ctk.CTkLabel(self.room03_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
@@ -347,8 +309,6 @@ class App(ctk.CTk):
         self.room29_frame_status = ctk.CTkLabel(self.room29_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
         self.room30_frame_status = ctk.CTkLabel(self.room30_frame, text='Ready', font=ctk.CTkFont('Mona-Sans semiBold', 14), text_color='#B6B6C6')
       
-        # =========================================== FRAMES ROOM LABEL 01 - 30 ================================================
-
         self.room01_frame_label = ctk.CTkLabel(self.room01_frame, text='01', font=ctk.CTkFont('Mona-Sans ExtraBold', 40), text_color='#FFDC99')
         self.room02_frame_label = ctk.CTkLabel(self.room02_frame, text='02', font=ctk.CTkFont('Mona-Sans ExtraBold', 40), text_color='#FFDC99')
         self.room03_frame_label = ctk.CTkLabel(self.room03_frame, text='03', font=ctk.CTkFont('Mona-Sans ExtraBold', 40), text_color='#FFDC99')
@@ -507,50 +467,33 @@ class App(ctk.CTk):
 
        # CHECK IN WIDGET
 
-        self.main_checkin_heading_label = ctk.CTkLabel(self.main_frame_checkin, text="Check In", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='sw')
-        self.main_checkin_heading_label.grid(row=0, column=0, pady=(5,5), padx=(20,60), sticky='news')
-        self.main_checkin_desc_label =  ctk.CTkLabel(self.main_frame_checkin, text="Choose the room type", font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
-        self.main_checkin_desc_label.place(x=355, y=43, anchor='center')
+        self.main_checkin_judul = ctk.CTkLabel(self.main_frame_checkin, text='Check In', font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='sw')
+        self.main_checkin_deskripsi = ctk.CTkLabel(self.main_frame_checkin, text='Selamat datang', font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
+        # self.main_checkin_singleroom_frame = ctk.CTkFrame(self.main_frame_checkin, fg_color='red', width=300, height=200)
+        # self.main_checkin_doubleroom_frame = ctk.CTkFrame(self.main_frame_checkin, fg_color='red', width=300, height=200)
+        # self.main_checkin_suiteroom_frame = ctk.CTkFrame(self.main_frame_checkin, fg_color='red', width=300, height=200)
+        # self.main_checkin_presidentsuiteroom_frame = ctk.CTkFrame(self.main_frame_checkin, fg_color='red', width=300, height=200)
 
-        self.main_checkin_singleroom_frame = ctk.CTkFrame(self.main_frame_checkin, fg_color='transparent', width=300, height=200)
-        self.main_checkin_doubleroom_frame = ctk.CTkFrame(self.main_frame_checkin, fg_color='transparent', width=300, height=200)
-        self.main_checkin_suiteroom_frame = ctk.CTkFrame(self.main_frame_checkin, fg_color='transparent', width=300, height=200)
-        self.main_checkin_presidentsuiteroom_frame = ctk.CTkFrame(self.main_frame_checkin, fg_color='transparent', width=300, height=200)
+        self.main_checkin_singleroom_image = ctk.CTkLabel(self.main_frame_checkin, image=self.singleroom_image, text='')
+        self.main_checkin_doubleroom_image = ctk.CTkLabel(self.main_frame_checkin, image=self.doubleroom_image, text='')
+        # self.main_checkin_singleroom_label = ctk.CTkLabel(self.main_checkin_singleroom_frame, text="", image=self.singleroom_image)
+        # self.main_checkin_doubleroom_label = ctk.CTkLabel(self.main_checkin_doubleroom_frame, text="", image=self.doubleroom_image)
+        # self.main_checkin_suiteroom_label = ctk.CTkLabel(self.main_checkin_suiteroom_frame, text="", image=self.suiteroom_image)
+        # self.main_checkin_presidentsuiteroom_label = ctk.CTkLabel(self.main_checkin_presidentsuiteroom_frame, text="", image=self.presidentsuiteroom_image)
         
-        self.main_checkin_singleroom_label = ctk.CTkLabel(self.main_checkin_singleroom_frame, text="", image=self.singleroom_image)
-        self.main_checkin_doubleroom_label = ctk.CTkLabel(self.main_checkin_doubleroom_frame, text="", image=self.doubleroom_image)
-        self.main_checkin_suiteroom_label = ctk.CTkLabel(self.main_checkin_suiteroom_frame, text="", image=self.suiteroom_image)
-        self.main_checkin_presidentsuiteroom_label = ctk.CTkLabel(self.main_checkin_presidentsuiteroom_frame, text="", image=self.presidentsuiteroom_image)
+        self.main_checkin_judul.grid(row=0, column=0, pady=(5,0), padx=(20,0), sticky='news')
+        self.main_checkin_deskripsi.place(x=350, y=45, anchor='center')
+        # self.main_checkin_singleroom_frame.grid(row=1, column=0, pady=0, sticky='news')
+        # self.main_checkin_doubleroom_frame.grid(row=1, column=1, pady=0, sticky='news')
+        # self.main_checkin_suiteroom_frame.grid(row=1, column=2, sticky='news')
+        # self.main_checkin_presidentsuiteroom_frame.grid(row=1, column=3, padx=(0,20), sticky='news')
+        self.main_checkin_singleroom_image.grid(row=1, column=0)
+        self.main_checkin_doubleroom_image.grid(row=1, column=1)
         
-        self.main_checkin_singleroom_available_label = ctk.CTkLabel(self.main_frame_checkin, text="Room Available : 10", font=ctk.CTkFont('Mona-Sans', 12), text_color="#B6B6C6")
-        self.main_checkin_doubleroom_available_label = ctk.CTkLabel(self.main_frame_checkin, text="Room Available : 10", font=ctk.CTkFont('Mona-Sans', 12), text_color="#B6B6C6")
-        self.main_checkin_suiteroom_available_label = ctk.CTkLabel(self.main_frame_checkin, text="Room Available : 6", font=ctk.CTkFont('Mona-Sans', 12), text_color="#B6B6C6")
-        self.main_checkin_presidentsuiteroom_available_label = ctk.CTkLabel(self.main_frame_checkin, text="Room Available : 4", font=ctk.CTkFont('Mona-Sans', 12), text_color="#B6B6C6")
-      
-        self.main_checkin_singleroom_button = ctk.CTkButton(self.main_frame_checkin, corner_radius=30, width=50, height=45, text="Select", font=ctk.CTkFont('Mona-Sans', 20), fg_color='#191A22', text_color="#FFFFFF", hover_color='#4646DD', cursor='hand2', border_color='#FFDC99', border_width=2, anchor="center", command=self.singleroom_menu)
-        self.main_checkin_doubleroom_button = ctk.CTkButton(self.main_frame_checkin, corner_radius=30, width=50, height=45, text="Select", font=ctk.CTkFont('Mona-Sans', 20), fg_color='#191A22', text_color="#FFFFFF", hover_color='#4646DD', cursor='hand2', border_color='#CE5700', border_width=2, anchor="center", command=self.doubleroom_menu)
-        self.main_checkin_suiteroom_button = ctk.CTkButton(self.main_frame_checkin, corner_radius=30, width=50, height=45, text="Select", font=ctk.CTkFont('Mona-Sans', 20), fg_color='#191A22', text_color="#FFFFFF", hover_color='#4646DD', cursor='hand2', border_color='#BBCDCA', border_width=2, anchor="center", command=self.suiteroom_menu)
-        self.main_checkin_presidentsuiteroom_button = ctk.CTkButton(self.main_frame_checkin, corner_radius=30, width=50, height=45, text="Select", font=ctk.CTkFont('Mona-Sans', 20), fg_color='#191A22', text_color="#FFFFFF", hover_color='#4646DD', cursor='hand2', border_color='#FFB800', border_width=2, anchor="center", command=self.presidentsuiteroom_menu)
-
-        self.main_checkin_singleroom_frame.grid(row=1, column=0, pady=0, sticky='news')
-        self.main_checkin_doubleroom_frame.grid(row=1, column=1, pady=0, sticky='news')
-        self.main_checkin_suiteroom_frame.grid(row=1, column=2, pady=0, sticky='news')
-        self.main_checkin_presidentsuiteroom_frame.grid(row=1, column=3, pady=0, sticky='news')
-        
-        self.main_checkin_singleroom_label.grid(row=0, column=0, padx=3)
-        self.main_checkin_doubleroom_label.grid(row=0, column=0, padx=3)
-        self.main_checkin_suiteroom_label.grid(row=0, column=0, padx=3)
-        self.main_checkin_presidentsuiteroom_label.grid(row=0, padx=3)
-
-        self.main_checkin_singleroom_available_label.place(x=155, y=350, anchor='center')
-        self.main_checkin_doubleroom_available_label.place(x=465, y=350, anchor='center')
-        self.main_checkin_suiteroom_available_label.place(x=775, y=350, anchor='center')
-        self.main_checkin_presidentsuiteroom_available_label.place(x=1085, y=350, anchor='center')
-
-        self.main_checkin_singleroom_button.grid(row=2, column=0, padx=(40,40), pady=30, sticky='news')
-        self.main_checkin_doubleroom_button.grid(row=2, column=1, padx=(40,40), pady=30, sticky='news')
-        self.main_checkin_suiteroom_button.grid(row=2, column=2, padx=(40,40), pady=30, sticky='news')
-        self.main_checkin_presidentsuiteroom_button.grid(row=2, column=3, padx=(40,65), pady=30, sticky='news')
+        # self.main_checkin_singleroom_label.grid(row=0, column=0, padx=3)
+        # self.main_checkin_doubleroom_label.grid(row=0, column=0, padx=3)
+        # self.main_checkin_suiteroom_label.grid(row=0, column=0, padx=3)
+        # self.main_checkin_presidentsuiteroom_label.grid(row=0, padx=3)
 
         # CHECK IN SINGLE ROOM WIDGET
 
@@ -791,25 +734,19 @@ class App(ctk.CTk):
         self.main_roomservice_desc_label =  ctk.CTkLabel(self.main_frame_roomservice, text='Choose the type of service', font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
         self.main_roomservice_desc_label.place(x=527.5, y=45, anchor='center')
 
-        self.main_roomservice_foodservice_frame = ctk.CTkFrame(self.main_frame_roomservice, fg_color='transparent', width=300, height=200)
-        self.main_roomservice_repairingservice_frame = ctk.CTkFrame(self.main_frame_roomservice, fg_color='transparent', width=300, height=200)
-        self.main_roomservice_cleaningservice_frame = ctk.CTkFrame(self.main_frame_roomservice, fg_color='transparent', width=300, height=200)
         
-        self.main_roomservice_foodservice_label = ctk.CTkLabel(self.main_roomservice_foodservice_frame, text="", image=self.foodservice_image)
-        self.main_roomservice_repairingservice_label = ctk.CTkLabel(self.main_roomservice_repairingservice_frame, text="", image=self.repairingservice_image)
-        self.main_roomservice_cleaningservice_label = ctk.CTkLabel(self.main_roomservice_cleaningservice_frame, text="", image=self.cleaningservice_image)
+        self.main_roomservice_foodservice_label = ctk.CTkLabel(self.main_frame_roomservice, text="", image=self.foodservice_image)
+        self.main_roomservice_repairingservice_label = ctk.CTkLabel(self.main_frame_roomservice, text="", image=self.repairingservice_image)
+        self.main_roomservice_cleaningservice_label = ctk.CTkLabel(self.main_frame_roomservice, text="", image=self.cleaningservice_image)
 
         self.main_roomservice_foodservice_button = ctk.CTkButton(self.main_frame_roomservice, corner_radius=30, width=50, height=60, text="Select", font=ctk.CTkFont('Mona-Sans', 20), fg_color='#191A22', text_color="#FFFFFF", hover_color='#4646DD', cursor='hand2', border_color='#121319', border_width=3, anchor="center", command=self.foodservice_menu)
         self.main_roomservice_repairingservice_button = ctk.CTkButton(self.main_frame_roomservice, corner_radius=30, width=50, height=60, text="Select", font=ctk.CTkFont('Mona-Sans', 20), fg_color='#191A22', text_color="#FFFFFF", hover_color='#4646DD', cursor='hand2', border_color='#121319', border_width=3, anchor="center", command=self.repairingservice_menu)
         self.main_roomservice_cleaningservice_button = ctk.CTkButton(self.main_frame_roomservice, corner_radius=30, width=50, height=60, text="Select", font=ctk.CTkFont('Mona-Sans', 20), fg_color='#191A22', text_color="#FFFFFF", hover_color='#4646DD', cursor='hand2', border_color='#121319', border_width=3, anchor="center", command=self.cleaningservice_menu)
 
-        self.main_roomservice_foodservice_frame.grid(row=1, column=0, padx=0, sticky='news')
-        self.main_roomservice_repairingservice_frame.grid(row=1, column=1, padx=0, sticky='news')
-        self.main_roomservice_cleaningservice_frame.grid(row=1, column=2, padx=0, sticky='news')
-
-        self.main_roomservice_foodservice_label.grid(row=0, column=0, padx=(0,5))
-        self.main_roomservice_repairingservice_label.grid(row=0, column=0, padx=5)
-        self.main_roomservice_cleaningservice_label.grid(row=0, column=0, padx=5)
+        
+        self.main_roomservice_foodservice_label.grid(row=1, column=0, padx=(0,5))
+        self.main_roomservice_repairingservice_label.grid(row=1, column=1, padx=5)
+        self.main_roomservice_cleaningservice_label.grid(row=1, column=2, padx=5)
 
         self.main_roomservice_foodservice_button.grid(row=2, column=0, padx=(40,40), pady=5, sticky='news')
         self.main_roomservice_repairingservice_button.grid(row=2, column=1, padx=(40,40), pady=5, sticky='news')
@@ -825,102 +762,26 @@ class App(ctk.CTk):
         self.main_foodservice_back.place(x=25, y=33, anchor='center')
 
         self.main_foodservice_menu_frame = ctk.CTkFrame(self.main_framebar_foodservice_menu, fg_color='#191922', border_color='#171720', border_width=5, corner_radius=20)
+        self.main_foodservice_appetizer_scrollableframe = ctk.CTkScrollableFrame(self.main_framebar_foodservice_menu, corner_radius=20, height=30, fg_color='#191922', bg_color='transparent', scrollbar_button_color='#9599C8', scrollbar_button_hover_color='#636685', scrollbar_fg_color='#242531', border_color='#171720', border_width=5)
+        self.main_foodservice_maincourse_scrollableframe = ctk.CTkScrollableFrame(self.main_framebar_foodservice_menu, corner_radius=20, height=30, fg_color='#191922', bg_color='transparent', scrollbar_button_color='#9599C8', scrollbar_button_hover_color='#636685', scrollbar_fg_color='#242531', border_color='#171720', border_width=5)
+        self.main_foodservice_dessert_scrollableframe = ctk.CTkScrollableFrame(self.main_framebar_foodservice_menu, corner_radius=20, height=30, fg_color='#191922', bg_color='transparent', scrollbar_button_color='#9599C8', scrollbar_button_hover_color='#636685', scrollbar_fg_color='#242531', border_color='#171720', border_width=5)
+        self.main_foodservice_drinks_scrollableframe = ctk.CTkScrollableFrame(self.main_framebar_foodservice_menu, corner_radius=20, height=30, fg_color='#191922', bg_color='transparent', scrollbar_button_color='#9599C8', scrollbar_button_hover_color='#636685', scrollbar_fg_color='#242531', border_color='#171720', border_width=5)
         self.main_foodservice_appetizer_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text_color='#D9D9FF', text='Appetizer', font=ctk.CTkFont('Mona-Sans Bold', 18), command=self.appetizer_menu)
         self.main_foodservice_maincourse_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text_color='#D9D9FF', text='Main Course', font=ctk.CTkFont('Mona-Sans Bold', 18), command=self.maincourse_menu)
         self.main_foodservice_dessert_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text_color='#D9D9FF', text='Dessert', font=ctk.CTkFont('Mona-Sans Bold', 18), command=self.dessert_menu)
         self.main_foodservice_drinks_button = ctk.CTkButton(self.main_foodservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text_color='#D9D9FF', text='Drinks', font=ctk.CTkFont('Mona-Sans Bold', 18), command=self.drinks_menu)
-        self.main_foodservice_appetizer_frame = ctk.CTkFrame(self.main_framebar_foodservice_menu, corner_radius=20, fg_color='#191922', bg_color='transparent' , border_color='#171720', border_width=5)
-        self.main_foodservice_maincourse_frame = ctk.CTkFrame(self.main_framebar_foodservice_menu, corner_radius=20, fg_color='#191922', bg_color='transparent' , border_color='#171720', border_width=5)
-        self.main_foodservice_dessert_frame = ctk.CTkFrame(self.main_framebar_foodservice_menu, corner_radius=20, fg_color='#191922', bg_color='transparent' , border_color='#171720', border_width=5)
-        self.main_foodservice_drinks_frame = ctk.CTkFrame(self.main_framebar_foodservice_menu, corner_radius=20, fg_color='#191922', bg_color='transparent' , border_color='#171720', border_width=5)
 
-        self.main_foodservice_appetizer_cireng = ctk.CTkButton(self.main_foodservice_appetizer_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.appetizer_cireng_image, text='')
-        self.main_foodservice_appetizer_risoles = ctk.CTkButton(self.main_foodservice_appetizer_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.appetizer_risoles_image, text='')
-        self.main_foodservice_appetizer_tahuisi = ctk.CTkButton(self.main_foodservice_appetizer_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.appetizer_tahuisi_image, text='')
-        self.main_foodservice_appetizer_tempemendoan = ctk.CTkButton(self.main_foodservice_appetizer_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.appetizer_tempemendoan_image, text='')
-        self.main_foodservice_appetizer_kroketkentang = ctk.CTkButton(self.main_foodservice_appetizer_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.appetizer_kroketkentang_image, text='')
+        self.main_foodservice_order_frame = ctk.CTkButton(self.main_framebar_foodservice_order, corner_radius=25, width=315, height=45, text="Order", text_color="#D9D9FF",font=ctk.CTkFont('Mona-Sans Bold', 30), fg_color='#191922', bg_color='transparent', hover_color='#191922', border_color='#171720', border_width=5)
 
-        self.main_foodservice_maincourse_ayambetutu = ctk.CTkButton(self.main_foodservice_maincourse_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.maincourse_ayambetutu_image, text='')
-        self.main_foodservice_maincourse_ayamsambalmatah = ctk.CTkButton(self.main_foodservice_maincourse_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.maincourse_ayamsambalmatah_image, text='')
-        self.main_foodservice_maincourse_ayamtaliwang = ctk.CTkButton(self.main_foodservice_maincourse_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.maincourse_ayamtaliwang_image, text='')
-        self.main_foodservice_maincourse_miegoreng = ctk.CTkButton(self.main_foodservice_maincourse_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.maincourse_miegoreng_image, text='')
-        self.main_foodservice_maincourse_nasigoreng = ctk.CTkButton(self.main_foodservice_maincourse_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.maincourse_nasigoreng_image, text='')
-        self.main_foodservice_maincourse_sateayam = ctk.CTkButton(self.main_foodservice_maincourse_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.maincourse_sateayam_image, text='')
-        self.main_foodservice_maincourse_sopbuntut = ctk.CTkButton(self.main_foodservice_maincourse_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.maincourse_sopbuntut_image, text='')
-
-        self.main_foodservice_dessert_escampur = ctk.CTkButton(self.main_foodservice_dessert_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.dessert_escampur_image, text='')
-        self.main_foodservice_dessert_esdawet = ctk.CTkButton(self.main_foodservice_dessert_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.dessert_esdawet_image, text='')
-        self.main_foodservice_dessert_espisangijo = ctk.CTkButton(self.main_foodservice_dessert_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.dessert_espisangijo_image, text='')
-        self.main_foodservice_dessert_klepon = ctk.CTkButton(self.main_foodservice_dessert_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.dessert_klepon_image, text='')
-        self.main_foodservice_dessert_pisangkeju = ctk.CTkButton(self.main_foodservice_dessert_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.dessert_pisangkeju_image, text='')
-
-        self.main_foodservice_drinks_esjeruk = ctk.CTkButton(self.main_foodservice_drinks_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.drinks_esjeruk_image, text='')
-        self.main_foodservice_drinks_eskelapa = ctk.CTkButton(self.main_foodservice_drinks_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.drinks_eskelapa_image, text='')
-        self.main_foodservice_drinks_esteh = ctk.CTkButton(self.main_foodservice_drinks_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.drinks_esteh_image, text='')
-        self.main_foodservice_drinks_kopi = ctk.CTkButton(self.main_foodservice_drinks_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.drinks_kopi_image, text='')
-        self.main_foodservice_drinks_susu = ctk.CTkButton(self.main_foodservice_drinks_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.drinks_susu_image, text='')
-
-        self.main_foodservice_order_title = ctk.CTkButton(self.main_framebar_foodservice_order, corner_radius=25, width=315, height=50, text="Order List", text_color="#D9D9FF",font=ctk.CTkFont('Mona-Sans Bold', 30), fg_color='#191922', bg_color='transparent', hover_color='#191922', border_color='#171720', border_width=5)
-        self.main_foodservice_order_roomlist = ctk.CTkOptionMenu(self.main_framebar_foodservice_order, width=200, height=40, font=ctk.CTkFont('Mona-Sans Bold Italic', 15), dropdown_font=ctk.CTkFont('Mona-Sans', 15), fg_color='#292982', dropdown_fg_color='#1A1A23', dropdown_text_color='#F0F0FF', text_color='#FFFFFF', button_color='#4646DD', button_hover_color='#3434A6', dropdown_hover_color='#3434A6', values=['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'], corner_radius=30, anchor='center', dynamic_resizing=True)
-        self.main_foodservice_order_button = ctk.CTkButton(self.main_framebar_foodservice_order, text='Proceed', font=ctk.CTkFont('Mona-Sans Bold', 25), text_color='#FFFFFF',  fg_color='#4646DD', hover_color='#3434A6', corner_radius=25, width=200, height=50, bg_color='transparent', cursor='hand2')
-    
         self.main_foodservice_menu_frame.grid(row=0, column=0, padx=(15,15), pady=(15,15), sticky='new')
+        self.main_foodservice_appetizer_scrollableframe.grid(row=1, column=0, padx=(20,20), sticky='news')
         self.main_foodservice_appetizer_button.grid(row=0, column=0, padx=(10,5), pady=(10,10), sticky='news')
         self.main_foodservice_maincourse_button.grid(row=0, column=1, padx=(5,5), pady=(10,10), sticky='news')
         self.main_foodservice_dessert_button.grid(row=0, column=2, padx=(5,5), pady=(10,10), sticky='news')
         self.main_foodservice_drinks_button.grid(row=0, column=3, padx=(5,10), pady=(10,10), sticky='news')
-        self.main_foodservice_appetizer_frame.grid(row=1, column=0, padx=(20,20), pady=(0,20), ipady=75, sticky='news')
-        self.main_foodservice_maincourse_frame.grid(row=1, column=0, padx=(20,20), pady=(0,20), ipady=75, sticky='news')
-        self.main_foodservice_dessert_frame.grid(row=1, column=0, padx=(20,20), pady=(0,20), ipady=75, sticky='news')
-        self.main_foodservice_drinks_frame.grid(row=1, column=0, padx=(20,20), pady=(0,20), ipady=75, sticky='news')
 
-        self.main_foodservice_appetizer_cireng.grid(row=0, column=0, padx=(17.5,0), pady=(20,0), sticky='news')
-        self.main_foodservice_appetizer_risoles.grid(row=0, column=1, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_appetizer_tahuisi.grid(row=0, column=2, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_appetizer_tempemendoan.grid(row=0, column=3, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_appetizer_kroketkentang.grid(row=1, column=0, padx=(17.5,0), pady=(10,0), sticky='news')
+        self.main_foodservice_order_frame.grid(row=0, column=0, columnspan=2, padx=(15,20), pady=(20,15), sticky='new')
 
-        self.main_foodservice_maincourse_ayambetutu.grid(row=0, column=0, padx=(17.5,0), pady=(20,0), sticky='news')
-        self.main_foodservice_maincourse_ayamsambalmatah.grid(row=0, column=1, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_maincourse_ayamtaliwang.grid(row=0, column=2, padx=(0,0), pady=(20,0), sticky='news')        
-        self.main_foodservice_maincourse_miegoreng.grid(row=0, column=3, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_maincourse_nasigoreng.grid(row=1, column=0, padx=(17.5,0), pady=(10,0), sticky='news')        
-        self.main_foodservice_maincourse_sateayam.grid(row=1, column=1, padx=(0,0), pady=(10,0), sticky='news')
-        self.main_foodservice_maincourse_sopbuntut.grid(row=1, column=2, padx=(0,0), pady=(10,0), sticky='news')
-
-        self.main_foodservice_dessert_escampur.grid(row=0, column=0, padx=(17.5,0), pady=(20,0), sticky='news')
-        self.main_foodservice_dessert_esdawet.grid(row=0, column=1, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_dessert_espisangijo.grid(row=0, column=2, padx=(0,0), pady=(20,0), sticky='news')        
-        self.main_foodservice_dessert_klepon.grid(row=0, column=3, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_dessert_pisangkeju.grid(row=1, column=0, padx=(17.5,0), pady=(10,0), sticky='news')   
-
-        self.main_foodservice_drinks_esjeruk.grid(row=0, column=0, padx=(17.5,0), pady=(20,0), sticky='news')
-        self.main_foodservice_drinks_eskelapa.grid(row=0, column=1, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_drinks_esteh.grid(row=0, column=2, padx=(0,0), pady=(20,0), sticky='news')        
-        self.main_foodservice_drinks_kopi.grid(row=0, column=3, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_drinks_susu.grid(row=1, column=0, padx=(17.5,0), pady=(10,0), sticky='news')            
-        
-        self.main_foodservice_order_title.grid(row=0, column=0, columnspan=2, padx=(15,20), pady=(20,15), sticky='new')
-        self.main_foodservice_order_roomlist.grid(row=1, column=0)
-        self.main_foodservice_order_button.place(x=80, y=520)
-
-        # REPAIRING SERVICE WIDGET
-
-        self.main_repairingservice_heading_label = ctk.CTkLabel(self.main_frame_repairingservice, text="Repairing Services", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='sw')
-        self.main_repairingservice_heading_label.grid(row=0, column=0, pady=(5,5), padx=(80,0), sticky='news')
-        self.main_repairingservice_desc_label =  ctk.CTkLabel(self.main_frame_repairingservice, text='Lorem ipsum dolor sit amet', font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
-        self.main_repairingservice_desc_label.place(x=685, y=45, anchor='center')
-        self.main_repairingservice_back = ctk.CTkButton(self.main_frame_repairingservice, width=20, height=20, fg_color='transparent', bg_color='transparent', text='', hover_color='#0C0B10', cursor='hand2', image=self.back_image, command=self.roomservice_menu)
-        self.main_repairingservice_back.place(x=25, y=33, anchor='center')
-
-        # CLEANING SERVICE WIDGET
-
-        self.main_cleaningservice_heading_label = ctk.CTkLabel(self.main_frame_cleaningservice, text="Cleaning Services", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='sw')
-        self.main_cleaningservice_heading_label.grid(row=0, column=0, pady=(5,5), padx=(80,0), sticky='news')
-        self.main_cleaningservice_desc_label =  ctk.CTkLabel(self.main_frame_cleaningservice, text='Lorem ipsum dolor sit amet', font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
-        self.main_cleaningservice_desc_label.place(x=667.5, y=45, anchor='center')
-        self.main_cleaningservice_back = ctk.CTkButton(self.main_frame_cleaningservice, width=20, height=20, fg_color='transparent', bg_color='transparent', text='', hover_color='#0C0B10', cursor='hand2', image=self.back_image, command=self.roomservice_menu)
-        self.main_cleaningservice_back.place(x=25, y=33, anchor='center')
 
         # ABOUT WIDGET
 
@@ -967,16 +828,20 @@ class App(ctk.CTk):
         self.main_about_credit = ctk.CTkLabel(self.main_frame_about, height=10, font=ctk.CTkFont('Mona-Sans', 12), text='by Kelompok 4', text_color='#4646DD', fg_color='transparent', bg_color='transparent')
         self.main_about_credit.place(x=600, y=655, anchor='center')
 
+
+
+
+
         self.select_frame('dashboard')
         self.select_foodservice_menu('appetizer')
     
     def select_frame(self, name):
         self.sidebar_button_dashboard.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'dashboard' else 'transparent')
         self.sidebar_button_checkinout.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'checkinout' else 'transparent')
-        self.sidebar_button_checkin.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'checkin' or name == 'singleroom' or name == 'identityroomsingle' or name == 'doubleroom' or name == 'identityroomdouble' or name == 'suiteroom' or name == 'identityroomsuite' or name == 'presidentsuiteroom' or name == 'identityroompresidentsuite' else 'transparent')
+        self.sidebar_button_checkin.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'checkin' or name == 'singleroom' or name == 'identityroomsingle' else 'transparent')
         self.sidebar_button_guestlist.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'guestlist' else 'transparent')
         self.sidebar_button_guesthistory.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'guesthistory' else 'transparent')
-        self.sidebar_button_roomservice.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'roomservice' or name == 'foodservice' or name == 'repairingservice' or name == 'cleaningservice' else 'transparent')
+        self.sidebar_button_roomservice.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'roomservice' else 'transparent')
         self.sidebar_button_about.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'about' else 'transparent')
         self.headbar_button_profile.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'profile' else 'transparent')
 
@@ -1080,21 +945,21 @@ class App(ctk.CTk):
         self.main_foodservice_drinks_button.configure(self.main_foodservice_menu_frame, fg_color=('#3434A6') if name == 'drinks' else '#242432')
         
         if name == "appetizer":
-            self.main_foodservice_appetizer_frame.grid(row=1, column=0, padx=(20,20), pady=(0,15), ipady=75, sticky='news')
+            self.main_foodservice_appetizer_scrollableframe.grid(row=1, column=0, padx=(20,20), sticky='news')
         else:
-            self.main_foodservice_appetizer_frame.grid_forget()   
+            self.main_foodservice_appetizer_scrollableframe.grid_forget()   
         if name == "maincourse":
-            self.main_foodservice_maincourse_frame.grid(row=1, column=0, padx=(20,20), pady=(0,15), ipady=75, sticky='news')
+            self.main_frame_checkin.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
         else:
-            self.main_foodservice_maincourse_frame.grid_forget()
+            self.main_frame_checkin.grid_forget()
         if name == "dessert":
-            self.main_foodservice_dessert_frame.grid(row=1, column=0, padx=(20,20), pady=(0,15), ipady=75, sticky='news')
+            self.main_frame_checkin_singleroom.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
         else:
-            self.main_foodservice_dessert_frame.grid_forget()
+            self.main_frame_checkin_singleroom.grid_forget()
         if name == "drinks":
-            self.main_foodservice_drinks_frame.grid(row=1, column=0, padx=(20,20), pady=(0,15), ipady=75, sticky='news')
+            self.main_frame_checkin_doubleroom.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
         else:
-            self.main_foodservice_drinks_frame.grid_forget()
+            self.main_frame_checkin_doubleroom.grid_forget()
 
     def appetizer_menu(self):
         self.select_foodservice_menu('appetizer')
@@ -1137,6 +1002,7 @@ class App(ctk.CTk):
         self.identityform_firstname_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsingle, text="First Name", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_lastname_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsingle, text="Last Name", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_gender_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsingle, text="Gender", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.identityform_guesttotal_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsingle, text="Guest Total", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_age_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsingle, text="Age", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_nin_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsingle, text="Nationality ID Number", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_nohandphone_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsingle, text="Mobile Phone Number", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
@@ -1150,6 +1016,7 @@ class App(ctk.CTk):
         self.identityform_firstname_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsingle, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's first name here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30) 
         self.identityform_lastname_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsingle, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's last name here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30) 
         self.identityform_gender_entry = ctk.CTkOptionMenu(self.main_framebar_checkin_identityformsingle, width=341.5, height=40, font=ctk.CTkFont('Mona-Sans Bold Italic', 15), dropdown_font=ctk.CTkFont('Mona-Sans', 15), fg_color='#292982', dropdown_fg_color='#1A1A23', dropdown_text_color='#F0F0FF', text_color='#FFFFFF', button_color='#4646DD', button_hover_color='#3434A6', dropdown_hover_color='#3434A6', values=['Male', 'Female'], corner_radius=30, anchor='center', dynamic_resizing=True)
+        self.identityform_guesttotal_entry = ctk.CTkOptionMenu(self.main_framebar_checkin_identityformsingle, width=341.5, height=40, font=ctk.CTkFont('Mona-Sans Bold Italic', 15), dropdown_font=ctk.CTkFont('Mona-Sans', 15), fg_color='#292982', dropdown_fg_color='#1A1A23', dropdown_text_color='#F0F0FF', text_color='#FFFFFF', button_color='#4646DD', button_hover_color='#3434A6', dropdown_hover_color='#3434A6', values=['2', 'Female'], corner_radius=30, anchor='center', dynamic_resizing=True)
         self.identityform_age_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsingle, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's age here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_nin_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsingle, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's ID number here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_nohandphone_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsingle, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's mobile phone number here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
@@ -1203,6 +1070,7 @@ class App(ctk.CTk):
         self.identityform_firstname_label = ctk.CTkLabel(self.main_framebar_checkin_identityformdouble, text="First Name", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_lastname_label = ctk.CTkLabel(self.main_framebar_checkin_identityformdouble, text="Last Name", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_gender_label = ctk.CTkLabel(self.main_framebar_checkin_identityformdouble, text="Gender", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.identityform_guesttotal_label = ctk.CTkLabel(self.main_framebar_checkin_identityformdouble, text="Guest Total", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_age_label = ctk.CTkLabel(self.main_framebar_checkin_identityformdouble, text="Age", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_nin_label = ctk.CTkLabel(self.main_framebar_checkin_identityformdouble, text="Nationality ID Number", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_nohandphone_label = ctk.CTkLabel(self.main_framebar_checkin_identityformdouble, text="Mobile Phone Number", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
@@ -1216,6 +1084,7 @@ class App(ctk.CTk):
         self.identityform_firstname_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformdouble, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's first name here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30) 
         self.identityform_lastname_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformdouble, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's last name here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30) 
         self.identityform_gender_entry = ctk.CTkOptionMenu(self.main_framebar_checkin_identityformdouble, width=341.5, height=40, font=ctk.CTkFont('Mona-Sans Bold Italic', 15), dropdown_font=ctk.CTkFont('Mona-Sans', 15), fg_color='#292982', dropdown_fg_color='#1A1A23', dropdown_text_color='#F0F0FF', text_color='#FFFFFF', button_color='#4646DD', button_hover_color='#3434A6', dropdown_hover_color='#3434A6', values=['Male', 'Female'], corner_radius=30, anchor='center', dynamic_resizing=True)
+        self.identityform_guesttotal_entry = ctk.CTkOptionMenu(self.main_framebar_checkin_identityformdouble, width=341.5, height=40, font=ctk.CTkFont('Mona-Sans Bold Italic', 15), dropdown_font=ctk.CTkFont('Mona-Sans', 15), fg_color='#292982', dropdown_fg_color='#1A1A23', dropdown_text_color='#F0F0FF', text_color='#FFFFFF', button_color='#4646DD', button_hover_color='#3434A6', dropdown_hover_color='#3434A6', values=['2', 'Female'], corner_radius=30, anchor='center', dynamic_resizing=True)
         self.identityform_age_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformdouble, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's age here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_nin_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformdouble, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's ID number here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_nohandphone_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformdouble, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's mobile phone number here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
@@ -1268,6 +1137,7 @@ class App(ctk.CTk):
         self.identityform_firstname_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsuite, text="First Name", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_lastname_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsuite, text="Last Name", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_gender_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsuite, text="Gender", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.identityform_guesttotal_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsuite, text="Guest Total", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_age_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsuite, text="Age", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_nin_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsuite, text="Nationality ID Number", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_nohandphone_label = ctk.CTkLabel(self.main_framebar_checkin_identityformsuite, text="Mobile Phone Number", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
@@ -1281,6 +1151,7 @@ class App(ctk.CTk):
         self.identityform_firstname_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's first name here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30) 
         self.identityform_lastname_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's last name here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30) 
         self.identityform_gender_entry = ctk.CTkOptionMenu(self.main_framebar_checkin_identityformsuite, width=341.5, height=40, font=ctk.CTkFont('Mona-Sans Bold Italic', 15), dropdown_font=ctk.CTkFont('Mona-Sans', 15), fg_color='#292982', dropdown_fg_color='#1A1A23', dropdown_text_color='#F0F0FF', text_color='#FFFFFF', button_color='#4646DD', button_hover_color='#3434A6', dropdown_hover_color='#3434A6', values=['Male', 'Female'], corner_radius=30, anchor='center', dynamic_resizing=True)
+        self.identityform_guesttotal_entry = ctk.CTkOptionMenu(self.main_framebar_checkin_identityformsuite, width=341.5, height=40, font=ctk.CTkFont('Mona-Sans Bold Italic', 15), dropdown_font=ctk.CTkFont('Mona-Sans', 15), fg_color='#292982', dropdown_fg_color='#1A1A23', dropdown_text_color='#F0F0FF', text_color='#FFFFFF', button_color='#4646DD', button_hover_color='#3434A6', dropdown_hover_color='#3434A6', values=['2', 'Female'], corner_radius=30, anchor='center', dynamic_resizing=True)
         self.identityform_age_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's age here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_nin_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's ID number here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_nohandphone_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's mobile phone number here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
@@ -1333,6 +1204,7 @@ class App(ctk.CTk):
         self.identityform_firstname_label = ctk.CTkLabel(self.main_framebar_checkin_identityformpresidentsuite, text="First Name", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_lastname_label = ctk.CTkLabel(self.main_framebar_checkin_identityformpresidentsuite, text="Last Name", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_gender_label = ctk.CTkLabel(self.main_framebar_checkin_identityformpresidentsuite, text="Gender", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.identityform_guesttotal_label = ctk.CTkLabel(self.main_framebar_checkin_identityformpresidentsuite, text="Guest Total", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_age_label = ctk.CTkLabel(self.main_framebar_checkin_identityformpresidentsuite, text="Age", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_nin_label = ctk.CTkLabel(self.main_framebar_checkin_identityformpresidentsuite, text="Nationality ID Number", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
         self.identityform_nohandphone_label = ctk.CTkLabel(self.main_framebar_checkin_identityformpresidentsuite, text="Mobile Phone Number", font=ctk.CTkFont('Mona-Sans', 20), text_color=("#F0F0FF"), fg_color='transparent', bg_color='transparent', anchor='w')
@@ -1346,6 +1218,7 @@ class App(ctk.CTk):
         self.identityform_firstname_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformpresidentsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's first name here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30) 
         self.identityform_lastname_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformpresidentsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's last name here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30) 
         self.identityform_gender_entry = ctk.CTkOptionMenu(self.main_framebar_checkin_identityformpresidentsuite, width=341.5, height=40, font=ctk.CTkFont('Mona-Sans Bold Italic', 15), dropdown_font=ctk.CTkFont('Mona-Sans', 15), fg_color='#292982', dropdown_fg_color='#1A1A23', dropdown_text_color='#F0F0FF', text_color='#FFFFFF', button_color='#4646DD', button_hover_color='#3434A6', dropdown_hover_color='#3434A6', values=['Male', 'Female'], corner_radius=30, anchor='center', dynamic_resizing=True)
+        self.identityform_guesttotal_entry = ctk.CTkOptionMenu(self.main_framebar_checkin_identityformpresidentsuite, width=341.5, height=40, font=ctk.CTkFont('Mona-Sans Bold Italic', 15), dropdown_font=ctk.CTkFont('Mona-Sans', 15), fg_color='#292982', dropdown_fg_color='#1A1A23', dropdown_text_color='#F0F0FF', text_color='#FFFFFF', button_color='#4646DD', button_hover_color='#3434A6', dropdown_hover_color='#3434A6', values=['2', 'Female'], corner_radius=30, anchor='center', dynamic_resizing=True)
         self.identityform_age_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformpresidentsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's age here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_nin_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformpresidentsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's ID number here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
         self.identityform_nohandphone_entry = ctk.CTkEntry(self.main_framebar_checkin_identityformpresidentsuite, width=341.5, height=40, text_color='#FFFFFF', placeholder_text="Enter guest's mobile phone number here", font=ctk.CTkFont('Mona-Sans Regular', 15), fg_color='#242531', border_width=0, corner_radius=30)
@@ -1384,17 +1257,6 @@ class App(ctk.CTk):
         self.identityform_deposit_entry.grid(row=7, column=2, sticky='new', padx=(65,35), pady=(3,15))
         self.identityform_guestnote_entry.grid(row=9, column=2, rowspan=2, sticky='new', padx=(65,35), pady=(3,15))
         
-    # def add_guest_history(self):
-        
-    #     self.checkindate = self.identityform_checkindate_entry.get()
-    #     self.checkoutdate = self.identityform_checkoutdate_entry.get()
-    #     self.guestname = self.guestname
-    #     self.nin
-    #     self.mobilephonenumber
-    #     self.email       
-    #     self.address
-    #     self.roomnumber 
-
     def profile_menu(self):
         self.profile_frame = ctk.CTkFrame(self, width=180, height=140, fg_color='#242531', bg_color='#1E1F29', border_width=7, border_color='#1E1F29', corner_radius=20)
         self.profile_frame.grid(row=1,column=1, padx=(100,50), sticky='ne')
