@@ -31,7 +31,7 @@ class App(ctk.CTk):
 
         self.login_page = LoginPage(self)
         self.registration_page = RegistrationPage(self)
-        self.show_mainmenu_page()
+        self.show_login_page()
 
         self.login_page.regis_label_button.configure(command=self.show_registration_page)
         self.registration_page.login_label_button.configure(command=self.show_login_page)
@@ -82,9 +82,9 @@ class App(ctk.CTk):
         self.suiteroom_image = ctk.CTkImage(Image.open('Aset Projek/Suite Room.png'), size=(305, 264))
         self.presidentsuiteroom_image = ctk.CTkImage(Image.open('Aset Projek/President Suite Room.png'), size=(305, 264))
         self.back_image = ctk.CTkImage(Image.open('Aset Projek/Back.png'), size=(40, 40))
-        self.foodservice_image = ctk.CTkImage(Image.open('Aset Projek/Food and Drink Service.png'), size=(405,351))
-        self.repairingservice_image = ctk.CTkImage(Image.open('Aset Projek/Repairing Service.png'), size=(405,351))
-        self.cleaningservice_image = ctk.CTkImage(Image.open('Aset Projek/Cleaning Service.png'), size=(405,351))
+        self.foodservice_image = ctk.CTkImage(Image.open('Aset Projek/Food and Drink Service.png'), size=(369,257.48))
+        self.repairingservice_image = ctk.CTkImage(Image.open('Aset Projek/Repairing Service.png'), size=(369,257.48))
+        self.cleaningservice_image = ctk.CTkImage(Image.open('Aset Projek/Cleaning Service.png'), size=(369,257.48))
         self.logout_image = ctk.CTkImage(Image.open('Aset Projek/Logout.png'), size=(20,20))
         self.appetizer_cireng_image = ctk.CTkImage(Image.open('Aset Projek/A_Cireng.png'), size=(175,159))
         self.appetizer_risoles_image = ctk.CTkImage(Image.open('Aset Projek/A_Risoles.png'), size=(175,159))
@@ -142,13 +142,15 @@ class App(ctk.CTk):
         self.main_frame_checkout_detail = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
         self.main_framebar_checkout = ctk.CTkFrame(self.main_frame_checkout, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_framebar_checkout_detail = ctk.CTkFrame(self.main_frame_checkout_detail, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
-        self.main_framebar_checkout_billingcost = ctk.CTkFrame(self.main_frame_checkout_detail, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
+        self.main_framebar_checkout_billingdetail = ctk.CTkFrame(self.main_frame_checkout_detail, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_framebar_guestlist = ctk.CTkFrame(self.main_frame_checkout, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_frame_guestlist = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
         self.main_framebar_guestlist = ctk.CTkFrame(self.main_frame_guestlist, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_frame_guesthistory = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
         self.main_framebar_guesthistory = ctk.CTkFrame(self.main_frame_guesthistory, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_frame_roomservice = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
+        self.main_framebar_roomservice_request = ctk.CTkFrame(self.main_frame_roomservice, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
+        self.main_framebar_roomservice_menu = ctk.CTkFrame(self.main_frame_roomservice, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_frame_foodservice = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
         self.main_framebar_foodservice_menu = ctk.CTkFrame(self.main_frame_foodservice, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_framebar_foodservice_order = ctk.CTkFrame(self.main_frame_foodservice, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
@@ -179,10 +181,13 @@ class App(ctk.CTk):
         self.main_framebar_checkin_doubleroom.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=10, pady=(0,0), sticky='news')
         self.main_framebar_checkin_suiteroom.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=10, pady=(0,0), sticky='news')
         self.main_framebar_checkin_presidentsuiteroom.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=10, pady=(0,0), sticky='news')
-        self.main_framebar_checkout.grid(row=1, column=0, padx=(10,35), pady=(5,50), sticky='news')
+        self.main_framebar_checkout.grid(row=1, column=0, padx=(10,35), pady=(5,60), sticky='news')
         self.main_frame_checkout_detail.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
-        self.main_framebar_checkout_detail.grid(row=1, column=0, padx=(10,10), pady=(0,0), ipadx=150, sticky='news')
-        self.main_framebar_checkout_billingcost.grid(row=1, column=1, padx=(20,10), pady=(0,0), ipadx=250, sticky='news')  
+        self.main_framebar_checkout_detail.grid(row=0, column=0, padx=(10,0), pady=(70,30), sticky='news')
+        self.main_framebar_checkout_billingdetail.grid(row=0, column=1, padx=(20,30), pady=(70,30), sticky='news')
+        self.main_framebar_checkout_billingdetail.grid_columnconfigure(0, weight=1)
+        self.main_frame_checkout_detail.grid_columnconfigure(1, weight=1)
+        self.main_frame_checkout_detail.grid_rowconfigure(0, weight=1)
         self.main_frame_checkout.grid_rowconfigure(1, weight=1)
         self.main_frame_checkout.grid_columnconfigure(0, weight=1)
         self.main_frame_guestlist.grid(row=1, column=1, padx=30, sticky='news')
@@ -191,12 +196,18 @@ class App(ctk.CTk):
         self.main_frame_guesthistory.grid_rowconfigure(1, weight=1)
         self.main_frame_guesthistory.grid_columnconfigure(0, weight=1)
         self.main_frame_guesthistory.grid(row=1, column=1, rowspan=3, ipady=300, padx=0, pady=0, sticky='news')
-        self.main_framebar_guestlist.grid(row=1, column=0, padx=(10,30), pady=(5,25), sticky='news')
-        self.main_framebar_guesthistory.grid(row=1, column=0, padx=(10,30), pady=(5,25), sticky='news')
-        self.main_frame_roomservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')        
-        self.main_frame_foodservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')        
-        self.main_framebar_foodservice_menu.grid(row=1, column=0, padx=(10,10), pady=(0,0), sticky='news')        
-        self.main_framebar_foodservice_order.grid(row=1, column=1, padx=(20,10), pady=(0,0), sticky='news')        
+        self.main_framebar_guestlist.grid(row=1, column=0, padx=(10,35), pady=(5,25), sticky='news')
+        self.main_framebar_guesthistory.grid(row=1, column=0, padx=(10,35), pady=(5,25), sticky='news')
+        self.main_frame_roomservice.grid(row=1, column=1, rowspan=3, padx=0, pady=0, sticky='news')        
+        self.main_frame_roomservice.grid_columnconfigure(0, weight=1)
+        self.main_framebar_roomservice_request.grid(row=1, column=0, padx=(10,35), pady=(0,0), sticky='news')
+        self.main_framebar_roomservice_request.grid_columnconfigure(0, weight=1)
+        self.main_framebar_roomservice_request.grid_columnconfigure(1, weight=1)
+        self.main_framebar_roomservice_menu.grid(row=0, column=0, padx=(10,35), pady=(70,25), sticky='news')
+        self.main_frame_foodservice.grid(row=1, column=1, rowspan=3, padx=0, pady=0, sticky='news')
+        self.main_frame_foodservice.grid_rowconfigure(1, weight=1)         
+        self.main_framebar_foodservice_menu.grid(row=1, column=0, padx=(10,10), pady=(0,22.5), sticky='news')        
+        self.main_framebar_foodservice_order.grid(row=1, column=1, padx=(20,10), pady=(0,22.5), sticky='news')        
         self.main_frame_repairingservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')        
         self.main_frame_cleaningservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')        
         self.main_frame_about.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
@@ -250,22 +261,22 @@ class App(ctk.CTk):
 
         self.main_dashboard_vacantrooms_frame = ctk.CTkFrame(self.main_frame_dashboard, fg_color='transparent', width=300, height=200)
         self.main_dashboard_occupiedrooms_frame = ctk.CTkFrame(self.main_frame_dashboard, fg_color='transparent', width=300, height=200)
-        self.main_dashboard_vacatedrooms_frame = ctk.CTkFrame(self.main_frame_dashboard, fg_color='transparent', width=300, height=200)
+        self.main_dashboard_vacantdirty_frame = ctk.CTkFrame(self.main_frame_dashboard, fg_color='transparent', width=300, height=200)
         self.main_dashboard_requiringservice_frame = ctk.CTkFrame(self.main_frame_dashboard, fg_color='transparent', width=300, height=200)
-       
+    
         self.main_dashboard_vacantrooms_label = ctk.CTkLabel(self.main_dashboard_vacantrooms_frame, text='\n\n                   30', font=ctk.CTkFont('Mona-Sans Bold', 50), text_color='#FFFFFF', image=self.vacantready_image)
         self.main_dashboard_occupiedrooms_label = ctk.CTkLabel(self.main_dashboard_occupiedrooms_frame, text='\n\n                   0', font=ctk.CTkFont('Mona-Sans Bold', 50), text_color='#FFFFFF', image=self.occupiedrooms_image)
-        self.main_dashboard_vacatedrooms_label = ctk.CTkLabel(self.main_dashboard_vacatedrooms_frame, text='\n\n                   0', font=ctk.CTkFont('Mona-Sans Bold', 50), text_color='#FFFFFF', image=self.vacantdirty_image)
+        self.main_dashboard_vacantdirty_label = ctk.CTkLabel(self.main_dashboard_vacantdirty_frame, text='\n\n                   0', font=ctk.CTkFont('Mona-Sans Bold', 50), text_color='#FFFFFF', image=self.vacantdirty_image)
         self.main_dashboard_requiringservice_label = ctk.CTkLabel(self.main_dashboard_requiringservice_frame, text='\n\n                   0', font=ctk.CTkFont('Mona-Sans Bold', 50), text_color='#FFFFFF', image=self.requiringservice_image)
         
         self.main_dashboard_vacantrooms_frame.grid(row=1, column=0, pady=0, sticky='news')
         self.main_dashboard_occupiedrooms_frame.grid(row=1, column=1, pady=0, sticky='news')
-        self.main_dashboard_vacatedrooms_frame.grid(row=1, column=2, pady=0, sticky='news')
+        self.main_dashboard_vacantdirty_frame.grid(row=1, column=2, pady=0, sticky='news')
         self.main_dashboard_requiringservice_frame.grid(row=1, column=3, pady=0, sticky='news')
         
         self.main_dashboard_vacantrooms_label.grid(row=0, column=0)
         self.main_dashboard_occupiedrooms_label.grid(row=0, column=0)
-        self.main_dashboard_vacatedrooms_label.grid(row=0, column=0)
+        self.main_dashboard_vacantdirty_label.grid(row=0, column=0)
         self.main_dashboard_requiringservice_label.grid(row=0, column=0)  
         
         # ===================================== DASHBOARD - ROOM STATUS WIDGETS ==========================================
@@ -865,6 +876,10 @@ class App(ctk.CTk):
 
                 self.room_checkout_button[self.room_id].configure(state='normal', text=formatted_room_id, text_color=text_color, font=ctk.CTkFont('Mona-Sans ExtraBold', 45))
 
+            elif self.room_id in self.room_button and self.room_id in self.room_checkout_button and self.status == 'Dirty':
+                self.room_button[self.room_id].configure(state='disabled', text='Dirty', font=ctk.CTkFont('Mona-Sans Bold', 25))
+                self.room_checkout_button[self.room_id].configure(state='disabled', text='Dirty', text_color='#FFFFFF', font=ctk.CTkFont('Mona-Sans Bold', 15))
+
             elif self.room_id in self.room_button and self.room_id in self.room_checkout_button:
                 self.room_button[self.room_id].configure(state='normal')
                 self.room_checkout_button[self.room_id].configure(state='disabled', text='Ready', text_color='#FFFFFF', font=ctk.CTkFont('Mona-Sans Bold', 15))
@@ -979,33 +994,38 @@ class App(ctk.CTk):
        # ROOM SERVICES WIDGET
 
         self.main_roomservice_heading_label = ctk.CTkLabel(self.main_frame_roomservice, text="Room Services", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='sw')
-        self.main_roomservice_heading_label.grid(row=0, column=0, pady=(5,5), padx=20, sticky='news')
+        self.main_roomservice_heading_label.place(x=20, y=5)
         self.main_roomservice_desc_label =  ctk.CTkLabel(self.main_frame_roomservice, text='Choose the type of service', font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
         self.main_roomservice_desc_label.place(x=527.5, y=45, anchor='center')
 
-        self.main_roomservice_foodservice_frame = ctk.CTkFrame(self.main_frame_roomservice, fg_color='transparent', width=300, height=200)
-        self.main_roomservice_repairingservice_frame = ctk.CTkFrame(self.main_frame_roomservice, fg_color='transparent', width=300, height=200)
-        self.main_roomservice_cleaningservice_frame = ctk.CTkFrame(self.main_frame_roomservice, fg_color='transparent', width=300, height=200)
+        self.main_roomservice_menu_request_frame = ctk.CTkButton(self.main_framebar_roomservice_request, corner_radius=25, height=45, text="Guest's Request ", anchor='center', font=ctk.CTkFont('Mona-Sans Bold', 30), fg_color='#191922', bg_color='transparent', hover_color='#191922', text_color="#FFFFFF", border_color='#171720', border_width=3)
+        self.main_roomservice_menu_request_frame.grid(row=0, column=0, columnspan=2, padx=(20,20), pady=(15,10), sticky='news')
         
-        self.main_roomservice_foodservice_label = ctk.CTkLabel(self.main_roomservice_foodservice_frame, text="", image=self.foodservice_image)
-        self.main_roomservice_repairingservice_label = ctk.CTkLabel(self.main_roomservice_repairingservice_frame, text="", image=self.repairingservice_image)
-        self.main_roomservice_cleaningservice_label = ctk.CTkLabel(self.main_roomservice_cleaningservice_frame, text="", image=self.cleaningservice_image)
+        self.main_roomservice_menu_title_frame = ctk.CTkButton(self.main_framebar_roomservice_menu, corner_radius=25, height=45, text="Service Menu", font=ctk.CTkFont('Mona-Sans Bold', 30), fg_color='#191922', bg_color='transparent', hover_color='#191922', text_color="#FFFFFF", border_color='#171720', border_width=3)
+        self.main_roomservice_menu_title_frame.grid(row=0, column=0, columnspan=3, padx=(20,20), pady=(15,10), sticky='news')
 
-        self.main_roomservice_foodservice_button = ctk.CTkButton(self.main_frame_roomservice, corner_radius=30, width=50, height=60, text="Select", font=ctk.CTkFont('Mona-Sans', 20), fg_color='#191A22', text_color="#FFFFFF", hover_color='#4646DD', cursor='hand2', border_color='#121319', border_width=3, anchor="center", command=self.foodservice_menu)
-        self.main_roomservice_repairingservice_button = ctk.CTkButton(self.main_frame_roomservice, corner_radius=30, width=50, height=60, text="Select", font=ctk.CTkFont('Mona-Sans', 20), fg_color='#191A22', text_color="#FFFFFF", hover_color='#4646DD', cursor='hand2', border_color='#121319', border_width=3, anchor="center", command=self.repairingservice_menu)
-        self.main_roomservice_cleaningservice_button = ctk.CTkButton(self.main_frame_roomservice, corner_radius=30, width=50, height=60, text="Select", font=ctk.CTkFont('Mona-Sans', 20), fg_color='#191A22', text_color="#FFFFFF", hover_color='#4646DD', cursor='hand2', border_color='#121319', border_width=3, anchor="center", command=self.cleaningservice_menu)
+        self.main_roomservice_roomoption_label = ctk.CTkLabel(self.main_framebar_roomservice_request, text="Room Number", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='center')
+        self.main_roomservice_roomoption_label.place(relx=0.35, rely=0.4, anchor='center')
+        self.main_roomservice_roomoption = ctk.CTkOptionMenu(self.main_framebar_roomservice_request, values=['01'], width=100, height=25, font=ctk.CTkFont('Mona-Sans Bold', 20), corner_radius=30, anchor='center', dropdown_font=ctk.CTkFont('Mona-Sans', 15), fg_color='#292982', text_color='#FFFFFF', button_color='#4646DD', button_hover_color='#3434A6')
+        self.main_roomservice_roomoption.place(relx=0.35, rely=0.55, anchor='center')
+        roomlist = [f"{room[0]:02d}" for room in self.room_status if room[1] == 'Occupied']
+        CTkScrollableDropdown(self.main_roomservice_roomoption, width=100, double_click=False, resize=False, y=-250, values=roomlist)
 
-        self.main_roomservice_foodservice_frame.grid(row=1, column=0, padx=0, sticky='news')
-        self.main_roomservice_repairingservice_frame.grid(row=1, column=1, padx=0, sticky='news')
-        self.main_roomservice_cleaningservice_frame.grid(row=1, column=2, padx=0, sticky='news')
+        self.main_roomservice_servicetype_label = ctk.CTkLabel(self.main_framebar_roomservice_request, text="Type of Service", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='center')
+        self.main_roomservice_servicetype_label.place(relx=0.65, rely=0.4, anchor='center')
+        self.main_roomservice_servicetype = ctk.CTkOptionMenu(self.main_framebar_roomservice_request, values=['Food and Drink Service','Repairing Service','Cleaning Service'], width=250, height=30, font=ctk.CTkFont('Mona-Sans Bold', 15), corner_radius=30, anchor='center', dropdown_font=ctk.CTkFont('Mona-Sans', 15), fg_color='#292982', text_color='#FFFFFF', button_color='#4646DD', button_hover_color='#3434A6')
+        self.main_roomservice_servicetype.place(relx=0.65, rely=0.55, anchor='center')
 
-        self.main_roomservice_foodservice_label.grid(row=0, column=0, padx=(0,5))
-        self.main_roomservice_repairingservice_label.grid(row=0, column=0, padx=5)
-        self.main_roomservice_cleaningservice_label.grid(row=0, column=0, padx=5)
+        self.main_roomservice_request_button = ctk.CTkButton(self.main_framebar_roomservice_request, text='Request Service', font=ctk.CTkFont('Mona-Sans Bold', 18), text_color='#FFFFFF', fg_color='#4646DD', hover_color='#3434A6', corner_radius=30, width=200, height=35, bg_color='transparent', cursor='hand2')
+        self.main_roomservice_request_button.grid(row=1, column=0, columnspan=2, pady=(80,20), padx=(20,15),sticky='ns')
 
-        self.main_roomservice_foodservice_button.grid(row=2, column=0, padx=(40,40), pady=5, sticky='news')
-        self.main_roomservice_repairingservice_button.grid(row=2, column=1, padx=(40,40), pady=5, sticky='news')
-        self.main_roomservice_cleaningservice_button.grid(row=2, column=2, padx=(40,40), pady=5, sticky='news')
+        self.main_roomservice_foodservice_button = ctk.CTkButton(self.main_framebar_roomservice_menu, corner_radius=50, image=self.foodservice_image, text="", fg_color='#131318', hover_color='#4646DD', cursor='hand2', anchor="center", command=self.foodservice_menu)
+        self.main_roomservice_repairingservice_button = ctk.CTkButton(self.main_framebar_roomservice_menu, corner_radius=50, image=self.repairingservice_image, text="", fg_color='#131318', hover_color='#4646DD', cursor='hand2', anchor="center", command=self.repairingservice_menu)
+        self.main_roomservice_cleaningservice_button = ctk.CTkButton(self.main_framebar_roomservice_menu, corner_radius=50, image=self.cleaningservice_image, text="", fg_color='#131318', hover_color='#4646DD', cursor='hand2', anchor="center", command=self.cleaningservice_menu)
+
+        self.main_roomservice_foodservice_button.grid(row=1, column=0, padx=(10,0), pady=(5,10), sticky='news')
+        self.main_roomservice_repairingservice_button.grid(row=1, column=1, padx=(0,0), pady=(5,10), sticky='news')
+        self.main_roomservice_cleaningservice_button.grid(row=1, column=2, padx=(0,10), pady=(5,10), sticky='news')
 
         # FOOD AND SERVICES WIDGET
 
@@ -1052,7 +1072,7 @@ class App(ctk.CTk):
         self.main_foodservice_drinks_kopi = ctk.CTkButton(self.main_foodservice_drinks_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.drinks_kopi_image, text='')
         self.main_foodservice_drinks_susu = ctk.CTkButton(self.main_foodservice_drinks_frame, cursor='hand2', hover_color='#4646DD', fg_color='transparent',image=self.drinks_susu_image, text='')
 
-        self.main_foodservice_order_title = ctk.CTkButton(self.main_framebar_foodservice_order, corner_radius=25, width=315, height=50, text="Order List", text_color="#D9D9FF",font=ctk.CTkFont('Mona-Sans Bold', 30), fg_color='#191922', bg_color='transparent', hover_color='#191922', border_color='#171720', border_width=5)
+        self.main_foodservice_order_title = ctk.CTkButton(self.main_framebar_foodservice_order, corner_radius=25, width=317.5, height=50, text="Order List", text_color="#D9D9FF",font=ctk.CTkFont('Mona-Sans Bold', 30), fg_color='#191922', bg_color='transparent', hover_color='#191922', border_color='#171720', border_width=5)
         self.main_foodservice_order_roomlist = ctk.CTkOptionMenu(self.main_framebar_foodservice_order, values=['01'], width=100, height=30, font=ctk.CTkFont('Mona-Sans Bold Italic', 15), corner_radius=30, anchor='center')
         roomlist = [
                 '01','02','03','04','05','06','07','08','09','10', 
@@ -1061,7 +1081,8 @@ class App(ctk.CTk):
         ]
         CTkScrollableDropdown(self.main_foodservice_order_roomlist, width=100, values=roomlist)
         self.main_foodservice_order_button = ctk.CTkButton(self.main_framebar_foodservice_order, text='Proceed', font=ctk.CTkFont('Mona-Sans Bold', 25), text_color='#FFFFFF',  fg_color='#4646DD', hover_color='#3434A6', corner_radius=25, width=200, height=50, bg_color='transparent', cursor='hand2')
-    
+
+
         self.main_foodservice_menu_frame.grid(row=0, column=0, padx=(15,15), pady=(15,15), sticky='new')
         self.main_foodservice_appetizer_button.grid(row=0, column=0, padx=(10,5), pady=(10,10), sticky='news')
         self.main_foodservice_maincourse_button.grid(row=0, column=1, padx=(5,5), pady=(10,10), sticky='news')
@@ -1615,36 +1636,161 @@ class App(ctk.CTk):
 
     def checkout_detail(self, roomnumber):
         self.select_frame('checkoutdetail')
-        self.main_checkout_label = ctk.CTkLabel(self.main_frame_checkout_detail, text="Check Out", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='s')
-        self.main_checkout_label.grid(row=0, column=0, pady=(5,5), padx=(77.5,0), sticky='ns')  
-        self.main_checkout_fillform_label = ctk.CTkLabel(self.main_frame_checkout_detail, text='Fill the form below', font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
-        self.main_checkout_fillform_label.place(x=392.5, y=45, anchor='center')
-        self.main_checkout_back =  ctk.CTkButton(self.main_frame_checkout_detail, width=20, height=20, fg_color='transparent', bg_color='transparent', text='', hover_color='#0C0B10', cursor='hand2', image=self.back_image, command=self.checkout_menu)
+        self.main_checkout_label = ctk.CTkLabel(self.main_frame_checkout_detail, text="Check Out", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='sw')
+        self.main_checkout_label.place(x=76.5, y=5)
+        self.main_checkout_fillform_label = ctk.CTkLabel(self.main_frame_checkout_detail, text='Checking out and paying the bills', font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
+        self.main_checkout_fillform_label.place(x=510, y=45, anchor='center')
+        self.main_checkout_back = ctk.CTkButton(self.main_frame_checkout_detail, width=20, height=20, fg_color='transparent', bg_color='transparent', text='', hover_color='#0C0B10', cursor='hand2', image=self.back_image, command=self.checkout_menu)
         self.main_checkout_back.place(x=25, y=33, anchor='center')
-        self.main_checkout_roomtype_label = ctk.CTkLabel(self.main_framebar_checkout_detail, text=f"ROOM NUMBER :   {roomnumber}", font=ctk.CTkFont('Mona-Sans Bold', 30), text_color="#B6B6C6", fg_color='transparent', bg_color='transparent', anchor='w')
-        self.main_checkout_guestid_label = ctk.CTkLabel(self.main_framebar_checkout_detail, text=f'Guest ID  :  {self.guestid}', font=ctk.CTkFont('Mona-Sans Bold', 30), text_color="#B6B6C6", fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_button = ctk.CTkButton(self.main_framebar_checkout_billingdetail, command=lambda room=roomnumber: self.checkout(room), text='Check Out', font=ctk.CTkFont('Mona-Sans Bold', 20), text_color='#FFFFFF', fg_color='#4646DD', hover_color='#3434A6', corner_radius=25, width=180, height=40, bg_color='transparent', cursor='hand2')
+        self.main_checkout_button.place(relx=0.85, rely=0.92, anchor='center')
+        self.main_checkout_roomnumber_label = ctk.CTkLabel(self.main_framebar_checkout_detail, text=f"ROOM NUMBER  :   {roomnumber}", font=ctk.CTkFont('Mona-Sans Bold', 25), text_color="#B6B6C6", fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_guestid_label = ctk.CTkLabel(self.main_framebar_checkout_detail, text=f'Guest ID  :  {self.guestid}', font=ctk.CTkFont('Mona-Sans SemiBold', 25), text_color="#9696A4", fg_color='transparent', bg_color='transparent', anchor='w')
     
-        self.main_checkout_detail_name_label = ctk.CTkLabel(self.main_framebar_checkout_detail, text="", font=ctk.CTkFont('Mona-Sans Bold', 25), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='w')
-        self.main_checkout_detail_nin_label = ctk.CTkLabel(self.main_framebar_checkout_detail, text="", font=ctk.CTkFont('Mona-Sans Bold', 15), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='w')
-        self.main_checkout_detail_email_label = ctk.CTkLabel(self.main_framebar_checkout_detail, text="", font=ctk.CTkFont('Mona-Sans Bold', 15), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='w')
-        
-        self.main_checkout_roomtype_label.grid(row=0, column=0, sticky='news', padx=(35,0), pady=(25,20))
-        self.main_checkout_detail_name_label.grid(row=1, column=0, sticky='news', padx=(35,0), pady=(10,0))
-        self.main_checkout_detail_nin_label.grid(row=2, column=0, sticky='news', padx=(35,0), pady=(10,0))
-        self.main_checkout_detail_email_label.grid(row=3, column=0, sticky='news', padx=(35,0), pady=(10,0))
+        if hasattr(self, 'main_checkout_billingdetail_roomtype'):
+            self.main_checkout_billingdetail_roomtype.grid_forget()
+            self.main_checkout_billingdetail_quantity.grid_forget()
+            self.main_checkout_billingdetail_total.grid_forget()
+            self.main_checkout_billingdetail_items.grid_forget()
+            self.main_checkout_billingdetail_itemprice.grid_forget()
+            self.main_checkout_billingdetail_itemquantity.grid_forget()
+            self.main_checkout_billingdetail_itemtotal.grid_forget()
+            self.main_checkout_billingdetail_subtotal.grid_forget()
+            self.main_checkout_billingdetail_ppn.grid_forget()
+            self.main_checkout_billingdetail_deposit.grid_forget()
+            self.main_checkout_billingdetail_grandtotal.grid_forget()
 
-        self.cursor.execute(f"SELECT first_name, last_name, nin, email FROM guest WHERE room_num = {roomnumber}")
+        self.main_checkout_checkindetail_button = ctk.CTkButton(self.main_framebar_checkout_detail, corner_radius=25, width=180, height=45, text="Check In Detail", font=ctk.CTkFont('Mona-Sans Bold', 30), fg_color='#191922', bg_color='transparent', hover_color='#191922', text_color="#FFFFFF", border_color='#171720', border_width=3)
+        self.main_checkout_checkindetail_button.grid(row=0, column=0, columnspan=2, padx=(20,20), pady=(15,15), sticky='news')
+        self.main_checkout_date_frame = ctk.CTkFrame(self.main_framebar_checkout_detail, corner_radius=25, width=180, height=100, fg_color='#191922', bg_color='transparent', border_color='#171720', border_width=3)
+        self.main_checkout_date_frame.grid(row=9, column=0, sticky='news', padx=(20,20), pady=(30,0))
+        self.main_checkout_date_frame.grid_columnconfigure(0, weight=1)
+
+        self.main_checkout_checkindetail_name_label = ctk.CTkLabel(self.main_framebar_checkout_detail, text="", font=ctk.CTkFont('Mona-Sans Bold', 22), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_checkindetail_age_label = ctk.CTkLabel(self.main_framebar_checkout_detail, text="", font=ctk.CTkFont('Mona-Sans Medium', 14), text_color=("#C3C3D3"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_checkindetail_gender_label = ctk.CTkLabel(self.main_framebar_checkout_detail, text="", font=ctk.CTkFont('Mona-Sans Medium', 14), text_color=("#BBBBCC"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_checkindetail_nin_label = ctk.CTkLabel(self.main_framebar_checkout_detail, text="", font=ctk.CTkFont('Mona-Sans Medium', 14), text_color=("#AEAEBD"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_checkindetail_phonenum_label = ctk.CTkLabel(self.main_framebar_checkout_detail, text="", font=ctk.CTkFont('Mona-Sans Medium', 14), text_color=("#A3A3B1"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_checkindetail_email_label = ctk.CTkLabel(self.main_framebar_checkout_detail, text="", font=ctk.CTkFont('Mona-Sans Medium', 14), text_color=("#9797A5"), fg_color='transparent', bg_color='transparent', anchor='w')
+
+        self.main_checkout_checkindetail_checkindate_label = ctk.CTkLabel(self.main_checkout_date_frame, text="Check In Date", font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='center')
+        self.main_checkout_checkindetail_checkindate_button = ctk.CTkButton(self.main_checkout_date_frame, text="", font=ctk.CTkFont('Mona-Sans Bold Wide Italic', 20), text_color=("#ACAEC3"), fg_color='#242432', border_color='#1E1E2A', hover_color='#242432', border_width=3, anchor="center", corner_radius=30)
+        self.main_checkout_checkindetail_checkoutdate_label = ctk.CTkLabel(self.main_checkout_date_frame, text="Check Out Date", font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='center')
+        self.main_checkout_checkindetail_checkoutdate_button = ctk.CTkButton(self.main_checkout_date_frame, text="", font=ctk.CTkFont('Mona-Sans Bold Wide Italic', 20), text_color=("#9C9EB3"), fg_color='#242432', border_color='#1E1E2A', hover_color='#242432', border_width=3, anchor="center", corner_radius=30)
+        
+        self.main_checkout_roomnumber_label.grid(row=1, column=0, sticky='news', padx=(35,35), pady=(10,0))
+        self.main_checkout_guestid_label.grid(row=2, column=0, sticky='news', padx=(35,35), pady=(0,20))
+        self.main_checkout_checkindetail_name_label.grid(row=3, column=0, sticky='news', padx=(35,50), pady=(20,0))
+        self.main_checkout_checkindetail_age_label.grid(row=4, column=0, sticky='news', padx=(35,50), pady=(0,0))
+        self.main_checkout_checkindetail_gender_label.grid(row=5, column=0, sticky='news', padx=(35,50), pady=(0,0))
+        self.main_checkout_checkindetail_nin_label.grid(row=6, column=0, sticky='news', padx=(35,50), pady=(0,0))
+        self.main_checkout_checkindetail_phonenum_label.grid(row=7, column=0, sticky='news', padx=(35,50), pady=(0,0))
+        self.main_checkout_checkindetail_email_label.grid(row=8, column=0, sticky='news', padx=(35,50), pady=(0,0))
+        
+        self.main_checkout_checkindetail_checkindate_label.grid(row=0, column=0, sticky='news', padx=(15,15), pady=(10,0))
+        self.main_checkout_checkindetail_checkindate_button.grid(row=1, column=0, sticky='news', padx=(15,15), pady=(0,0))
+        self.main_checkout_checkindetail_checkoutdate_label.grid(row=2, column=0, sticky='news', padx=(15,15), pady=(15,0))
+        self.main_checkout_checkindetail_checkoutdate_button.grid(row=3, column=0, sticky='news', padx=(15,15), pady=(0,15))
+
+        self.cursor.execute(f"SELECT first_name, last_name, age, gender, nin, phone_number, email, check_in_date, check_out_date, deposit FROM guest WHERE room_num = {roomnumber}")
         guest_data = self.cursor.fetchone()
 
         if guest_data:
-            first_name, last_name, nin, email = guest_data
-
-            # Menggabungkan first name dan last name
+            first_name, last_name, age, gender, nin, phone_number, email, check_in_date, check_out_date, deposit = guest_data
             full_name = f"{first_name} {last_name}"
 
-            self.main_checkout_detail_name_label.configure(text=full_name)
-            self.main_checkout_detail_nin_label.configure(text=f"NIN\t:    {nin}")
-            self.main_checkout_detail_email_label.configure(text=f"Email\t:    {email}")
+            self.main_checkout_checkindetail_name_label.configure(text=full_name)
+            self.main_checkout_checkindetail_age_label.configure(text=f"Age\t:    {age}")
+            self.main_checkout_checkindetail_gender_label.configure(text=f"Gender\t:    {gender}")
+            self.main_checkout_checkindetail_nin_label.configure(text=f"NIN\t:    {nin}")
+            self.main_checkout_checkindetail_phonenum_label.configure(text=f"Phone\t:    {phone_number}")
+            self.main_checkout_checkindetail_email_label.configure(text=f"Email\t:    {email}")
+            self.main_checkout_checkindetail_checkindate_button.configure(text=check_in_date)
+            self.main_checkout_checkindetail_checkoutdate_button.configure(text=check_out_date)
+        
+        self.main_checkout_billingdetail_frame = ctk.CTkButton(self.main_framebar_checkout_billingdetail, corner_radius=25, width=200, height=45, text="Billing Detail", font=ctk.CTkFont('Mona-Sans Bold', 30), fg_color='#191922', bg_color='transparent', hover_color='#191922', text_color="#FFFFFF", border_color='#171720', border_width=3)
+        self.main_checkout_billingdetail_frame.grid(row=0, column=0, columnspan=4, padx=(20,20), pady=(15,20), sticky='news')
+
+        self.main_checkout_billingdetail_costdetail_label = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text="Cost Details", font=ctk.CTkFont('Mona-Sans Bold', 35), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_costdetail_label.grid(row=1, column=0, columnspan=2, sticky='news', padx=(35,0), pady=(0,0))
+        
+        self.main_checkout_billingdetail_roomtype_label = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text="Room Type", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color=("#D6D7E2"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_orderlist_label = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text="Order List", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color=("#D6D7E2"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_price_label = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text="Price", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color=("#D6D7E2"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_quantity_label = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text="Quantity", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color=("#D6D7E2"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_total_label = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text="Total", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color=("#D6D7E2"), fg_color='transparent', bg_color='transparent', anchor='w')
+        
+        self.main_checkout_billingdetail_roomtype_label.grid(row=2, column=0, sticky='nws', padx=(35,0), pady=(10,0))
+        self.main_checkout_billingdetail_orderlist_label.grid(row=4, column=0, sticky='nws', padx=(35,0), pady=(20,0))
+        self.main_checkout_billingdetail_price_label.grid(row=2, column=1, sticky='nws', padx=(0,0), pady=(20,0))
+        self.main_checkout_billingdetail_quantity_label.grid(row=2, column=2, sticky='nws', padx=(50,60), pady=(20,0))
+        self.main_checkout_billingdetail_total_label.grid(row=2, column=3, sticky='nws', padx=(0,60), pady=(20,0))
+
+
+        if 1 <= roomnumber <= 10:
+            room_type_color = '#FFDC99'
+            room_type_text = 'Single Room'
+            price_per_night = 300000
+        elif 11 <= roomnumber <= 20:
+            room_type_color = '#CE5700'  
+            room_type_text = 'Double Room'
+            price_per_night = 450000
+        elif 21 <= roomnumber <= 26:
+            room_type_color = '#BBCDCA'  
+            room_type_text = 'Suite Room'
+            price_per_night = 550000
+        elif 27 <= roomnumber <= 30:
+            room_type_color = '#FFB800' 
+            room_type_text = 'President Suite Room'
+            price_per_night = 850000
+
+        check_in_date_str = str(check_in_date)
+        check_out_date_str = str(check_out_date)
+
+        check_in_date = datetime.strptime(check_in_date_str, "%Y-%m-%d")
+        check_out_date = datetime.strptime(check_out_date_str, "%Y-%m-%d")
+        quantity = (check_out_date - check_in_date).days
+        total_price = quantity * price_per_night
+        
+        self.main_checkout_billingdetail_roomtype = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text=room_type_text, font=ctk.CTkFont('Mona-Sans SemiBold', 14), text_color=room_type_color, fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_price = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text=f"Rp {price_per_night:,.0f}", font=ctk.CTkFont('Mona-Sans Medium', 14), text_color=("#B3B4BF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_quantity = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text=f"{quantity} Night", font=ctk.CTkFont('Mona-Sans Medium', 14), text_color=("#B3B4BF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_total = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text=f"Rp {total_price:,.0f}", font=ctk.CTkFont('Mona-Sans Medium', 14), text_color=("#B3B4BF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        
+        self.main_checkout_billingdetail_items = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text='-', font=ctk.CTkFont('Mona-Sans SemiBold', 14), text_color='#B3B4BF', fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_itemprice = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text='-', font=ctk.CTkFont('Mona-Sans SemiBold', 14), text_color='#B3B4BF', fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_itemquantity = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text='-', font=ctk.CTkFont('Mona-Sans SemiBold', 14), text_color='#B3B4BF', fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_itemtotal = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text='-', font=ctk.CTkFont('Mona-Sans SemiBold', 14), text_color='#B3B4BF', fg_color='transparent', bg_color='transparent', anchor='w')
+
+        self.main_checkout_billingdetail_roomtype.grid(row=3, column=0, sticky='nws', padx=(35,0), pady=(0,0))
+        self.main_checkout_billingdetail_price.grid(row=3, column=1, sticky='nws', padx=(0,0), pady=(0,0))
+        self.main_checkout_billingdetail_quantity.grid(row=3, column=2, sticky='nws', padx=(50,60), pady=(0,0))
+        self.main_checkout_billingdetail_total.grid(row=3, column=3, sticky='nws', padx=(0,60), pady=(0,0))
+
+        self.main_checkout_billingdetail_items.grid(row=5, column=0, sticky='nws', padx=(35,0), pady=(10,0))
+        self.main_checkout_billingdetail_itemprice.grid(row=5, column=1, sticky='nws', padx=(0,0), pady=(10,0))
+        self.main_checkout_billingdetail_itemquantity.grid(row=5, column=2, sticky='nws', padx=(50,60), pady=(10,0))
+        self.main_checkout_billingdetail_itemtotal.grid(row=5, column=3, sticky='nws', padx=(0,60), pady=(10,0))
+
+        self.main_checkout_billingdetail_subtotal_label = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text="Sub-Total", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color=("#D6D7E2"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_ppn_label = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text="PPn 10%", font=ctk.CTkFont('Mona-Sans Medium', 14), text_color=("#D6D7E2"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_deposit_label = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text="Deposit", font=ctk.CTkFont('Mona-Sans Medium', 14), text_color=("#D6D7E2"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_grandtotal_label = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text="Grand Total", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color=("#D6D7E2"), fg_color='transparent', bg_color='transparent', anchor='w')
+        
+        self.main_checkout_billingdetail_subtotal = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text=f'Rp {total_price:,.0f}', font=ctk.CTkFont('Mona-Sans SemiBold', 17), text_color=("#B3B4BF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_ppn = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text=f"Rp {price_per_night:,.0f}", font=ctk.CTkFont('Mona-Sans Medium', 14), text_color=("#B3B4BF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_deposit = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text=f"Rp {deposit:,.0f}", font=ctk.CTkFont('Mona-Sans Medium', 14), text_color=("#B3B4BF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_checkout_billingdetail_grandtotal = ctk.CTkLabel(self.main_framebar_checkout_billingdetail, text=f"Rp {total_price:,.0f}", font=ctk.CTkFont('Mona-Sans SemiBold', 17), text_color=("#B3B4BF"), fg_color='transparent', bg_color='transparent', anchor='w')
+
+        self.main_checkout_billingdetail_subtotal_label.grid(row=6, column=1, sticky='nws', padx=(0,0), pady=(30,0))
+        self.main_checkout_billingdetail_ppn_label.grid(row=7, column=1, sticky='nws', padx=(0,0), pady=(5,0))
+        self.main_checkout_billingdetail_deposit_label.grid(row=8, column=1, sticky='nws', padx=(0,0), pady=(0,0))
+        self.main_checkout_billingdetail_grandtotal_label.grid(row=9, column=1, sticky='nws', padx=(0,0), pady=(5,0))
+
+        self.main_checkout_billingdetail_subtotal.grid(row=6, column=3, sticky='nws', padx=(0,60), pady=(30,0))
+        self.main_checkout_billingdetail_ppn.grid(row=7, column=3, sticky='nws', padx=(0,60), pady=(5,0))
+        self.main_checkout_billingdetail_deposit.grid(row=8, column=3, sticky='nws', padx=(0,60), pady=(0,0))
+        self.main_checkout_billingdetail_grandtotal.grid(row=9, column=3, sticky='nws', padx=(0,60), pady=(5,0))
 
     def update_room_button(self):
         for data in self.room_status:
@@ -1661,11 +1807,18 @@ class App(ctk.CTk):
                 elif 26 <= int(self.room_id) <= 30:
                     text_color = '#FFB800'
 
-                self.room_checkout_button[self.room_id].configure(state='normal', text=self.room_id, text_color=text_color, font=ctk.CTkFont('Mona-Sans ExtraBold', 45))
+                formatted_room_id = str(self.room_id).zfill(2)
+
+                self.room_checkout_button[self.room_id].configure(state='normal', text=formatted_room_id, text_color=text_color, font=ctk.CTkFont('Mona-Sans ExtraBold', 45))
+
+            elif self.room_id in self.room_button and self.room_id in self.room_checkout_button and self.status == 'Dirty':
+                self.room_button[self.room_id].configure(state='disabled', text='Dirty', font=ctk.CTkFont('Mona-Sans Bold', 25))
+                self.room_checkout_button[self.room_id].configure(state='disabled', text='Dirty', text_color='#FFFFFF', font=ctk.CTkFont('Mona-Sans Bold', 15))
 
             elif self.room_id in self.room_button and self.room_id in self.room_checkout_button:
                 self.room_button[self.room_id].configure(state='normal')
                 self.room_checkout_button[self.room_id].configure(state='disabled', text='Ready', text_color='#FFFFFF', font=ctk.CTkFont('Mona-Sans Bold', 15))
+
         print('Berhasil Update')
 
     def update_room_status(self):
@@ -1675,9 +1828,8 @@ class App(ctk.CTk):
 
             self.ready_rooms = 0
             self.occupied_rooms = 0
-
-            # for data in self.room_status:
-            #     print(data)
+            self.dirty_rooms = 0
+            self.service_rooms = 0
 
             self.room_labels = {
                 1: self.room01_frame_status,
@@ -1766,9 +1918,15 @@ class App(ctk.CTk):
                     self.ready_rooms += 1
                 elif self.status == 'Occupied':
                     self.occupied_rooms += 1
-            
+                elif self.status == 'Dirty':
+                    self.dirty_rooms += 1
+                elif self.status == 'Service':
+                    self.service_rooms += 1
+
             self.main_dashboard_vacantrooms_label.configure(text=f"\n\n                   {self.ready_rooms}")
             self.main_dashboard_occupiedrooms_label.configure(text=f"\n\n                   {self.occupied_rooms}")
+            self.main_dashboard_vacantdirty_label.configure(text=f"\n\n                   {self.dirty_rooms}")
+            self.main_dashboard_requiringservice_label.configure(text=f"\n\n                   {self.service_rooms}")
 
         except Exception as e:
             print(f"Error: {e}")
@@ -1846,7 +2004,54 @@ class App(ctk.CTk):
             return True
         except ValueError:
             return False
+    
+    def checkout(self, roomnumber):
+        try:
+            self.messageboxconfirm = CTkMessagebox(self, title="Check Out Confirmation", font=ctk.CTkFont('Mona-Sans Medium', 14), justify='center',corner_radius=20, text_color='#FFFFFF', title_color='#B6B6C6', sound=True, border_color='#15151F', border_width=4, fg_color='#181823', bg_color='#181823', button_hover_color='#4646DD', button_color=('#181823','#181823'), button_text_color=('#FFFFFF','#FFFFFF'), message="Are you sure want to Check in?", icon='Aset Projek/Question.png', cancel_button='None', icon_size=(80,80), button_height=40, button_width=180, option_focus=1, option_1="Yes", option_2='Cancel', width=450, height=250) 
+            if self.messageboxconfirm.get() == "Yes":
+                self.messagebox = CTkMessagebox(self, title="Success", message="Check Out Successful!",font=ctk.CTkFont('Mona-Sans Medium', 14), corner_radius=20, text_color='#FFFFFF', title_color='#3AE942', sound=True, border_color='#15151F', border_width=4, fg_color='#181823', bg_color='#181823', button_hover_color='#4646DD', button_color=('#181823','#181823'), button_text_color=('#FFFFFF','#FFFFFF'), icon='Aset Projek/Checked.png', cancel_button='None', icon_size=(70,70), option_focus=1, option_1="Ok", width=400, height=225)    
+                
+                self.cursor.execute(f"UPDATE kamar SET status='Dirty' WHERE id=%s", (roomnumber,))
+                
+                self.room_indicator[self.room_id].after(1000, self.update_room_status)
+                self.room_labels[self.room_id].after(1000, self.update_room_status)
+                self.room_button[self.room_id].after(1000, self.update_room_button)
+                
+                self.conn.commit()    
+                print('Berhasil Checkout')
+                
+                if self.messagebox.get() == "Ok":   
+                    self.select_frame('checkout')
+                    
+            if self.messageboxconfirm.get() == "Cancel":
+                pass
 
+        except Exception as es:
+                print(f'Gagal: {es}')
+
+    def servicerequest(self, roomnumber):
+        try:
+            self.messageboxconfirm = CTkMessagebox(self, title="Service Request Confirmation", font=ctk.CTkFont('Mona-Sans Medium', 14), justify='center',corner_radius=20, text_color='#FFFFFF', title_color='#B6B6C6', sound=True, border_color='#15151F', border_width=4, fg_color='#181823', bg_color='#181823', button_hover_color='#4646DD', button_color=('#181823','#181823'), button_text_color=('#FFFFFF','#FFFFFF'), message="Are you sure want to request a Service?", icon='Aset Projek/Question.png', cancel_button='None', icon_size=(80,80), button_height=40, button_width=180, option_focus=1, option_1="Yes", option_2='Cancel', width=450, height=250) 
+            if self.messageboxconfirm.get() == "Yes":
+                self.messagebox = CTkMessagebox(self, title="Success", message="Requesting service Successful!",font=ctk.CTkFont('Mona-Sans Medium', 14), corner_radius=20, text_color='#FFFFFF', title_color='#3AE942', sound=True, border_color='#15151F', border_width=4, fg_color='#181823', bg_color='#181823', button_hover_color='#4646DD', button_color=('#181823','#181823'), button_text_color=('#FFFFFF','#FFFFFF'), icon='Aset Projek/Checked.png', cancel_button='None', icon_size=(70,70), option_focus=1, option_1="Ok", width=400, height=225)    
+                
+                self.cursor.execute(f"UPDATE kamar SET status='Service' WHERE id=%s", (roomnumber,))
+                
+                self.room_indicator[self.room_id].after(1000, self.update_room_status)
+                self.room_labels[self.room_id].after(1000, self.update_room_status)
+                self.room_button[self.room_id].after(1000, self.update_room_button)
+                
+                self.conn.commit()    
+                print('Berhasil Requesting Service')
+                
+                if self.messagebox.get() == "Ok":   
+                    pass
+                    
+            if self.messageboxconfirm.get() == "Cancel":
+                pass
+
+        except Exception as es:
+                print(f'Gagal: {es}')
 
     def profile_menu(self):
         self.profile_frame = ctk.CTkFrame(self, width=180, height=140, fg_color='#242531', bg_color='#1E1F29', border_width=7, border_color='#1E1F29', corner_radius=20)
