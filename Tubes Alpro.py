@@ -155,7 +155,9 @@ class App(ctk.CTk):
         self.main_framebar_foodservice_menu = ctk.CTkFrame(self.main_frame_foodservice, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_framebar_foodservice_order = ctk.CTkFrame(self.main_frame_foodservice, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_frame_repairingservice = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
+        self.main_framebar_repairingservice = ctk.CTkFrame(self.main_frame_repairingservice, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_frame_cleaningservice = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
+        self.main_framebar_cleaningservice = ctk.CTkFrame(self.main_frame_cleaningservice, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_frame_about = ctk.CTkFrame(self, fg_color="#0C0B10", bg_color='#0C0B10', corner_radius=15)
         self.main_frame_dashboard_roomstatus = ctk.CTkFrame(self.main_frame_dashboard, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
         self.main_scrollframe_dashboard_roomstatus = ctk.CTkScrollableFrame(self.main_frame_dashboard_roomstatus, width=1150, corner_radius=20, height=30, fg_color='#191922', bg_color='transparent', scrollbar_button_color='#9599C8', scrollbar_button_hover_color='#636685', scrollbar_fg_color='#242531', border_color='#171720', border_width=5)
@@ -181,7 +183,7 @@ class App(ctk.CTk):
         self.main_framebar_checkin_doubleroom.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=10, pady=(0,0), sticky='news')
         self.main_framebar_checkin_suiteroom.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=10, pady=(0,0), sticky='news')
         self.main_framebar_checkin_presidentsuiteroom.grid(row=1, column=0, columnspan=10, padx=(10,10), ipady=10, pady=(0,0), sticky='news')
-        self.main_framebar_checkout.grid(row=1, column=0, padx=(10,35), pady=(5,60), sticky='news')
+        self.main_framebar_checkout.grid(row=1, column=0, padx=(10,35), pady=(5,100), sticky='news')
         self.main_frame_checkout_detail.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
         self.main_framebar_checkout_detail.grid(row=0, column=0, padx=(10,0), pady=(70,30), sticky='news')
         self.main_framebar_checkout_billingdetail.grid(row=0, column=1, padx=(20,30), pady=(70,30), sticky='news')
@@ -206,11 +208,17 @@ class App(ctk.CTk):
         self.main_framebar_roomservice_menu.grid(row=0, column=0, padx=(10,35), pady=(70,25), sticky='news')
         self.main_frame_foodservice.grid(row=1, column=1, rowspan=3, padx=0, pady=0, sticky='news')
         self.main_frame_foodservice.grid_rowconfigure(1, weight=1)         
-        self.main_framebar_foodservice_menu.grid(row=1, column=0, padx=(10,10), pady=(0,22.5), sticky='news')        
-        self.main_framebar_foodservice_order.grid(row=1, column=1, padx=(20,10), pady=(0,22.5), sticky='news')  
+        self.main_framebar_foodservice_menu.grid(row=1, column=0, padx=(10,25), pady=(0,22.5), sticky='news')        
+        self.main_framebar_foodservice_order.grid(row=1, column=1, padx=(0,0), pady=(0,22.5), sticky='nws')  
         self.main_framebar_foodservice_order.grid_rowconfigure(2, weight=1)      
-        self.main_frame_repairingservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')        
+        self.main_frame_repairingservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
+        self.main_frame_repairingservice.grid_columnconfigure(0, weight=1)
+        self.main_framebar_repairingservice.grid(row=1, column=0, padx=(10,35), pady=(0,0), sticky='news')
+        self.main_framebar_repairingservice.grid_columnconfigure(0, weight=1)
         self.main_frame_cleaningservice.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')        
+        self.main_frame_cleaningservice.grid_columnconfigure(0, weight=1)
+        self.main_framebar_cleaningservice.grid(row=1, column=0, padx=(10,35), pady=(0,0), sticky='news')
+        self.main_framebar_cleaningservice.grid_columnconfigure(0, weight=1)
         self.main_frame_about.grid(row=1, column=1, rowspan=3, ipady=320, padx=0, pady=0, sticky='news')
         self.main_frame_dashboard_roomstatus.grid(row=2, column=0, rowspan=1, columnspan=4, padx=(9,37), pady=5, ipady=10, sticky='news')
         self.main_scrollframe_dashboard_roomstatus.grid(row=1, column=0, columnspan=10, padx=(17.5,10), ipady=15, sticky='news')
@@ -662,7 +670,6 @@ class App(ctk.CTk):
         self.room19_button.grid(row=2, column=3, padx=(0,15), pady=(15,0), sticky='news')
         self.room20_button.grid(row=2, column=4, padx=(0,20), pady=(15,0), sticky='news')
 
-
         # CHECK IN SUITE ROOM WIDGET
 
         self.main_checkin_heading_label = ctk.CTkLabel(self.main_frame_checkin_suiteroom, text="Check In", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='s')
@@ -712,14 +719,12 @@ class App(ctk.CTk):
         self.room29_button.grid(row=1, column=2, padx=(0,15), pady=(15,0), sticky='news')
         self.room30_button.grid(row=1, column=3, padx=(0,20), pady=(15,0), sticky='news')
         
-        
         self.cursor.execute("SELECT MAX(id) FROM guest")
         max_guest_id = self.cursor.fetchone()[0]
         if max_guest_id is not None:
             self.guestid = max_guest_id + 1
         else:
             self.guestid = 1
-
 
        # CHECK OUT WIDGET
 
@@ -884,7 +889,7 @@ class App(ctk.CTk):
             elif self.room_id in self.room_button and self.room_id in self.room_checkout_button and self.status == 'Service':
                 formatted_room_id = str(self.room_id).zfill(2)
                 self.room_button[self.room_id].configure(state='disabled', text='Unavailable', font=ctk.CTkFont('Mona-Sans Bold', 25))
-                self.room_checkout_button[self.room_id].configure(state='normal', text=formatted_room_id, text_color=text_color, font=ctk.CTkFont('Mona-Sans ExtraBold', 45))
+                self.room_checkout_button[self.room_id].configure(state='normal', text=formatted_room_id, font=ctk.CTkFont('Mona-Sans ExtraBold', 45))
 
             elif self.room_id in self.room_button and self.room_id in self.room_checkout_button:
                 self.room_button[self.room_id].configure(state='normal')
@@ -897,52 +902,84 @@ class App(ctk.CTk):
         self.main_guestlist_desc_label =  ctk.CTkLabel(self.main_frame_guestlist, text='List of guests currently staying', font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
         self.main_guestlist_desc_label.place(x=430, y=45, anchor='center')
 
-        self.guest_list = [
-            ["Room Number", "Room Type", "Guest Name", "Check In Date", 'Check Out Date',"Status"],
-            ['01', 'Single','','','','Ready'],  
-            ['02', 'Single','','','','Ready'],
-            ['03', 'Single','','','','Ready'],
-            ['04', 'Single','','','','Ready'],
-            ['05', 'Single','','','','Ready'],
-            ['06', 'Single','','','','Ready'],
-            ['07', 'Single','','','','Ready'],
-            ['08', 'Single','','','','Ready'],        
-            ['09', 'Single','','','','Ready'],        
-            ['10', 'Single','','','','Ready'],        
-            ['11', 'Double','','','','Ready'],        
-            ['12', 'Double','','','','Ready'],        
-            ['13', 'Double','','','','Ready'],        
-            ['14', 'Double','','','','Ready'],        
-            ['15', 'Double','','','','Ready'],        
-            ['16', 'Double','','','','Ready'],        
-            ['17', 'Double','','','','Ready'],        
-            ['18', 'Double','','','','Ready'],        
-            ['19', 'Double','','','','Ready'],        
-            ['20', 'Double','','','','Ready'],        
-            ['21', 'Suite','','','','Ready'],        
-            ['22', 'Suite','','','','Ready'],        
-            ['23', 'Suite','','','','Ready'],        
-            ['24', 'Suite','','','','Ready'],        
-            ['25', 'Suite','','','','Ready'],        
-            ['26', 'Suite','','','','Ready'],        
-            ['27', 'President Suite','','','','Ready'],        
-            ['28', 'President Suite','','','','Ready'],        
-            ['29', 'President Suite','','','','Ready'],        
-            ['30', 'President Suite','','','','Ready'],        
-        ]
+        self.cursor.execute("SELECT id, status FROM kamar")
+        room_statuses = self.cursor.fetchall()
 
+        self.cursor.execute("SELECT room_num, first_name, last_name, check_in_date, check_out_date, guest_note FROM guest")
+        self.guest_datas = self.cursor.fetchall()
+
+        self.guest_list = [
+            ["Room Number", "Room Type", "Guest Name", "Check In Date", 'Check Out Date',"Status",'Guest Note'],
+            ['01', 'Single','','','','Ready',''],  
+            ['02', 'Single','','','','Ready',''],
+            ['03', 'Single','','','','Ready',''],
+            ['04', 'Single','','','','Ready',''],
+            ['05', 'Single','','','','Ready',''],
+            ['06', 'Single','','','','Ready',''],
+            ['07', 'Single','','','','Ready',''],
+            ['08', 'Single','','','','Ready',''],        
+            ['09', 'Single','','','','Ready',''],        
+            ['10', 'Single','','','','Ready',''],        
+            ['11', 'Double','','','','Ready',''],        
+            ['12', 'Double','','','','Ready',''],        
+            ['13', 'Double','','','','Ready',''],        
+            ['14', 'Double','','','','Ready',''],        
+            ['15', 'Double','','','','Ready',''],        
+            ['16', 'Double','','','','Ready',''],        
+            ['17', 'Double','','','','Ready',''],        
+            ['18', 'Double','','','','Ready',''],        
+            ['19', 'Double','','','','Ready',''],        
+            ['20', 'Double','','','','Ready',''],        
+            ['21', 'Suite','','','','Ready',''],        
+            ['22', 'Suite','','','','Ready',''],        
+            ['23', 'Suite','','','','Ready',''],        
+            ['24', 'Suite','','','','Ready',''],        
+            ['25', 'Suite','','','','Ready',''],        
+            ['26', 'Suite','','','','Ready',''],        
+            ['27', 'President Suite','','','','Ready',''],        
+            ['28', 'President Suite','','','','Ready',''],        
+            ['29', 'President Suite','','','','Ready',''],        
+            ['30', 'President Suite','','','','Ready',''],        
+        ]
+    
         self.main_guestlist_scrollableframe = CTkXYFrame(self.main_framebar_guestlist, scrollbar_fg_color='transparent', fg_color="#131318", scrollbar_button_color='#4646DD', scrollbar_button_hover_color='#3434A6')
         self.main_guestlist_scrollableframe.pack(fill="both", expand=True, padx=20, pady=20)
-        self.main_guestlist_table = CTkTable(self.main_guestlist_scrollableframe, font=ctk.CTkFont('Mona-Sans Bold', 14), values=self.guest_list, header_color='#4646DD', colors=['#131318', '#15151B'], border_color='#101016', corner_radius=0, border_width=2, color_phase='horizontal', wraplength=200)
+        self.main_guestlist_table = CTkTable(self.main_guestlist_scrollableframe, font=ctk.CTkFont('Mona-Sans Medium', 13), values=self.guest_list, header_color='#4646DD', colors=['#131318', '#15151B'], border_color='#101016', corner_radius=0, border_width=2, color_phase='horizontal', wraplength=550)
         self.main_guestlist_table.pack(expand=True)
-        self.main_guestlist_table.edit_column(0, width=130)
+        self.main_guestlist_table.edit_column(0, width=110)
         self.main_guestlist_table.edit_column(1, width=150)
         self.main_guestlist_table.edit_column(2, width=400)
-        self.main_guestlist_table.edit_column(3, width=150)
-        self.main_guestlist_table.edit_column(4, width=150)
-        self.main_guestlist_table.edit_column(5, width=200)
+        self.main_guestlist_table.edit_column(3, width=110)
+        self.main_guestlist_table.edit_column(4, width=120)
+        self.main_guestlist_table.edit_column(5, width=130)
+        self.main_guestlist_table.edit_column(6, width=550)
         
-        # GUEST HISTORY WIDGET
+
+        for guest_data in self.guest_datas:
+            room_num = guest_data[0]
+            guest_full_name = f"{guest_data[1]} {guest_data[2]}"
+            check_in_date = guest_data[3]
+            check_out_date = guest_data[4]
+            guest_note = guest_data[5]
+
+            self.main_guestlist_table.insert(room_num, 2, guest_full_name)
+            self.main_guestlist_table.insert(room_num, 3, check_in_date)
+            self.main_guestlist_table.insert(room_num, 4, check_out_date)
+            self.main_guestlist_table.insert(room_num, 6, guest_note)
+            
+        for room_status in room_statuses:
+            room_number = room_status[0]
+            self.statuses = room_status[1]
+
+            self.main_guestlist_table.insert(room_number, 5, self.statuses)
+
+            if self.statuses == 'Dirty':
+                self.main_guestlist_table.delete(room_number, 2)    
+                self.main_guestlist_table.delete(room_number, 3)    
+                self.main_guestlist_table.delete(room_number, 4)    
+                self.main_guestlist_table.delete(room_number, 6)  
+        
+          
 
         self.main_guesthistory_heading_label = ctk.CTkLabel(self.main_frame_guesthistory, text="Guest History", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='sw')
         self.main_guesthistory_heading_label.grid(row=0, column=0, rowspan=1, pady=(5,0), padx=(20,100), sticky='news')
@@ -954,30 +991,26 @@ class App(ctk.CTk):
 
         self.guest_history = [['Guest ID', 'Room Number', 'Guest Name', 'Age', 'Gender', 'NIN',
                         'Mobile Phone Number', 'Email', 'Address', 'Check In Date', 'Check Out Date']]
-
+        
         for row in rows:
-            guest_name = f"{row[2]} {row[3]}"  # Assuming that first_name is at index 2 and last_name is at index 3
-    
-            # Append values to guest_history
+            guest_name = f"{row[2]} {row[3]}"
             self.guest_history.append([
-                row[0],  # Assuming that guest_id is at index 0
-                row[1],  # Assuming that room_num is at index 1
+                row[0],  
+                row[1],  
                 guest_name,
-                row[4],  # Assuming that age is at index 4
-                row[5],  # Assuming that gender is at index 5
-                row[6],  # Assuming that nin is at index 6
-                row[7],  # Assuming that phone_number is at index 7
-                row[8],  # Assuming that email is at index 8
-                row[9],  # Assuming that address is at index 9
-                row[10],  # Assuming that check_in_date is at index 10
-                row[11]   # Assuming that check_out_date is at index 11
-            ])
-
+                row[4], 
+                row[5],  
+                row[6],  
+                row[7],  
+                row[8],  
+                row[9],  
+                row[10],  
+                row[11]
+        ])
     
-
         self.main_guesthistory_scrollableframe = CTkXYFrame(self.main_framebar_guesthistory, scrollbar_fg_color='transparent', fg_color="#131318", scrollbar_button_color='#4646DD', scrollbar_button_hover_color='#3434A6')
         self.main_guesthistory_scrollableframe.pack(fill="both", expand=True, padx=20, pady=20)
-        self.main_guesthistory_table = CTkTable(self.main_guesthistory_scrollableframe, font=ctk.CTkFont('Mona-Sans Bold', 14), values=self.guest_history, header_color='#4646DD', colors=['#131318', '#15151B'], border_color='#101016', corner_radius=0, border_width=2, color_phase='horizontal', wraplength=350)
+        self.main_guesthistory_table = CTkTable(self.main_guesthistory_scrollableframe, font=ctk.CTkFont('Mona-Sans Medium', 13), values=self.guest_history, header_color='#4646DD', colors=['#131318', '#15151B'], border_color='#101016', corner_radius=0, border_width=2, color_phase='horizontal', wraplength=350)
         self.main_guesthistory_table.pack(expand=True)
         self.main_guesthistory_table.edit_column(0, width=80)
         self.main_guesthistory_table.edit_column(1, width=120)
@@ -1018,7 +1051,7 @@ class App(ctk.CTk):
         CTkScrollableDropdown(self.main_roomservice_roomoption, width=100, double_click=False, resize=False, y=-250, values=self.roomlist, fg_color='#242531', frame_border_color='#1E1F29', frame_border_width=3, alpha=1, frame_corner_radius=25, button_color='#4646DD', hover_color='#3434A6', scrollbar_button_color='#4646DD', scrollbar_button_hover_color='#3434A6')
         
         self.main_roomservice_request_button = ctk.CTkButton(self.main_framebar_roomservice_request, command=lambda: self.servicerequest(self.main_roomservice_roomoption.get(), self.main_roomservice_servicetype.get()),text='Request Service', font=ctk.CTkFont('Mona-Sans Bold', 18), text_color='#FFFFFF', fg_color='#4646DD', hover_color='#3434A6', corner_radius=30, width=200, height=35, bg_color='transparent', cursor='hand2')
-        self.main_roomservice_request_button.grid(row=1, column=0, columnspan=2, pady=(80,20), padx=(20,15),sticky='ns')
+        self.main_roomservice_request_button.grid(row=1, column=0, columnspan=2, pady=(90,20), padx=(20,15),sticky='ns')
 
         self.main_roomservice_foodservice_button = ctk.CTkButton(self.main_framebar_roomservice_menu, corner_radius=50, image=self.foodservice_image, text="", fg_color='#131318', hover_color='#4646DD', cursor='hand2', anchor="center", command=self.foodservice_menu)
         self.main_roomservice_repairingservice_button = ctk.CTkButton(self.main_framebar_roomservice_menu, corner_radius=50, image=self.repairingservice_image, text="", fg_color='#131318', hover_color='#4646DD', cursor='hand2', anchor="center", command=self.repairingservice_menu)
@@ -1028,7 +1061,7 @@ class App(ctk.CTk):
         self.main_roomservice_repairingservice_button.grid(row=1, column=1, padx=(0,0), pady=(5,10), sticky='news')
         self.main_roomservice_cleaningservice_button.grid(row=1, column=2, padx=(0,10), pady=(5,10), sticky='news')
 
-        # FOOD AND SERVICES WIDGET
+        # FOOD AND DRINKS SERVICES WIDGET
 
         self.main_foodservice_heading_label = ctk.CTkLabel(self.main_frame_foodservice, text="Food & Drink Services", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='sw')
         self.main_foodservice_heading_label.grid(row=0, column=0, pady=(5,5), padx=(80,0), sticky='news')
@@ -1047,32 +1080,32 @@ class App(ctk.CTk):
         self.main_foodservice_dessert_frame = ctk.CTkFrame(self.main_framebar_foodservice_menu, corner_radius=20, fg_color='#191922', bg_color='transparent' , border_color='#171720', border_width=5)
         self.main_foodservice_drinks_frame = ctk.CTkFrame(self.main_framebar_foodservice_menu, corner_radius=20, fg_color='#191922', bg_color='transparent' , border_color='#171720', border_width=5)
 
-        self.main_foodservice_appetizer_cireng = self.create_button(self.main_foodservice_appetizer_frame, 'Cireng', self.appetizer_cireng_image, 0, 0)
-        self.main_foodservice_appetizer_risoles = self.create_button(self.main_foodservice_appetizer_frame, 'Risoles', self.appetizer_risoles_image, 0, 1)
-        self.main_foodservice_appetizer_tahuisi = self.create_button(self.main_foodservice_appetizer_frame, 'Tahu Isi', self.appetizer_tahuisi_image, 0, 2)
-        self.main_foodservice_appetizer_tempemendoan = self.create_button(self.main_foodservice_appetizer_frame, 'Tempe Mendoan', self.appetizer_tempemendoan_image, 0, 3)
-        self.main_foodservice_appetizer_kroketkentang = self.create_button(self.main_foodservice_appetizer_frame, 'Kroket Kentang', self.appetizer_kroketkentang_image, 1, 0)
+        self.main_foodservice_appetizer_cireng = self.create_button(self.main_foodservice_appetizer_frame, 'Cireng', self.appetizer_cireng_image, 0, 0, 17.5, 0, 20, 0)
+        self.main_foodservice_appetizer_risoles = self.create_button(self.main_foodservice_appetizer_frame, 'Risoles', self.appetizer_risoles_image, 0, 1, 0, 0, 20, 0)
+        self.main_foodservice_appetizer_tahuisi = self.create_button(self.main_foodservice_appetizer_frame, 'Tahu Isi', self.appetizer_tahuisi_image, 0, 2, 0, 0, 20, 0)
+        self.main_foodservice_appetizer_tempemendoan = self.create_button(self.main_foodservice_appetizer_frame, 'Tempe Mendoan', self.appetizer_tempemendoan_image, 0, 3, 0, 0, 20, 0)
+        self.main_foodservice_appetizer_kroketkentang = self.create_button(self.main_foodservice_appetizer_frame, 'Kroket Kentang', self.appetizer_kroketkentang_image, 1, 0, 17.5, 0, 10, 0)
 
-        self.main_foodservice_maincourse_ayambetutu = self.create_button(self.main_foodservice_maincourse_frame, 'Ayam Betutu', self.maincourse_ayambetutu_image, 0, 0)
-        self.main_foodservice_maincourse_ayamsambalmatah = self.create_button(self.main_foodservice_maincourse_frame, 'Ayam Sambal Matah', self.maincourse_ayamsambalmatah_image, 0, 1)
-        self.main_foodservice_maincourse_ayamtaliwang = self.create_button(self.main_foodservice_maincourse_frame, 'Ayam Taliwang', self.maincourse_ayamtaliwang_image, 0, 2)
-        self.main_foodservice_maincourse_miegoreng = self.create_button(self.main_foodservice_maincourse_frame, 'Mie Goreng', self.maincourse_miegoreng_image, 0, 3)
-        self.main_foodservice_maincourse_nasigoreng = self.create_button(self.main_foodservice_maincourse_frame, 'Nasi Goreng', self.maincourse_nasigoreng_image, 1, 0)
-        self.main_foodservice_maincourse_sateayam = self.create_button(self.main_foodservice_maincourse_frame, 'Sate Ayam', self.maincourse_sateayam_image, 1, 1)
-        self.main_foodservice_maincourse_sopbuntut = self.create_button(self.main_foodservice_maincourse_frame, 'Sop Buntut', self.maincourse_sopbuntut_image, 1, 2)
+        self.main_foodservice_maincourse_ayambetutu = self.create_button(self.main_foodservice_maincourse_frame, 'Ayam Betutu', self.maincourse_ayambetutu_image, 0, 0, 17.5, 0, 20 ,0)
+        self.main_foodservice_maincourse_ayamsambalmatah = self.create_button(self.main_foodservice_maincourse_frame, 'Ayam Sambal Matah', self.maincourse_ayamsambalmatah_image, 0, 1, 0, 0, 20, 0)
+        self.main_foodservice_maincourse_ayamtaliwang = self.create_button(self.main_foodservice_maincourse_frame, 'Ayam Taliwang', self.maincourse_ayamtaliwang_image, 0, 2, 0, 0, 20, 0)
+        self.main_foodservice_maincourse_miegoreng = self.create_button(self.main_foodservice_maincourse_frame, 'Mie Goreng', self.maincourse_miegoreng_image, 0, 3, 0, 0, 20, 0)
+        self.main_foodservice_maincourse_nasigoreng = self.create_button(self.main_foodservice_maincourse_frame, 'Nasi Goreng', self.maincourse_nasigoreng_image, 1, 0, 17.5, 0, 10, 0)
+        self.main_foodservice_maincourse_sateayam = self.create_button(self.main_foodservice_maincourse_frame, 'Sate Ayam', self.maincourse_sateayam_image, 1, 1, 0, 0, 10, 0)
+        self.main_foodservice_maincourse_sopbuntut = self.create_button(self.main_foodservice_maincourse_frame, 'Sop Buntut', self.maincourse_sopbuntut_image, 1, 2, 0, 0, 10, 0)
 
-        self.main_foodservice_dessert_escampur = self.create_button(self.main_foodservice_dessert_frame, 'Es Campur', self.dessert_escampur_image, 0, 0)
-        self.main_foodservice_dessert_esdawet = self.create_button(self.main_foodservice_dessert_frame, 'Es Dawet', self.dessert_esdawet_image, 0, 1)
-        self.main_foodservice_dessert_espisangijo = self.create_button(self.main_foodservice_dessert_frame, 'Es Pisang Ijo', self.dessert_espisangijo_image, 0, 2)
-        self.main_foodservice_dessert_klepon = self.create_button(self.main_foodservice_dessert_frame, 'Klepon', self.dessert_klepon_image, 0, 3)
-        self.main_foodservice_dessert_pisangkeju = self.create_button(self.main_foodservice_dessert_frame, 'Pisang Keju', self.dessert_pisangkeju_image, 1, 1)
+        self.main_foodservice_dessert_escampur = self.create_button(self.main_foodservice_dessert_frame, 'Es Campur', self.dessert_escampur_image, 0, 0, 17.5, 0, 20, 0)
+        self.main_foodservice_dessert_esdawet = self.create_button(self.main_foodservice_dessert_frame, 'Es Dawet', self.dessert_esdawet_image, 0, 1, 0, 0, 20, 0)
+        self.main_foodservice_dessert_espisangijo = self.create_button(self.main_foodservice_dessert_frame, 'Es Pisang Ijo', self.dessert_espisangijo_image, 0, 2, 0, 0, 20, 0)
+        self.main_foodservice_dessert_klepon = self.create_button(self.main_foodservice_dessert_frame, 'Klepon', self.dessert_klepon_image, 0, 3, 0, 0, 20, 0)
+        self.main_foodservice_dessert_pisangkeju = self.create_button(self.main_foodservice_dessert_frame, 'Pisang Keju', self.dessert_pisangkeju_image, 1, 0, 17.5, 0, 10, 0)
 
-        self.main_foodservice_drinks_esjeruk = self.create_button(self.main_foodservice_drinks_frame, 'Es Jeruk', self.drinks_esjeruk_image, 0, 0)
-        self.main_foodservice_drinks_eskelapa = self.create_button(self.main_foodservice_drinks_frame, 'Es Kelapa', self.drinks_eskelapa_image, 0, 1)
-        self.main_foodservice_drinks_esteh = self.create_button(self.main_foodservice_drinks_frame, 'Es Teh', self.drinks_esteh_image, 0, 2)
-        self.main_foodservice_drinks_kopi = self.create_button(self.main_foodservice_drinks_frame, 'Kopi', self.drinks_kopi_image, 0, 3)
-        self.main_foodservice_drinks_susu = self.create_button(self.main_foodservice_drinks_frame, 'Susu', self.drinks_susu_image, 1, 0)
-
+        self.main_foodservice_drinks_esjeruk = self.create_button(self.main_foodservice_drinks_frame, 'Es Jeruk', self.drinks_esjeruk_image, 0, 0, 17.5, 0, 20, 0)
+        self.main_foodservice_drinks_eskelapa = self.create_button(self.main_foodservice_drinks_frame, 'Es Kelapa', self.drinks_eskelapa_image, 0, 1, 0, 0, 20, 0)
+        self.main_foodservice_drinks_esteh = self.create_button(self.main_foodservice_drinks_frame, 'Es Teh', self.drinks_esteh_image, 0, 2, 0, 0, 20, 0)
+        self.main_foodservice_drinks_kopi = self.create_button(self.main_foodservice_drinks_frame, 'Kopi', self.drinks_kopi_image, 0, 3, 0, 0, 20, 0)
+        self.main_foodservice_drinks_susu = self.create_button(self.main_foodservice_drinks_frame, 'Susu', self.drinks_susu_image, 1, 0, 17.5, 0, 10, 0)    
+        
         self.main_foodservice_order_title = ctk.CTkButton(self.main_framebar_foodservice_order, corner_radius=25, width=317.5, height=50, text="Order List", text_color="#D9D9FF",font=ctk.CTkFont('Mona-Sans Bold', 30), fg_color='#191922', bg_color='transparent', hover_color='#191922', border_color='#171720', border_width=5)
         self.main_foodservice_order_roomlist_label = ctk.CTkLabel(self.main_framebar_foodservice_order, text="ROOM NUMBER  :", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color="#B6B6C6", fg_color='transparent', bg_color='transparent', anchor='w')
         self.main_foodservice_order_roomlist = ctk.CTkOptionMenu(self.main_framebar_foodservice_order, values=[''], width=100, height=25, font=ctk.CTkFont('Mona-Sans Bold', 20), corner_radius=30, anchor='center', dropdown_font=ctk.CTkFont('Mona-Sans', 15), fg_color='#292982', text_color='#FFFFFF', button_color='#4646DD', button_hover_color='#3434A6')
@@ -1080,14 +1113,14 @@ class App(ctk.CTk):
         CTkScrollableDropdown(self.main_foodservice_order_roomlist, width=100, values=foodserviceroom)
         self.main_foodservice_order_button = ctk.CTkButton(self.main_framebar_foodservice_order, text='Proceed', font=ctk.CTkFont('Mona-Sans Bold', 25), text_color='#FFFFFF',  fg_color='#4646DD', hover_color='#3434A6', corner_radius=25, width=200, height=50, bg_color='transparent', cursor='hand2')
         self.main_foodservice_order_frame = ctk.CTkFrame(self.main_framebar_foodservice_order, fg_color='#191922', border_color='#171720', border_width=5, corner_radius=20)
-        self.main_foodservice_order_scrollableframe = CTkXYFrame(self.main_foodservice_order_frame, scrollbar_button_color='#4646DD', scrollbar_button_hover_color='#3434A6', scrollbar_fg_color='transparent', fg_color='#191922') 
-        self.main_foodservice_order_scrollableframe.pack(fill="both", expand=True, padx=20, pady=20)
+        self.main_foodservice_order_scrollableframe = ctk.CTkScrollableFrame(self.main_foodservice_order_frame, scrollbar_button_color='#4646DD', scrollbar_button_hover_color='#3434A6', scrollbar_fg_color='transparent', fg_color='#191922') 
+        self.main_foodservice_order_scrollableframe.pack(fill="both", expand=True, padx=(15,15), pady=20)
 
         self.main_foodservice_orderlist_product_label = ctk.CTkLabel(self.main_foodservice_order_scrollableframe, text="Product", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color=("#D6D7E2"), fg_color='transparent', bg_color='transparent', anchor='w')
-        self.main_foodservice_orderlist_quantity_label = ctk.CTkLabel(self.main_foodservice_order_scrollableframe, text="Quantity", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color=("#D6D7E2"), fg_color='transparent', bg_color='transparent', anchor='center')
+        self.main_foodservice_orderlist_quantity_label = ctk.CTkLabel(self.main_foodservice_order_scrollableframe, text="Quantity", font=ctk.CTkFont('Mona-Sans Bold', 20), text_color=("#D6D7E2"), fg_color='transparent', bg_color='transparent', anchor='w')
 
-        self.main_foodservice_orderlist_product_label.grid(row=0, column=0, padx=(0,0), sticky='nws')
-        self.main_foodservice_orderlist_quantity_label.grid(row=0, column=1, padx=(100,40), sticky='news')
+        self.main_foodservice_orderlist_product_label.grid(row=0, column=0, padx=(0,90), sticky='nws')
+        self.main_foodservice_orderlist_quantity_label.grid(row=0, column=1, padx=(0,0), sticky='news')
 
         self.orders = []
 
@@ -1101,71 +1134,88 @@ class App(ctk.CTk):
         self.main_foodservice_dessert_frame.grid(row=1, column=0, padx=(20,20), pady=(0,20), ipady=75, sticky='news')
         self.main_foodservice_drinks_frame.grid(row=1, column=0, padx=(20,20), pady=(0,20), ipady=75, sticky='news')
 
-        self.main_foodservice_appetizer_cireng.grid(row=0, column=0, padx=(17.5,0), pady=(20,0), sticky='news')
-        self.main_foodservice_appetizer_risoles.grid(row=0, column=1, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_appetizer_tahuisi.grid(row=0, column=2, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_appetizer_tempemendoan.grid(row=0, column=3, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_appetizer_kroketkentang.grid(row=1, column=0, padx=(17.5,0), pady=(10,0), sticky='news')
-
-        self.main_foodservice_maincourse_ayambetutu.grid(row=0, column=0, padx=(17.5,0), pady=(20,0), sticky='news')
-        self.main_foodservice_maincourse_ayamsambalmatah.grid(row=0, column=1, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_maincourse_ayamtaliwang.grid(row=0, column=2, padx=(0,0), pady=(20,0), sticky='news')        
-        self.main_foodservice_maincourse_miegoreng.grid(row=0, column=3, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_maincourse_nasigoreng.grid(row=1, column=0, padx=(17.5,0), pady=(10,0), sticky='news')        
-        self.main_foodservice_maincourse_sateayam.grid(row=1, column=1, padx=(0,0), pady=(10,0), sticky='news')
-        self.main_foodservice_maincourse_sopbuntut.grid(row=1, column=2, padx=(0,0), pady=(10,0), sticky='news')
-
-        self.main_foodservice_dessert_escampur.grid(row=0, column=0, padx=(17.5,0), pady=(20,0), sticky='news')
-        self.main_foodservice_dessert_esdawet.grid(row=0, column=1, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_dessert_espisangijo.grid(row=0, column=2, padx=(0,0), pady=(20,0), sticky='news')        
-        self.main_foodservice_dessert_klepon.grid(row=0, column=3, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_dessert_pisangkeju.grid(row=1, column=0, padx=(17.5,0), pady=(10,0), sticky='news')   
-
-        self.main_foodservice_drinks_esjeruk.grid(row=0, column=0, padx=(17.5,0), pady=(20,0), sticky='news')
-        self.main_foodservice_drinks_eskelapa.grid(row=0, column=1, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_drinks_esteh.grid(row=0, column=2, padx=(0,0), pady=(20,0), sticky='news')        
-        self.main_foodservice_drinks_kopi.grid(row=0, column=3, padx=(0,0), pady=(20,0), sticky='news')
-        self.main_foodservice_drinks_susu.grid(row=1, column=0, padx=(17.5,0), pady=(10,0), sticky='news')            
-        
-        self.main_foodservice_order_title.grid(row=0, column=0, columnspan=2, padx=(15,20), pady=(20,15), sticky='new')
+        self.main_foodservice_order_title.grid(row=0, column=0, columnspan=2, padx=(20,20), pady=(15,15), sticky='new')
         self.main_foodservice_order_roomlist_label.grid(row=1, column=0, pady=(10,10), padx=(30,0))
-        self.main_foodservice_order_roomlist.grid(row=1, column=1, pady=(10,10), padx=(0,20))
-        self.main_foodservice_order_frame.grid(row=2, column=0, columnspan=2, padx=(20,20), pady=(15,20), sticky='news')
-        self.main_foodservice_order_button.grid(row=3, column=0, columnspan=2, pady=(0,20), padx=(20,25))
+        self.main_foodservice_order_roomlist.grid(row=1, column=1, pady=(10,10), padx=(0,30))
+        self.main_foodservice_order_frame.grid(row=2, column=0, columnspan=2, padx=(15,15), pady=(15,20), sticky='news')
+        self.main_foodservice_order_button.grid(row=3, column=0, columnspan=2, pady=(0,20), padx=(77.25,77.25), sticky='news')
 
 
         # REPAIRING SERVICE WIDGET
 
         self.main_repairingservice_heading_label = ctk.CTkLabel(self.main_frame_repairingservice, text="Repairing Services", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='sw')
         self.main_repairingservice_heading_label.grid(row=0, column=0, pady=(5,5), padx=(80,0), sticky='news')
-        self.main_repairingservice_desc_label =  ctk.CTkLabel(self.main_frame_repairingservice, text='Lorem ipsum dolor sit amet', font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
-        self.main_repairingservice_desc_label.place(x=685, y=45, anchor='center')
+        self.main_repairingservice_desc_label =  ctk.CTkLabel(self.main_frame_repairingservice, text='Choose the type of repairing', font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
+        self.main_repairingservice_desc_label.place(x=690, y=45, anchor='center')
         self.main_repairingservice_back = ctk.CTkButton(self.main_frame_repairingservice, width=20, height=20, fg_color='transparent', bg_color='transparent', text='', hover_color='#0C0B10', cursor='hand2', image=self.back_image, command=self.roomservice_menu)
         self.main_repairingservice_back.place(x=25, y=33, anchor='center')
 
-        self.main_framebar_repairingservice = ctk.CTkFrame(self.main_frame_repairingservice, fg_color="#131318", bg_color='#0C0B10', border_color='#101014', border_width=5, corner_radius=20)
-        
-        self.main_framebar_repairingservice.grid(row=1, column=0, sticky='news')
+        self.main_repairingservice_button = ctk.CTkButton(self.main_framebar_repairingservice, corner_radius=25, width=180, height=45, text="Repairing Service Menu", font=ctk.CTkFont('Mona-Sans Bold', 30), fg_color='#191922', bg_color='transparent', hover_color='#191922', text_color="#FFFFFF", border_color='#171720', border_width=3)
+        self.main_repairingservice_button.grid(row=0, column=0, columnspan=1, padx=(20,20), pady=(15,15), sticky='news')
+
+
+        self.main_roomservice_repairingtype_label = ctk.CTkLabel(self.main_framebar_repairingservice, text="Repairing type select", font=ctk.CTkFont('Mona-Sans Bold', 40), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_repairingservice_menu_frame = ctk.CTkFrame(self.main_framebar_repairingservice, fg_color='#191922', border_color='#171720', border_width=5, corner_radius=20)
+        self.main_repairingservice_electricityrepair_button = ctk.CTkButton(self.main_repairingservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text_color='#D9D9FF', text='Electricity Repairing', font=ctk.CTkFont('Mona-Sans Bold', 18), command=lambda: self.select_repairingservice_menu('electricity'))
+        self.main_repairingservice_furniturerepair_button = ctk.CTkButton(self.main_repairingservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text_color='#D9D9FF', text='Furniture Repairing', font=ctk.CTkFont('Mona-Sans Bold', 18), command=lambda: self.select_repairingservice_menu('furniture'))
+        self.main_repairingservice_roomlist_label = ctk.CTkLabel(self.main_framebar_repairingservice, text="ROOM NUMBER  :", font=ctk.CTkFont('Mona-Sans Bold', 25), text_color="#B6B6C6", fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_repairingservice_roomlist = ctk.CTkOptionMenu(self.main_framebar_repairingservice, values=[''], width=100, height=25, font=ctk.CTkFont('Mona-Sans Bold', 20), corner_radius=30, anchor='center', dropdown_font=ctk.CTkFont('Mona-Sans', 15), fg_color='#292982', text_color='#FFFFFF', button_color='#4646DD', button_hover_color='#3434A6')
+        repairingserviceroom = []
+        CTkScrollableDropdown(self.main_repairingservice_roomlist, width=100, values=repairingserviceroom)
+        self.main_repairingservice_proceed_button = ctk.CTkButton(self.main_framebar_repairingservice, text='Proceed', font=ctk.CTkFont('Mona-Sans Bold', 25), text_color='#FFFFFF',  fg_color='#4646DD', hover_color='#3434A6', corner_radius=25, width=150, height=35, bg_color='transparent', cursor='hand2')
+
+        self.main_roomservice_repairingtype_label.grid(row=1, column=0, sticky='news', padx=(40,0), pady=(15,0))
+        self.main_repairingservice_menu_frame.grid(row=2, column=0, padx=(25,0), pady=(10,0), sticky='nws')
+        self.main_repairingservice_electricityrepair_button.grid(row=0, column=0, padx=(10,5), pady=(10,10), sticky='news')
+        self.main_repairingservice_furniturerepair_button.grid(row=0, column=1, padx=(5,5), pady=(10,10), sticky='news')
+        self.main_repairingservice_roomlist_label.grid(row=3, column=0, padx=(40,0), pady=(40,0), sticky='news')
+        self.main_repairingservice_roomlist.grid(row=3, column=0, padx=(280,0), pady=(40,0), sticky='w')  
+        self.main_repairingservice_proceed_button.grid(row=4, column=0, padx=(0,0), pady=(80,30), sticky='ns')
 
         # CLEANING SERVICE WIDGET
 
         self.main_cleaningservice_heading_label = ctk.CTkLabel(self.main_frame_cleaningservice, text="Cleaning Services", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='sw')
         self.main_cleaningservice_heading_label.grid(row=0, column=0, pady=(5,5), padx=(80,0), sticky='news')
-        self.main_cleaningservice_desc_label =  ctk.CTkLabel(self.main_frame_cleaningservice, text='Lorem ipsum dolor sit amet', font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
+        self.main_cleaningservice_desc_label =  ctk.CTkLabel(self.main_frame_cleaningservice, text='Choose the cleaning purpose', font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
         self.main_cleaningservice_desc_label.place(x=667.5, y=45, anchor='center')
         self.main_cleaningservice_back = ctk.CTkButton(self.main_frame_cleaningservice, width=20, height=20, fg_color='transparent', bg_color='transparent', text='', hover_color='#0C0B10', cursor='hand2', image=self.back_image, command=self.roomservice_menu)
         self.main_cleaningservice_back.place(x=25, y=33, anchor='center')
+
+        self.main_cleaningservice_button = ctk.CTkButton(self.main_framebar_cleaningservice, corner_radius=25, width=180, height=45, text="Cleaning Service Menu", font=ctk.CTkFont('Mona-Sans Bold', 30), fg_color='#191922', bg_color='transparent', hover_color='#191922', text_color="#FFFFFF", border_color='#171720', border_width=3)
+        self.main_cleaningservice_button.grid(row=0, column=0, columnspan=1, padx=(20,20), pady=(15,15), sticky='news')
+
+
+        self.main_roomservice_cleaningtype_label = ctk.CTkLabel(self.main_framebar_cleaningservice, text="Cleaning type select", font=ctk.CTkFont('Mona-Sans Bold', 40), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_cleaningservice_menu_frame = ctk.CTkFrame(self.main_framebar_cleaningservice, fg_color='#191922', border_color='#171720', border_width=5, corner_radius=20)
+        self.main_cleaningservice_vacantdirty_button = ctk.CTkButton(self.main_cleaningservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text_color='#D9D9FF', text='Vacant Dirty', font=ctk.CTkFont('Mona-Sans Bold', 18), command=lambda: self.select_cleaningservice_menu('vacantdirty'))
+        self.main_cleaningservice_cleaningrequest_button = ctk.CTkButton(self.main_cleaningservice_menu_frame, width=190, height=40, corner_radius=20, fg_color='#242432', bg_color='transparent', border_color='#1E1E2A', border_width=4, hover_color='#4646DD', text_color='#D9D9FF', text='Cleaning Request', font=ctk.CTkFont('Mona-Sans Bold', 18), command=lambda: self.select_cleaningservice_menu('cleaningrequest'))
+        self.main_cleaningservice_roomlist_label = ctk.CTkLabel(self.main_framebar_cleaningservice, text="ROOM NUMBER  :", font=ctk.CTkFont('Mona-Sans Bold', 25), text_color="#B6B6C6", fg_color='transparent', bg_color='transparent', anchor='w')
+        self.main_cleaningservice_roomlist = ctk.CTkOptionMenu(self.main_framebar_cleaningservice, values=[''], width=100, height=25, font=ctk.CTkFont('Mona-Sans Bold', 20), corner_radius=30, anchor='center', dropdown_font=ctk.CTkFont('Mona-Sans', 15), fg_color='#292982', text_color='#FFFFFF', button_color='#4646DD', button_hover_color='#3434A6')
+        cleaningserviceroom = []
+        CTkScrollableDropdown(self.main_cleaningservice_roomlist, width=100, values=cleaningserviceroom)
+        self.main_cleaningservice_proceed_button = ctk.CTkButton(self.main_framebar_cleaningservice, text='Proceed', font=ctk.CTkFont('Mona-Sans Bold', 25), text_color='#FFFFFF',  fg_color='#4646DD', hover_color='#3434A6', corner_radius=25, width=150, height=35, bg_color='transparent', cursor='hand2')
+
+        self.main_roomservice_cleaningtype_label.grid(row=1, column=0, sticky='news', padx=(40,0), pady=(15,0))
+        self.main_cleaningservice_menu_frame.grid(row=2, column=0, padx=(25,0), pady=(10,0), sticky='nws')
+        self.main_cleaningservice_vacantdirty_button.grid(row=0, column=0, padx=(10,5), pady=(10,10), sticky='news')
+        self.main_cleaningservice_cleaningrequest_button.grid(row=0, column=1, padx=(5,5), pady=(10,10), sticky='news')
+        self.main_cleaningservice_roomlist_label.grid(row=3, column=0, padx=(40,0), pady=(40,0), sticky='news')
+        self.main_cleaningservice_roomlist.grid(row=3, column=0, padx=(280,0), pady=(40,0), sticky='w')
+        self.main_cleaningservice_proceed_button.grid(row=4, column=0, padx=(0,0), pady=(80,30), sticky='ns')
+
 
         # ABOUT WIDGET
 
         self.main_about_heading_label = ctk.CTkLabel(self.main_frame_about, text="About", font=ctk.CTkFont('Mona-Sans Bold', 50), text_color=("#FFFFFF"), fg_color='transparent', bg_color='transparent', anchor='s')
         self.main_about_heading_label.grid(row=0, column=0, pady=(5,20), padx=20, sticky='news')
+        self.main_about_desc_label =  ctk.CTkLabel(self.main_frame_about, text='Some information about us and the application', font=ctk.CTkFont('Mona-Sans SemiBold', 20), text_color=("#B6B6C6"), fg_color='transparent', bg_color='transparent', anchor='sw')
+        self.main_about_desc_label.place(x=410, y=45, anchor='center')
 
         self.main_about_logo = ctk.CTkLabel(self.main_frame_about, text='', image=self.logoshadow_image)
-        self.main_about_logo.place(x=600, y=120, anchor='center')
+        self.main_about_logo.place(x=600, y=140, anchor='center')
 
         self.main_about_desc = ctk.CTkLabel(self.main_frame_about, font=ctk.CTkFont('Mona-Sans Medium', 15), text='"Hostay" merupakan sebuah program yang dirancang untuk membantu dan mempermudah\nresepsionis dalam melakukan pelayanan yang diberikan kepada tamu.\n\nDengan otomatisasi tugas-tugas seperti pemesanan, Check-in dan Check-out, dan manajemen inventaris.\n Sehingga hotel dapat mengelola operasinya dengan lebih efisien.')
-        self.main_about_desc.place(x=600, y=240, anchor='center')
+        self.main_about_desc.place(x=600, y=260, anchor='center')
 
         self.main_about_incha = ctk.CTkLabel(self.main_frame_about, font=ctk.CTkFont('Mona-Sans Bold Wide', 12), text='Incha Raghil', text_color='#FFFFFF')
         self.main_about_shadiq = ctk.CTkLabel(self.main_frame_about, font=ctk.CTkFont('Mona-Sans Bold Wide', 12), text='Muhammad Shadiq Al-Fatiy', text_color='#FFFFFF')
@@ -1181,19 +1231,19 @@ class App(ctk.CTk):
         self.main_about_khanza_nim = ctk.CTkLabel(self.main_frame_about, height=10, font=ctk.CTkFont('Mona-Sans Medium Wide', 12), text='10231049', text_color='#D2D2DD')
         self.main_about_ajeng_nim = ctk.CTkLabel(self.main_frame_about, height=10, font=ctk.CTkFont('Mona-Sans Medium Wide', 12), text='16231003', text_color='#D2D2DD')
 
-        self.main_about_incha.place(x=300, y=380, anchor='center')
-        self.main_about_shadiq.place(x=600, y=380, anchor='center')
-        self.main_about_syahrul.place(x=900, y=380, anchor='center')
-        self.main_about_khanza.place(x=430, y=450, anchor='center')
-        self.main_about_ajeng.place(x=770, y=450, anchor='center')
-        self.main_about_bagas.place(x=600, y=520, anchor='center')
+        self.main_about_incha.place(x=300, y=400, anchor='center')
+        self.main_about_shadiq.place(x=600, y=400, anchor='center')
+        self.main_about_syahrul.place(x=900, y=400, anchor='center')
+        self.main_about_khanza.place(x=430, y=470, anchor='center')
+        self.main_about_ajeng.place(x=770, y=470, anchor='center')
+        self.main_about_bagas.place(x=600, y=540, anchor='center')
 
-        self.main_about_incha_nim.place(x=300, y=395, anchor='center')
-        self.main_about_shadiq_nim.place(x=600, y=395, anchor='center')
-        self.main_about_syahrul_nim.place(x=900, y=395, anchor='center')
-        self.main_about_khanza_nim.place(x=430, y=465, anchor='center')
-        self.main_about_ajeng_nim.place(x=770, y=465, anchor='center')
-        self.main_about_bagas_nim.place(x=600, y=535, anchor='center')
+        self.main_about_incha_nim.place(x=300, y=415, anchor='center')
+        self.main_about_shadiq_nim.place(x=600, y=415, anchor='center')
+        self.main_about_syahrul_nim.place(x=900, y=415, anchor='center')
+        self.main_about_khanza_nim.place(x=430, y=485, anchor='center')
+        self.main_about_ajeng_nim.place(x=770, y=485, anchor='center')
+        self.main_about_bagas_nim.place(x=600, y=555, anchor='center')
 
 
         self.main_about_copyright = ctk.CTkLabel(self.main_frame_about, font=ctk.CTkFont('Mona-Sans Bold', 14), text='Copyright © 2023 Hostay', text_color='#FFFFFF')
@@ -1203,7 +1253,9 @@ class App(ctk.CTk):
 
         self.select_frame('dashboard')
         self.select_foodservice_menu('appetizer')
-    
+        self.select_repairingservice_menu('electricity')
+        self.select_cleaningservice_menu('vacantdirty')
+
     def select_frame(self, name):
         self.sidebar_button_dashboard.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'dashboard' else 'transparent')
         self.sidebar_button_checkinout.configure(self.sidebar_frame, fg_color=('#3434A6') if name == 'checkinout' else 'transparent')
@@ -1356,6 +1408,14 @@ class App(ctk.CTk):
 
     def repairingservice_menu(self):
         self.select_frame('repairingservice')
+
+    def select_repairingservice_menu(self, name):
+        self.main_repairingservice_electricityrepair_button.configure(self.main_repairingservice_menu_frame, fg_color=('#3434A6') if name == 'electricity' else '#242432')
+        self.main_repairingservice_furniturerepair_button.configure(self.main_repairingservice_menu_frame, fg_color=('#3434A6') if name == 'furniture' else '#242432')
+
+    def select_cleaningservice_menu(self,name):
+        self.main_cleaningservice_vacantdirty_button.configure(self.main_cleaningservice_menu_frame, fg_color=('#3434A6') if name == 'vacantdirty' else '#242432')
+        self.main_cleaningservice_cleaningrequest_button.configure(self.main_cleaningservice_menu_frame, fg_color=('#3434A6') if name == 'cleaningrequest' else '#242432')
 
     def cleaningservice_menu(self):
         self.select_frame('cleaningservice')
@@ -1810,6 +1870,7 @@ class App(ctk.CTk):
         self.main_checkout_billingdetail_grandtotal.grid(row=9, column=3, sticky='nws', padx=(0,60), pady=(5,0))
 
     def update_room_button(self):
+        
         for data in self.room_status:
             self.room_id, self.status = data
             if self.room_id in self.room_button and self.room_id in self.room_checkout_button and self.status == 'Occupied':
@@ -1838,7 +1899,7 @@ class App(ctk.CTk):
             elif self.room_id in self.room_button and self.room_id in self.room_checkout_button and self.status == 'Service':
                 formatted_room_id = str(self.room_id).zfill(2)
                 self.room_button[self.room_id].configure(state='disabled', text='Unavailable', font=ctk.CTkFont('Mona-Sans Bold', 25))
-                self.room_checkout_button[self.room_id].configure(state='normal', text=formatted_room_id, text_color=text_color, font=ctk.CTkFont('Mona-Sans ExtraBold', 45))
+                self.room_checkout_button[self.room_id].configure(state='normal', text=formatted_room_id, font=ctk.CTkFont('Mona-Sans ExtraBold', 45))
                 
             elif self.room_id in self.room_button and self.room_id in self.room_checkout_button:
                 self.room_button[self.room_id].configure(state='normal')
@@ -2007,7 +2068,9 @@ class App(ctk.CTk):
                     self.room_indicator[self.room_id].after(1000, self.update_room_status)
                     self.room_labels[self.room_id].after(1000, self.update_room_status)
                     self.room_button[self.room_id].after(1000, self.update_room_button)
+                    
                     self.update_guest_history_table()
+                    self.update_guest_list_table()
 
                     self.conn.commit()    
                     print('Berhasil Input Database')
@@ -2037,21 +2100,54 @@ class App(ctk.CTk):
             guest_name = f"{row[2]} {row[3]}"  
         
             self.guest_history.append([
-                row[0],  # Assuming that guest_id is at index 0
-                row[1],  # Assuming that room_num is at index 1
+                row[0],  
+                row[1],  
                 guest_name,
-                row[4],  # Assuming that age is at index 4
-                row[5],  # Assuming that gender is at index 5
-                row[6],  # Assuming that nin is at index 6
-                row[7],  # Assuming that phone_number is at index 7
-                row[8],  # Assuming that email is at index 8
-                row[9],  # Assuming that address is at index 9
-                row[10],  # Assuming that check_in_date is at index 10
-                row[11]   # Assuming that check_out_date is at index 11
+                row[4],  
+                row[5], 
+                row[6],  
+                row[7],  
+                row[8], 
+                row[9],  
+                row[10],  
+                row[11]   
             ])
 
         print(self.guest_history)
         self.main_guesthistory_table.add_row(*self.guest_history)
+
+    def update_guest_list_table(self):
+
+        self.cursor.execute("SELECT id, status FROM kamar")
+        room_statuses = self.cursor.fetchall()
+        print(room_statuses)
+
+        self.cursor.execute("SELECT room_num, first_name, last_name, check_in_date, check_out_date, guest_note FROM guest")
+        self.guest_datas = self.cursor.fetchall()
+
+        for guest_data in self.guest_datas:
+            room_num = guest_data[0]
+            guest_full_name = f"{guest_data[1]} {guest_data[2]}"
+            check_in_date = guest_data[3]
+            check_out_date = guest_data[4]
+            guest_note = guest_data[5]
+
+            self.main_guestlist_table.insert(room_num, 2, guest_full_name)
+            self.main_guestlist_table.insert(room_num, 3, check_in_date)
+            self.main_guestlist_table.insert(room_num, 4, check_out_date)
+            self.main_guestlist_table.insert(room_num, 6, guest_note)
+            
+        for room_status in room_statuses:
+            room_number = room_status[0]
+            self.statuses = room_status[1]
+
+            self.main_guestlist_table.insert(room_number, 5, self.statuses)
+
+            if self.statuses == 'Dirty':
+                self.main_guestlist_table.delete(room_number, 2)    
+                self.main_guestlist_table.delete(room_number, 3)    
+                self.main_guestlist_table.delete(room_number, 4)    
+                self.main_guestlist_table.delete(room_number, 6)  
 
 
     def dateformatvalidation(self, date_string):
@@ -2073,6 +2169,36 @@ class App(ctk.CTk):
                 self.room_labels[self.room_id].after(1000, self.update_room_status)
                 self.room_button[self.room_id].after(1000, self.update_room_button)
     
+                self.cursor.execute("SELECT id, status FROM kamar")
+                room_statuses = self.cursor.fetchall()
+                print(room_statuses)
+
+                self.cursor.execute("SELECT room_num, first_name, last_name, check_in_date, check_out_date, guest_note FROM guest")
+                self.guest_datas = self.cursor.fetchall()
+                for guest_data in self.guest_datas:
+                    room_num = guest_data[0]
+                    guest_full_name = f"{guest_data[1]} {guest_data[2]}"
+                    check_in_date = guest_data[3]
+                    check_out_date = guest_data[4]
+                    guest_note = guest_data[5]
+
+                    self.main_guestlist_table.insert(room_num, 2, guest_full_name)
+                    self.main_guestlist_table.insert(room_num, 3, check_in_date)
+                    self.main_guestlist_table.insert(room_num, 4, check_out_date)
+                    self.main_guestlist_table.insert(room_num, 6, guest_note)
+                    
+                for room_status in room_statuses:
+                    room_number = room_status[0]
+                    self.statuses = room_status[1]
+
+                    self.main_guestlist_table.insert(room_number, 5, self.statuses)
+
+                    if self.statuses == 'Dirty':
+                        self.main_guestlist_table.delete(room_number, 2)    
+                        self.main_guestlist_table.delete(room_number, 3)    
+                        self.main_guestlist_table.delete(room_number, 4)    
+                        self.main_guestlist_table.delete(room_number, 6)
+
                 self.conn.commit()    
                 print('Berhasil Checkout')
                 
@@ -2100,6 +2226,7 @@ class App(ctk.CTk):
                 self.room_labels[self.room_id].after(1000, self.update_room_status)
                 self.room_button[self.room_id].after(1000, self.update_room_button)
                 
+                self.update_guest_list_table()
 
                 self.conn.commit()    
                 print('Berhasil Requesting Service')
@@ -2121,9 +2248,9 @@ class App(ctk.CTk):
             existing_item['quantity'] += quantity
         self.update_order_scrollable_frame()
 
-    def create_button(self, frame, item_name, image, row, column):
+    def create_button(self, frame, item_name, image, row, column, valuex1, valuex2, valuey1, valuey2):
         button = ctk.CTkButton(frame, command=lambda name=item_name: self.item_name(name, button), cursor='hand2', hover_color='#4646DD', fg_color='transparent', image=image, text='')
-        button.grid(row=row, column=column)
+        button.grid(row=row, column=column, padx=(valuex1,valuex2), pady=(valuey1,valuey2))
 
         return button     
 
@@ -2174,16 +2301,16 @@ class App(ctk.CTk):
                 self.quantity_label.configure(text='')
             else:
                 self.item_label = ctk.CTkLabel(self.main_foodservice_order_scrollableframe, text=item_label_text, font=ctk.CTkFont('Mona-Sans Medium', 14), text_color='#B3B4BF', fg_color='#191922', bg_color='transparent', anchor='w')
-                self.item_label.grid(row=start_row + i, column=0, sticky='nws', pady=(0, 0), padx=(0, 0))
+                self.item_label.grid(row=start_row + i, column=0, sticky='nws', pady=(0,0), padx=(0,0))
 
-                self.quantity_label = ctk.CTkLabel(self.main_foodservice_order_scrollableframe, text=quantity_label_text, font=ctk.CTkFont('Mona-Sans Medium', 14), text_color='#B3B4BF', fg_color='#191922', bg_color='transparent', anchor='center')
-                self.quantity_label.grid(row=start_row + i, column=1, sticky='news', padx=(100, 40))
+                self.quantity_label = ctk.CTkLabel(self.main_foodservice_order_scrollableframe, text=quantity_label_text, font=ctk.CTkFont('Mona-Sans Medium', 14), text_color='#B3B4BF', fg_color='#191922', bg_color='transparent', anchor='w')
+                self.quantity_label.grid(row=start_row + i, column=1, sticky='news', padx=(40,0))
 
                 self.add_button = ctk.CTkButton(self.main_foodservice_order_scrollableframe, text='+', width=25, fg_color='#4646DD', hover_color='#3434A6', font=ctk.CTkFont('Mona-Sans Medium', 14), anchor='center', command=lambda i=i: self.update_quantity(i, 'add'))
-                self.add_button.grid(row=start_row + i, column=1, sticky='ns', pady=(2,0), padx=(100, 100))
+                self.add_button.grid(row=start_row + i, column=1, sticky='nws', pady=(2,0), padx=(0,0))
 
                 self.subtract_button = ctk.CTkButton(self.main_foodservice_order_scrollableframe, text='-', width=25, fg_color='#4646DD', hover_color='#3434A6', font=ctk.CTkFont('Mona-Sans Medium', 14), anchor='center', command=lambda i=i: self.update_quantity(i, 'subtract'))
-                self.subtract_button.grid(row=start_row + i, column=1, sticky='ns', pady=(2,0), padx=(160, 40))
+                self.subtract_button.grid(row=start_row + i, column=1, sticky='ns', pady=(2,0), padx=(60,0))
 
     def update_quantity(self, index, action):
         if action == 'add':
